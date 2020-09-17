@@ -1,0 +1,354 @@
+
+arc_B4_3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+22 copy
+  rotate: false
+  xy: 2, 7
+  size: 223, 36
+  orig: 223, 36
+  offset: 0, 0
+  index: -1
+Group 1 copy
+  rotate: true
+  xy: 704, 830
+  size: 192, 303
+  orig: 192, 303
+  offset: 0, 0
+  index: -1
+Layer 0
+  rotate: false
+  xy: 434, 10
+  size: 185, 49
+  orig: 185, 49
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: true
+  xy: 949, 203
+  size: 183, 46
+  orig: 183, 46
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: false
+  xy: 227, 3
+  size: 179, 40
+  orig: 179, 40
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: false
+  xy: 751, 11
+  size: 129, 42
+  orig: 129, 42
+  offset: 0, 0
+  index: -1
+Layer 6
+  rotate: false
+  xy: 882, 11
+  size: 127, 42
+  orig: 127, 42
+  offset: 0, 0
+  index: -1
+aMix_02_00010
+  rotate: false
+  xy: 621, 2
+  size: 128, 51
+  orig: 128, 51
+  offset: 0, 0
+  index: -1
+bMix_02_00003
+  rotate: false
+  xy: 434, 283
+  size: 28, 10
+  orig: 28, 10
+  offset: 0, 0
+  index: -1
+body1
+  rotate: false
+  xy: 2, 384
+  size: 460, 369
+  orig: 460, 369
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 2, 45
+  size: 430, 337
+  orig: 430, 337
+  offset: 0, 0
+  index: -1
+ear1
+  rotate: true
+  xy: 732, 202
+  size: 198, 215
+  orig: 198, 215
+  offset: 0, 0
+  index: -1
+leg1
+  rotate: false
+  xy: 464, 246
+  size: 266, 507
+  orig: 266, 507
+  offset: 0, 0
+  index: -1
+leg1_3
+  rotate: true
+  xy: 724, 55
+  size: 145, 259
+  orig: 145, 259
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: false
+  xy: 732, 402
+  size: 226, 426
+  orig: 226, 426
+  offset: 0, 0
+  index: -1
+smoke_03_00000
+  rotate: false
+  xy: 751, 2
+  size: 51, 7
+  orig: 51, 7
+  offset: 0, 0
+  index: -1
+smoke_03_00001
+  rotate: true
+  xy: 704, 764
+  size: 64, 15
+  orig: 64, 15
+  offset: 0, 0
+  index: -1
+smoke_03_00002
+  rotate: true
+  xy: 434, 295
+  size: 87, 26
+  orig: 87, 26
+  offset: 0, 0
+  index: -1
+tail1
+  rotate: false
+  xy: 2, 755
+  size: 700, 267
+  orig: 700, 267
+  offset: 0, 0
+  index: -1
+wing1_1
+  rotate: false
+  xy: 434, 61
+  size: 288, 183
+  orig: 288, 183
+  offset: 0, 0
+  index: -1
+wing4
+  rotate: true
+  xy: 960, 388
+  size: 440, 55
+  orig: 440, 55
+  offset: 0, 0
+  index: -1
+
+arc_B4_32.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group 2 copy
+  rotate: false
+  xy: 573, 405
+  size: 208, 251
+  orig: 208, 251
+  offset: 0, 0
+  index: -1
+Group 3 copy
+  rotate: true
+  xy: 364, 267
+  size: 131, 244
+  orig: 131, 244
+  offset: 0, 0
+  index: -1
+aMix_02_00006
+  rotate: false
+  xy: 647, 7
+  size: 119, 42
+  orig: 119, 42
+  offset: 0, 0
+  index: -1
+aMix_02_00016
+  rotate: true
+  xy: 939, 119
+  size: 136, 53
+  orig: 136, 53
+  offset: 0, 0
+  index: -1
+beam
+  rotate: false
+  xy: 939, 257
+  size: 60, 131
+  orig: 60, 131
+  offset: 0, 0
+  index: -1
+chin1
+  rotate: true
+  xy: 921, 452
+  size: 222, 96
+  orig: 222, 96
+  offset: 0, 0
+  index: -1
+chin2
+  rotate: false
+  xy: 783, 56
+  size: 153, 121
+  orig: 153, 121
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 488, 2
+  size: 53, 54
+  orig: 53, 54
+  offset: 0, 0
+  index: -1
+head1
+  rotate: true
+  xy: 2, 27
+  size: 298, 330
+  orig: 298, 330
+  offset: 0, 0
+  index: -1
+leg1_1
+  rotate: true
+  xy: 334, 58
+  size: 207, 244
+  orig: 207, 244
+  offset: 0, 0
+  index: -1
+leg1_2
+  rotate: false
+  xy: 364, 400
+  size: 207, 256
+  orig: 207, 256
+  offset: 0, 0
+  index: -1
+lighttail
+  rotate: true
+  xy: 334, 3
+  size: 53, 152
+  orig: 53, 152
+  offset: 0, 0
+  index: -1
+neck1
+  rotate: false
+  xy: 474, 658
+  size: 376, 364
+  orig: 376, 364
+  offset: 0, 0
+  index: -1
+neck1_1
+  rotate: true
+  xy: 783, 378
+  size: 278, 136
+  orig: 278, 136
+  offset: 0, 0
+  index: -1
+neck2
+  rotate: false
+  xy: 2, 327
+  size: 360, 396
+  orig: 360, 396
+  offset: 0, 0
+  index: -1
+neck2_1
+  rotate: false
+  xy: 783, 179
+  size: 154, 197
+  orig: 154, 197
+  offset: 0, 0
+  index: -1
+neck2_2
+  rotate: false
+  xy: 610, 160
+  size: 171, 243
+  orig: 171, 243
+  offset: 0, 0
+  index: -1
+neck2_3
+  rotate: false
+  xy: 852, 676
+  size: 148, 346
+  orig: 148, 346
+  offset: 0, 0
+  index: -1
+smoke_03_00004
+  rotate: false
+  xy: 543, 2
+  size: 102, 47
+  orig: 102, 47
+  offset: 0, 0
+  index: -1
+smoke_03_00005
+  rotate: false
+  xy: 771, 2
+  size: 102, 52
+  orig: 102, 52
+  offset: 0, 0
+  index: -1
+smoke_03_00007
+  rotate: false
+  xy: 921, 390
+  size: 81, 60
+  orig: 81, 60
+  offset: 0, 0
+  index: -1
+smoke_03_00009
+  rotate: false
+  xy: 364, 660
+  size: 82, 63
+  orig: 82, 63
+  offset: 0, 0
+  index: -1
+wing2_1
+  rotate: false
+  xy: 2, 725
+  size: 470, 297
+  orig: 470, 297
+  offset: 0, 0
+  index: -1
+wing3
+  rotate: false
+  xy: 580, 51
+  size: 189, 107
+  orig: 189, 107
+  offset: 0, 0
+  index: -1
+
+arc_B4_33.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group 18 copy 11f
+  rotate: true
+  xy: 214, 14
+  size: 95, 101
+  orig: 95, 101
+  offset: 0, 0
+  index: -1
+Rock 003 Up_00002
+  rotate: false
+  xy: 112, 9
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 2, 2
+  size: 108, 107
+  orig: 108, 107
+  offset: 0, 0
+  index: -1
