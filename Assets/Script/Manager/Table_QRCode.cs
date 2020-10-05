@@ -26,7 +26,9 @@ public class Table_QRCode : Tool_TableParser
 
     public void Load()
     {
+        Debug.LogFormat("QRCode Load Start : {0}", Time.realtimeSinceStartup);
         Read_Resources_Bytes("Data/medal", Parser_);
+        Debug.LogFormat("QRCode Load End : {0}", Time.realtimeSinceStartup);
     }
 
     void Parser_(string[] val)
@@ -34,6 +36,6 @@ public class Table_QRCode : Tool_TableParser
         if (val[0] == "id")
             return;
 
-        m_Dic.Add(int.Parse(val[1]), new QRCode(val));
+        m_Dic.Add(int.Parse(val[0]), new QRCode(val));
     }
 }

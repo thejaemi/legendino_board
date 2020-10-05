@@ -5,20 +5,21 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     // for battle
-    public List<int> MyDino = new List<int>();
+    public int m_StageId;
+    public List<int> m_MyDino = new List<int>();
     public Dictionary<int, GameObject> m_MyDino_Object = new Dictionary<int, GameObject>();
-    public List<int> OtherDino = new List<int>();
+    public List<int> m_OtherDino = new List<int>();
     public Dictionary<int, GameObject> m_OtherDino_Object = new Dictionary<int, GameObject>();
 
     public CM_JobManager m_JobMng;
     public CM_JobQueue m_JobQueue;
 
     // for data
-    public Table_Dino m_Table_Dino = new Table_Dino();
-    public Table_QRCode m_Table_QRCode = new Table_QRCode();
-    public Table_Card m_Table_Card = new Table_Card();
-    public Table_Deck m_Table_Deck = new Table_Deck();
-    public Table_Stage m_Table_Stage = new Table_Stage();
+    public Table_Dino m_Table_Dino;
+    public Table_QRCode m_Table_QRCode;
+    public Table_Card m_Table_Card;
+    public Table_Deck m_Table_Deck;
+    public Table_Stage m_Table_Stage;
     public Dictionary<string, bool> m_StageClear = new Dictionary<string, bool>();
 
 
@@ -37,7 +38,8 @@ public class GameData : MonoBehaviour
         (m_Table_Card = CM_Singleton<Table_Card>.instance).Load();
         m_Table_Card.gameObject.transform.parent = transform;
 
-        (m_Table_Stage = CM_Singleton<Table_Stage>.instance).Load();
+        m_Table_Stage = CM_Singleton<Table_Stage>.instance;
+        m_Table_Stage.Load();
         m_Table_Stage.gameObject.transform.parent = transform;
 
         (m_Table_Deck = CM_Singleton<Table_Deck>.instance).Load();
@@ -88,13 +90,13 @@ public class GameData : MonoBehaviour
 
     public void Clear_MyDino()
     {
-        MyDino.Clear();
+        m_MyDino.Clear();
     }
 
     public void Add_MyDino(int id)
     {
         Debug.LogFormat("Add MyDino {0}", id);
-        MyDino.Add(id);
+        m_MyDino.Add(id);
         //StartCoroutine(LoadDino(id, 0));
         m_JobQueue.Enqueue(LoadDino(id, 0)).Start();
     }
@@ -102,7 +104,7 @@ public class GameData : MonoBehaviour
     public void Add_OtherDino(int id)
     {
         Debug.LogFormat("Add OtherDino {0}", id);
-        OtherDino.Add(id);
+        m_OtherDino.Add(id);
         //StartCoroutine(LoadDino(id, 1));
         m_JobQueue.Enqueue(LoadDino(id, 1)).Start();
     }

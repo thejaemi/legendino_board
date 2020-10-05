@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Table_Stage : Tool_TableParser
 {
-    Dictionary<int, Stage> m_Dic = new Dictionary<int, Stage>();
+    public Dictionary<int, Stage> m_Dic = new Dictionary<int, Stage>();
 
 
     private void Awake()
