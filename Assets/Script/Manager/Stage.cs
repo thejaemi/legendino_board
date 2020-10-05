@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage : MonoBehaviour
+public class Stage
 {
     public int m_Id;
     public int m_StageId;
