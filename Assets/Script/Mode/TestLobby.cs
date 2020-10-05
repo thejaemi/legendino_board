@@ -54,8 +54,8 @@ public class TestLobby : MonoBehaviour
 
             // 선택된 공룡
             m_sTmp = "";
-            for (int i = 0; i < CM_Singleton<GameData>.instance.MyDino.Count; i++)
-                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.MyDino[i]);
+            for (int i = 0; i < CM_Singleton<GameData>.instance.m_MyDino.Count; i++)
+                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_MyDino[i]);
             GUI.Label(new Rect(180, 25, 100, 30), m_sTmp);
             GUI.EndGroup();
 
@@ -70,8 +70,8 @@ public class TestLobby : MonoBehaviour
 
             // 선택된 공룡
             m_sTmp = "";
-            for (int i = 0; i < CM_Singleton<GameData>.instance.OtherDino.Count; i++)
-                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.OtherDino[i]);
+            for (int i = 0; i < CM_Singleton<GameData>.instance.m_OtherDino.Count; i++)
+                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_OtherDino[i]);
             GUI.Label(new Rect(180, 25, 100, 30), m_sTmp);
             GUI.EndGroup();
 
@@ -79,8 +79,10 @@ public class TestLobby : MonoBehaviour
 
 
             if (GUI.Button(new Rect(522, 180, 100, 30), "임시배틀"))
-                SceneManager.LoadScene("Battle");
-
+            {
+                CM_Singleton<GameData>.instance.m_StageId = 1;
+                SceneManager.LoadScene("Loading_Battle");
+            }
 
             float sy = Screen.height - 600;
 

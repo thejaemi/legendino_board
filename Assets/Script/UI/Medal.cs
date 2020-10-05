@@ -14,6 +14,8 @@ public class Medal : MonoBehaviour
     public float m_AngleRatio = 0.0f;
     string m_Desc = "";
 
+    public bool m_ShowTool = false;
+
     private void Awake()
     {
 
@@ -72,6 +74,9 @@ public class Medal : MonoBehaviour
 
     private void OnGUI()
     {
+        if (m_ShowTool == false)
+            return;
+
         GUI.Label(new Rect(550, 140, 300, 30), string.Format("z {0} / r {1} / {2}", m_Angle, m_AngleRatio, m_Desc));
 
         if (GUI.Button(new Rect(550, 100, 100, 30), "Set"))
