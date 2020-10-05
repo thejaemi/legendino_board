@@ -195,7 +195,7 @@ namespace Spine.Unity.Editor {
 					EditorGUILayout.HelpBox("Skeleton Data Asset required", MessageType.Warning);
 					return;
 				}
-
+/*
 				#if NO_PREFAB_MESH
 				if (isInspectingPrefab) {
 					MeshFilter meshFilter = component.GetComponent<MeshFilter>();
@@ -203,7 +203,7 @@ namespace Spine.Unity.Editor {
 						meshFilter.sharedMesh = null;
 				}
 				#endif
-
+*/
 				// Initial skin name.
 				if (component.valid) {
 					string[] skins = new string[component.skeleton.Data.Skins.Count];
