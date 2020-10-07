@@ -75,12 +75,12 @@ public class QRCamScreen : MonoBehaviour {
 	void Start () {
 		SetRawTexture();
 		DrawCamTexture();
-		initRotation();
+		// initRotation();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		SetRotation();
+		// SetRotation();
 		if(enableDecode == false)
 			return;
 
@@ -122,8 +122,8 @@ public class QRCamScreen : MonoBehaviour {
 				float scaleFactor = parentCanvas.scaleFactor;
 				float width = parentCanvas.pixelRect.size.y / scaleFactor;
 				float height = parentCanvas.pixelRect.size.x / scaleFactor;
-				Debug.Log(width);
-				Debug.Log(height);
+				// Debug.Log(width);
+				// Debug.Log(height);
 				rawImage.rectTransform.sizeDelta = new Vector2(width, height);
 				// rawImage.texture.height = (int)height;
 				rawImage.transform.localEulerAngles = new Vector3(0, 0, -90f);
