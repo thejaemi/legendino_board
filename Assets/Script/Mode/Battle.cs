@@ -8,14 +8,44 @@ public class Battle : MonoBehaviour
 
     // for interface
     public Transform m_Position_My;         // 공룡 모델 위치
+    GameObject m_CurDino_My;
+    public UIProgressBar m_Gauge_Hp_My;
+    public UILabel m_Label_Hp_My;
     public DinoField m_DinoField_My;
     public Medal[] m_Medal_My;
+    public UILabel m_Label_Attack_My;
+    public UILabel m_Label_Defence_My;
+    public UILabel m_Label_Counter_My;
+    public UILabel m_Label_Special_My;
+
     public Transform m_Position_Other;      // 공룡 모델 위치
+    GameObject m_CurDino_Other;
+    public UIProgressBar m_Gauge_Hp_Other;
+    public UILabel m_Label_Hp_Other;
     public DinoField m_DinoField_Other;
     public Medal[] m_Medal_Other;
+    public UILabel m_Label_Attack_Other;
+    public UILabel m_Label_Defence_Other;
+    public UILabel m_Label_Counter_Other;
+    public UILabel m_Label_Special_Other;
 
-    GameObject m_CurDino_My;
-    GameObject m_CurDino_Other;
+    public GameObject m_Blind;
+
+    public GameObject m_Label_Ready;
+    public GameObject m_Label_Set;
+    public GameObject m_Label_Spin;
+
+    public GameObject m_UI_PlzTouch;
+    public UILabel m_Label_PlzTouchCount;
+
+    public GameObject m_UI_SpinResult;
+    public UISprite m_Sprite_Result_My;
+    public UILabel m_Label_Result_My;
+    public UILabel m_Label_ResultDesc_My;
+    public UISprite m_Sprite_Result_Other;
+    public UILabel m_Label_Result_Other;
+    public UILabel m_Label_ResultDesc_Other;
+
 
     // for duel
     int m_Turn = 0;
@@ -90,6 +120,7 @@ public class Battle : MonoBehaviour
         }
     }
 
+    // https://www.notion.so/UI-798fd7dfb61f4890b9c1a3220a67a6db#834c7b732c204caabc7c95471d3db7d4
     IEnumerator Step_Ready()
     {
         DebugAdd("# 스타트 레디");
@@ -214,6 +245,44 @@ public class Battle : MonoBehaviour
     }
 
     #endregion
+
+
+
+
+    #region for Msg
+
+    public void CardTypeSelect_Attack()
+    {
+
+    }
+
+    public void CardTypeSelect_Defence()
+    {
+
+    }
+
+    public void CardTypeSelect_Counter()
+    {
+
+    }
+
+    public void CardTypeSelect_Special()
+    {
+
+    }
+
+    public void StartSpin()
+    {
+
+    }
+
+    public void StopSpin()
+    {
+
+    }
+
+    #endregion
+
 
 
 
