@@ -25,7 +25,7 @@ public class GameData : MonoBehaviour
 
     private void Awake()
     {
-        CM_Dispatcher.DontDestroyOnLoad(CM_Dispatcher.instance);
+        DontDestroyOnLoad(CM_Dispatcher.instance);
         m_JobMng = CM_JobManager.Make();
         m_JobQueue = CM_JobQueue.Make();
 
@@ -38,8 +38,7 @@ public class GameData : MonoBehaviour
         (m_Table_Card = CM_Singleton<Table_Card>.instance).Load();
         m_Table_Card.gameObject.transform.parent = transform;
 
-        m_Table_Stage = CM_Singleton<Table_Stage>.instance;
-        m_Table_Stage.Load();
+        (m_Table_Stage = CM_Singleton<Table_Stage>.instance).Load();
         m_Table_Stage.gameObject.transform.parent = transform;
 
         (m_Table_Deck = CM_Singleton<Table_Deck>.instance).Load();
