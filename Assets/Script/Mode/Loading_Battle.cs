@@ -8,6 +8,7 @@ public class Loading_Battle : MonoBehaviour
     public UILabel m_Label_Title;
     public Medal[] m_Medals_My;
     public Medal[] m_Medals_Other;
+    public UILabel m_Label_Progress;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,25 @@ public class Loading_Battle : MonoBehaviour
                 m_Medals_Other[i].gameObject.SetActive(false);
         }
 
-        Invoke("GoBattle", 3.0f);
+        StartCoroutine(Loading());
+    }
+
+    IEnumerator Loading()
+    {
+        float Sec = 1.0f;
+        float f = 0.0f;
+
+        while(true)
+        {
+            f += Time.deltaTime;
+            m_Label_Progress.text = string.Format("{0}%", Mathf.SmoothStep(0, 100, f/Sec));
+            if (f >= Sec)
+                break;
+
+            yield return null;
+        }
+
+        GoBattle();
     }
 
     void GoBattle()
