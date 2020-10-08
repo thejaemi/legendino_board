@@ -11,6 +11,7 @@ public class QRVerificationManager : MonoBehaviour
 
     void Awake()
     {
+        CM_Singleton<Table_QRCode>.instance.Load();
         qrCamera.COMPLETE_DECODE_QR = ScanFinishedQRCode;
     }
 
@@ -53,17 +54,16 @@ public class QRVerificationManager : MonoBehaviour
 		}
 	}
 
-    private void ScanFinishedQRCode(string code)
+    private void ScanFinishedQRCode(string data)
     {
         m_finishedDecode = true;
-        Debug.Log(code);
+        Debug.Log(data);
         char[] separator = { '\'' };
-        string[] decodeCodes = code.Split(separator);
+        string[] decodeCodes = data.Split(separator);
         int codeSection = 7;
+        string code = decodeCodes[codeSection];
+        int dinoIndex = CM_Singleton<Table_QRCode>.instance.GetDinoIndex(code);
 
-        // if(decodeCodes.Length > codeSection)
-            
-
-
+        Debug.Log("Dino Index :: " + dinoIndex);
     }
 }

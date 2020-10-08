@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Table_QRCode : Tool_TableParser
 {
-    Dictionary<int, QRCode> m_Dic = new Dictionary<int, QRCode>();
+    // Dictionary<int, QRCode> m_Dic = new Dictionary<int, QRCode>();
+    Dictionary<string, QRCode> m_Dic = new Dictionary<string, QRCode>();
+    
 
 
     private void Awake()
@@ -36,6 +38,17 @@ public class Table_QRCode : Tool_TableParser
         if (val[0] == "id")
             return;
 
-        m_Dic.Add(int.Parse(val[0]), new QRCode(val));
+        m_Dic.Add(val[1], new QRCode(val));
+    }
+
+    public int GetDinoIndex(string code)
+    {
+        int dinoIndex = 0;
+        if(m_Dic.ContainsKey(code))
+            dinoIndex = m_Dic[code].m_DinoId;
+        else
+            Debug.Log("ERROR !! ");
+            
+        return dinoIndex;   
     }
 }
