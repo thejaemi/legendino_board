@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QRCode : MonoBehaviour
+public class QRCode
 {
     public int m_Id;
     public string m_QRCode;

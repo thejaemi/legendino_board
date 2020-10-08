@@ -34,6 +34,6 @@ public class Table_Card : Tool_TableParser
         if (val[0] == "id")
             return;
 
-        m_Dic.Add(int.Parse(val[1]), new Card(val));
+        m_Dic.Add(int.Parse(val[0]), new Card(val));
     }
 }

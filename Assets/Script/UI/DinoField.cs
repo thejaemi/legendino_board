@@ -6,6 +6,7 @@ public class DinoField : MonoBehaviour
 {
     public Medal m_Medal;
     private Dinosaur m_dinosaur;
+    public bool m_ShowTool = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,9 @@ public class DinoField : MonoBehaviour
 
     private void OnGUI()
     {
+        if (m_ShowTool == false)
+            return;
+
         if (GUI.Button(new Rect(400, 100, 100, 30), "OnSpin"))
             StartSpin();
 
