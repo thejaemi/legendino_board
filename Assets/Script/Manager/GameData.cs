@@ -120,9 +120,4 @@ public class GameData : MonoBehaviour
         else if (Owner == 1)
             m_OtherDino_Object.Add(id, tmp);
     }
-
-    public void Add_Card()
-    {
-
-    }
 }

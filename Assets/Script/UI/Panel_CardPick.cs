@@ -23,6 +23,10 @@ public class Panel_CardPick : MonoBehaviour
     public GameObject m_UI_DeckMade;
 
     public UISprite[] m_Sprite_Deck;
+    public UILabel m_Label_Attack;
+    public UILabel m_Label_Defence;
+    public UILabel m_Label_Counter;
+    public UILabel m_Label_Special;
     public UISprite[] m_Sprite_MadeDeck;
 
     // Start is called before the first frame update
@@ -57,6 +61,11 @@ public class Panel_CardPick : MonoBehaviour
 
         if (m_GameData.m_MyInfo.m_Equip_Belt > 0)
             m_Sprite_Deck[4].spriteName = string.Format("card_{0}", m_GameData.m_MyInfo.m_Equip_Belt);
+
+        m_Label_Attack.text = string.Format("+ {0}", m_GameData.m_MyInfo.m_Attack);
+        m_Label_Defence.text = string.Format("+ {0}", m_GameData.m_MyInfo.m_Defence);
+        m_Label_Counter.text = string.Format("+ {0}", m_GameData.m_MyInfo.m_Counter);
+        m_Label_Special.text = string.Format("+ {0}", m_GameData.m_MyInfo.m_Special);
     }
 
     public void SetPickCards(List<int> DeckList)

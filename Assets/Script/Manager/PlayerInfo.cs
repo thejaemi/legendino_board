@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo : MonoBehaviour
+public class PlayerInfo
 {
     public List<int> m_Dino = new List<int>();
 
@@ -20,12 +20,6 @@ public class PlayerInfo : MonoBehaviour
     public int m_Equip_Belt;
     public void Reset_Equip() { m_Equip_Amulet = 0; m_Equip_Ring = 0; m_Equip_Glove = 0; m_Equip_Map = 0; m_Equip_Belt = 0; }
 
-    public GameData GD;
-
-    private void Awake()
-    {
-        GD = CM_Singleton<GameData>.instance;
-    }
 
     public void Add_Dino(int Id)
     {
@@ -66,6 +60,8 @@ public class PlayerInfo : MonoBehaviour
                 m_Equip_Belt = Id;
                 break;
         }
+
+        CalcStat();
     }
 
     /// <summary>
@@ -77,10 +73,10 @@ public class PlayerInfo : MonoBehaviour
 
         for (int i = 0; i < m_Dino.Count; i++)
         {
-            m_Hp += GD.m_Table_Dino.m_Dic[m_Dino[i]].m_Hp;
-            m_Attack += GD.m_Table_Dino.m_Dic[m_Dino[i]].m_Attack;
-            m_Defence += GD.m_Table_Dino.m_Dic[m_Dino[i]].m_Defence;
-            m_Special += GD.m_Table_Dino.m_Dic[m_Dino[i]].m_Special;
+            m_Hp += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Hp;
+            m_Attack += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Attack;
+            m_Defence += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Defence;
+            m_Special += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Special;
         }
 
         CalcCardStat(m_Equip_Amulet);
@@ -92,9 +88,12 @@ public class PlayerInfo : MonoBehaviour
 
     public void CalcCardStat(int Id)
     {
-        m_Hp += GD.m_Table_Card.m_Dic[Id].m_Hp;
-        m_Attack += GD.m_Table_Card.m_Dic[Id].m_Attack;
-        m_Defence += GD.m_Table_Card.m_Dic[Id].m_Defence;
-        m_Special += GD.m_Table_Card.m_Dic[Id].m_Special;
+        if (Id == 0)
+            return;
+
+        m_Hp += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Hp;
+        m_Attack += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Attack;
+        m_Defence += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Defence;
+        m_Special += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Special;
     }
 }
