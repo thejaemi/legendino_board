@@ -11,7 +11,7 @@ public class QRVerificationManager : MonoBehaviour
 
     void Awake()
     {
-        // qrCamera.COMPLETE_DECODE_QR = ScanFinishedQRCode;
+        qrCamera.COMPLETE_DECODE_QR = ScanFinishedQRCode;
     }
 
     
@@ -55,6 +55,8 @@ public class QRVerificationManager : MonoBehaviour
 
     private void ScanFinishedQRCode(string code)
     {
+        m_finishedDecode = true;
+        Debug.Log(code);
         char[] separator = { '\'' };
         string[] decodeCodes = code.Split(separator);
         int codeSection = 7;

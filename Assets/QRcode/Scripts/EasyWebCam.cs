@@ -260,9 +260,9 @@ namespace TBEasyWebCam
 
 		public static int Width()
 		{
-			if (!isPlaying ()) {
-			return 0;
-			}
+			// if (!isPlaying ()) {
+			// return 0;
+			// }
 			if (easyWebCamInterface != null) {
 				return easyWebCamInterface.previewWidth;
 			}
@@ -271,9 +271,9 @@ namespace TBEasyWebCam
 
 		public static int Height()
 		{
-			if (!isPlaying ()) {
-				return 0;
-			}
+			// if (!isPlaying ()) {
+			// 	return 0;
+			// }
 			if (easyWebCamInterface != null) {
 				return easyWebCamInterface.previewHeight;
 			}
