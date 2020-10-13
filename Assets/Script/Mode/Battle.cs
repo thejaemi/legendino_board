@@ -47,6 +47,11 @@ public class Battle : MonoBehaviour
     public UILabel m_Label_ResultDesc_Other;
 
 
+    public GameObject m_CardTypeSelect;
+    public GameObject m_CardPick;
+    public Panel_CardPick m_Panel_CardPick;
+
+
     // for duel
     int m_Turn = 0;
     CM_JobQueue m_JobQueue_Duel;
@@ -56,6 +61,7 @@ public class Battle : MonoBehaviour
     private void Awake()
     {
         m_GameData = CM_Singleton<GameData>.instance;
+        m_GameData.m_MyInfo.Reset_Equip();
 
         SetDino();
     }
@@ -68,6 +74,7 @@ public class Battle : MonoBehaviour
         //CM_JobQueue.Make()
         m_GameData.m_JobQueue
             .Enqueue(Step_Ready())
+            .Enqueue(Step_Set())
             .Enqueue(Step_Go())
             .Enqueue(Step_Duel())
             .Enqueue(Step_Result())
@@ -83,11 +90,14 @@ public class Battle : MonoBehaviour
 
     void SetDino()
     {
+        if (m_GameData.m_MyInfo.m_Dino.Count == 0)
+            return;
+
         for (int i = 0; i < m_Medal_My.Length; i++)
         {
             if (i == 0)     // 선봉
             {
-                m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyDino[i]];
+                m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[i]];
                 m_CurDino_My.transform.parent = null;
                 m_CurDino_My.transform.position = m_Position_My.position;
                 m_CurDino_My.transform.localScale = m_Position_My.transform.localScale * 0.0015625f;
@@ -95,8 +105,8 @@ public class Battle : MonoBehaviour
                 m_CurDino_My.transform.parent = m_Position_My;
             }
 
-            if (i < m_GameData.m_MyDino.Count)
-                m_Medal_My[i].Set(m_GameData.m_MyDino[i]);
+            if (i < m_GameData.m_MyInfo.m_Dino.Count)
+                m_Medal_My[i].Set(m_GameData.m_MyInfo.m_Dino[i]);
             else
                 m_Medal_My[i].gameObject.SetActive(false);
         }
@@ -105,7 +115,7 @@ public class Battle : MonoBehaviour
         {
             if (i == 0)     // 선봉
             {
-                m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherDino[i]];
+                m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[i]];
                 m_CurDino_Other.transform.parent = null;
                 m_CurDino_Other.transform.position = m_Position_Other.position;
                 m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale * 0.0015625f;
@@ -113,8 +123,8 @@ public class Battle : MonoBehaviour
                 m_CurDino_Other.transform.parent = m_Position_Other;
             }
 
-            if(i < m_GameData.m_OtherDino.Count)
-                m_Medal_Other[i].Set(m_GameData.m_OtherDino[i]);
+            if(i < m_GameData.m_OtherInfo.m_Dino.Count)
+                m_Medal_Other[i].Set(m_GameData.m_OtherInfo.m_Dino[i]);
             else
                 m_Medal_Other[i].gameObject.SetActive(false);
         }
@@ -124,11 +134,13 @@ public class Battle : MonoBehaviour
     IEnumerator Step_Ready()
     {
         DebugAdd("# 스타트 레디");
-        DebugAdd("아군 등장");
-        m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run");
+        DebugAdd("  아군 등장");
+        if(m_CurDino_My)
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run");
         m_Position_My.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
-        DebugAdd("적군 등장");
-        m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run");
+        DebugAdd("  적군 등장");
+        if(m_CurDino_Other)
+            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run");
         m_Position_Other.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
 
         yield return new WaitForSeconds(1.0f);
@@ -136,13 +148,42 @@ public class Battle : MonoBehaviour
         DebugAdd("# 엔드 레디");
     }
 
+
+
+    List<int> m_List_Deck;
+
+    IEnumerator Step_Set()
+    {
+        DebugAdd("# 스타트 셋");
+
+        m_CardTypeSelect.SetActive(true);
+        while (true)
+        {
+            yield return null;
+        }
+
+        DebugAdd("# 엔드 셋");
+    }
+
+    void SetCardPick(int Type)
+    {
+        m_List_Deck = m_GameData.m_Table_Deck.GetShuffledDeck(Type);
+        m_CardPick.SetActive(true);
+        m_CardTypeSelect.SetActive(false);
+        m_Panel_CardPick.SetPickCards(m_List_Deck);
+    }
+
+
+
     IEnumerator Step_Go()
     {
         DebugAdd("# 스타트 고");
         DebugAdd("아군 파이팅 애니");
-        m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
+        if(m_CurDino_My)
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
         DebugAdd("적군 파이팅 애니");
-        m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
+        if(m_CurDino_Other)
+            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
         DebugAdd("아군 선 패시브");
         DebugAdd("적군 선 패시브");
 
@@ -249,26 +290,27 @@ public class Battle : MonoBehaviour
 
 
 
+
     #region for Msg
 
     public void CardTypeSelect_Attack()
     {
-
+        SetCardPick(1);
     }
 
     public void CardTypeSelect_Defence()
     {
-
+        SetCardPick(2);
     }
 
     public void CardTypeSelect_Counter()
     {
-
+        SetCardPick(3);
     }
 
     public void CardTypeSelect_Special()
     {
-
+        SetCardPick(4);
     }
 
     public void StartSpin()

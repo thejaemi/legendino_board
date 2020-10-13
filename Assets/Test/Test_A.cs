@@ -65,12 +65,12 @@ public class Test_A : MonoBehaviour
                 m_CurMode = EMode.SelectDino;
 
             if (GUI.Button(new Rect(160, 20, 140, 60), "초기화"))
-                CM_Singleton<GameData>.instance.Clear_MyDino();
+                CM_Singleton<GameData>.instance.m_MyInfo.Clear_Dino();
 
             // 선택된 공룡
             m_sTmp = "";
-            for (int i = 0; i < CM_Singleton<GameData>.instance.m_MyDino.Count; i++)
-                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_MyDino[i]);
+            for (int i = 0; i < CM_Singleton<GameData>.instance.m_MyInfo.m_Dino.Count; i++)
+                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[i]);
             GUI.Label(new Rect(180, 25, 200, 60), m_sTmp);
             GUI.EndGroup();
 
@@ -81,12 +81,12 @@ public class Test_A : MonoBehaviour
                 m_CurMode = EMode.SelectDinoOther;
 
             if (GUI.Button(new Rect(160, 20, 140, 60), "초기화"))
-                CM_Singleton<GameData>.instance.Clear_MyDino();
+                CM_Singleton<GameData>.instance.m_MyInfo.Clear_Dino();
 
             // 선택된 공룡
             m_sTmp = "";
-            for (int i = 0; i < CM_Singleton<GameData>.instance.m_OtherDino.Count; i++)
-                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_OtherDino[i]);
+            for (int i = 0; i < CM_Singleton<GameData>.instance.m_OtherInfo.m_Dino.Count; i++)
+                m_sTmp = string.Format("{0} {1}", m_sTmp, CM_Singleton<GameData>.instance.m_OtherInfo.m_Dino[i]);
             GUI.Label(new Rect(180, 25, 100, 30), m_sTmp);
             GUI.EndGroup();
 

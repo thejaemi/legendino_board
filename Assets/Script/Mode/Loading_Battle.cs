@@ -19,16 +19,16 @@ public class Loading_Battle : MonoBehaviour
 
         for (int i = 0; i < m_Medals_My.Length; i++)
         {
-            if (i < gd.m_MyDino.Count)
-                m_Medals_My[i].Set(gd.m_MyDino[i]);
+            if (i < gd.m_MyInfo.m_Dino.Count)
+                m_Medals_My[i].Set(gd.m_MyInfo.m_Dino[i]);
             else
                 m_Medals_My[i].gameObject.SetActive(false);
         }
 
         for (int i = 0; i < m_Medals_Other.Length; i++)
         {
-            if (i < gd.m_OtherDino.Count)
-                m_Medals_Other[i].Set(gd.m_OtherDino[i]);
+            if (i < gd.m_OtherInfo.m_Dino.Count)
+                m_Medals_Other[i].Set(gd.m_OtherInfo.m_Dino[i]);
             else
                 m_Medals_Other[i].gameObject.SetActive(false);
         }

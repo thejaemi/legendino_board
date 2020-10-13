@@ -6,10 +6,12 @@ public class GameData : MonoBehaviour
 {
     // for battle
     public int m_StageId;
-    public List<int> m_MyDino = new List<int>();
+
+    public PlayerInfo m_MyInfo = new PlayerInfo();
     public Dictionary<int, GameObject> m_MyDino_Object = new Dictionary<int, GameObject>();
-    public List<int> m_OtherDino = new List<int>();
+    public PlayerInfo m_OtherInfo = new PlayerInfo();
     public Dictionary<int, GameObject> m_OtherDino_Object = new Dictionary<int, GameObject>();
+
 
     public CM_JobManager m_JobMng;
     public CM_JobQueue m_JobQueue;
@@ -87,15 +89,11 @@ public class GameData : MonoBehaviour
         
     }
 
-    public void Clear_MyDino()
-    {
-        m_MyDino.Clear();
-    }
 
     public void Add_MyDino(int id)
     {
         Debug.LogFormat("Add MyDino {0}", id);
-        m_MyDino.Add(id);
+        m_MyInfo.Add_Dino(id);
         //StartCoroutine(LoadDino(id, 0));
         m_JobQueue.Enqueue(LoadDino(id, 0)).Start();
     }
@@ -103,7 +101,7 @@ public class GameData : MonoBehaviour
     public void Add_OtherDino(int id)
     {
         Debug.LogFormat("Add OtherDino {0}", id);
-        m_OtherDino.Add(id);
+        m_OtherInfo.Add_Dino(id);
         //StartCoroutine(LoadDino(id, 1));
         m_JobQueue.Enqueue(LoadDino(id, 1)).Start();
     }
@@ -121,5 +119,10 @@ public class GameData : MonoBehaviour
             m_MyDino_Object.Add(id, tmp);
         else if (Owner == 1)
             m_OtherDino_Object.Add(id, tmp);
+    }
+
+    public void Add_Card()
+    {
+
     }
 }
