@@ -60,4 +60,16 @@ public class Table_Deck : Tool_TableParser
 
         return array;
     }
+
+    public List<int> GetShuffledDeck(int Type)
+    {
+        if(Type == 1)
+            return new List<int>(ShuffleArray<int>(m_List_AttackDeck.ToArray(), Time.frameCount));
+        else if(Type == 2)
+            return new List<int>(ShuffleArray<int>(m_List_DefenceDeck.ToArray(), Time.frameCount));
+        else if(Type == 3)
+            return new List<int>(ShuffleArray<int>(m_List_CounterDeck.ToArray(), Time.frameCount));
+        else
+            return new List<int>(ShuffleArray<int>(m_List_SpecialDeck.ToArray(), Time.frameCount));
+    }
 }

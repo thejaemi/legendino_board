@@ -5,6 +5,7 @@ using UnityEngine;
 public class DinoField : MonoBehaviour
 {
     public Medal m_Medal;
+    public GameObject m_SpinBase;
     private Dinosaur m_dinosaur;
     public bool m_ShowTool = false;
 
@@ -16,7 +17,7 @@ public class DinoField : MonoBehaviour
 
     private void Update()
     {
-
+        m_SpinBase.transform.rotation = m_Medal.transform.rotation;
     }
 
     public void SetDinoMedal(Dinosaur _dinosaur)

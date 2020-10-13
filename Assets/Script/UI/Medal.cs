@@ -16,6 +16,12 @@ public class Medal : MonoBehaviour
 
     public bool m_ShowTool = false;
 
+    static public Color Color_Attack = new Color(0.1882353f, 0.09411765f, 0.1607843f);
+    static public Color Color_Defence = new Color(0.05490196f, 0.09411765f, 0.2392157f);
+    static public Color Color_Counter = new Color(0.04705882f, 0.227451f, 0.2392157f);
+    static public Color Color_Evade = new Color(0.1294118f, 0.09803922f, 0.227451f);
+    static public Color Color_Special = new Color(0.2235294f, 0.254902f, 0.2156863f);
+
     private void Awake()
     {
 
@@ -37,19 +43,19 @@ public class Medal : MonoBehaviour
 
     public void Set(int DinoId)
     {
-        m_Sprite_Dino.spriteName = string.Format("dino_{0}", 168);
+        m_Sprite_Dino.spriteName = string.Format("medal_{0}", DinoId);
 
         m_Dino = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[DinoId];
         if(m_Dino.m_Ratio_Attack > 0)
-            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color.red, "공격"));
+            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color_Attack, "공격"));
         if (m_Dino.m_Ratio_Defence > 0)
-            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Defence, Color.blue, "방어"));
+            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Defence, Color_Defence, "방어"));
         if (m_Dino.m_Ratio_Counter > 0)
-            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Counter, Color.cyan, "카운터"));
+            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Counter, Color_Counter, "카운터"));
         if (m_Dino.m_Ratio_Special > 0)
-            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Special, Color.yellow, "스페셜"));
+            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Special, Color_Special, "스페셜"));
         if (m_Dino.m_Ratio_Evade > 0)
-            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Evade, Color.green, "회피"));
+            StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Evade, Color_Evade, "회피"));
     }
 
     public void OnSpin()
@@ -85,10 +91,10 @@ public class Medal : MonoBehaviour
 
     void TestSet()
     {
-        StartCoroutine(m_Gauge.Add_(0.3f, Color.red, "공격"));
-        StartCoroutine(m_Gauge.Add_(0.2f, Color.blue, "방어"));
-        StartCoroutine(m_Gauge.Add_(0.2f, Color.cyan, "반격"));
-        StartCoroutine(m_Gauge.Add_(0.2f, Color.yellow, "필살"));
-        StartCoroutine(m_Gauge.Add_(0.1f, Color.green, "회피"));
+        StartCoroutine(m_Gauge.Add_(0.3f, Color_Attack, "공격"));
+        StartCoroutine(m_Gauge.Add_(0.2f, Color_Defence, "방어"));
+        StartCoroutine(m_Gauge.Add_(0.2f, Color_Counter, "반격"));
+        StartCoroutine(m_Gauge.Add_(0.2f, Color_Special, "필살"));
+        StartCoroutine(m_Gauge.Add_(0.1f, Color_Evade, "회피"));
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Table_Card : Tool_TableParser
 {
-    Dictionary<int, Card> m_Dic = new Dictionary<int, Card>();
+    public Dictionary<int, Card> m_Dic = new Dictionary<int, Card>();
 
 
     private void Awake()

@@ -10,15 +10,12 @@ public class Panel_DeckMade : MonoBehaviour
     public UILabel m_Label_Counter;
     public UILabel m_Label_Special;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        m_Sprite_Cards[0].spriteName = string.Format("card_{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Equip_Amulet);
+        m_Sprite_Cards[1].spriteName = string.Format("card_{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Equip_Ring);
+        m_Sprite_Cards[2].spriteName = string.Format("card_{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Equip_Glove);
+        m_Sprite_Cards[3].spriteName = string.Format("card_{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Equip_Map);
+        m_Sprite_Cards[4].spriteName = string.Format("card_{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Equip_Belt);
     }
 }
