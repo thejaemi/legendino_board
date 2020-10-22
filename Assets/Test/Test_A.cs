@@ -65,7 +65,7 @@ public class Test_A : MonoBehaviour
                 m_CurMode = EMode.SelectDino;
 
             if (GUI.Button(new Rect(160, 20, 140, 60), "초기화"))
-                CM_Singleton<GameData>.instance.m_MyInfo.Clear_Dino();
+                CM_Singleton<GameData>.instance.Clear_MyDino();
 
             // 선택된 공룡
             m_sTmp = "";
@@ -81,7 +81,7 @@ public class Test_A : MonoBehaviour
                 m_CurMode = EMode.SelectDinoOther;
 
             if (GUI.Button(new Rect(160, 20, 140, 60), "초기화"))
-                CM_Singleton<GameData>.instance.m_MyInfo.Clear_Dino();
+                CM_Singleton<GameData>.instance.Clear_OtherDino();
 
             // 선택된 공룡
             m_sTmp = "";
