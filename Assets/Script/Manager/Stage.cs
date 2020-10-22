@@ -15,6 +15,7 @@ public class Stage
     public int m_Card3;
     public int m_Card4;
     public int m_Card5;
+    public string m_StageImage;
 
     public Stage(string[] val)
     {
@@ -29,5 +30,6 @@ public class Stage
         m_Card3 = int.Parse(val[8]);
         m_Card4 = int.Parse(val[9]);
         m_Card5 = int.Parse(val[10]);
+        m_StageImage = val[11];
     }
 }

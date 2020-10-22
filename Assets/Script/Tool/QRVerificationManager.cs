@@ -11,7 +11,7 @@ public class QRVerificationManager : MonoBehaviour
 
     void Awake()
     {
-        CM_Singleton<Table_QRCode>.instance.Load();
+        //CM_Singleton<Table_QRCode>.instance.Load();
         qrCamera.COMPLETE_DECODE_QR = ScanFinishedQRCode;
     }
 

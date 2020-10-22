@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class GameData : MonoBehaviour
 {
@@ -16,14 +17,25 @@ public class GameData : MonoBehaviour
     public CM_JobManager m_JobMng;
     public CM_JobQueue m_JobQueue;
 
-    // for data
+    // for table
     public Table_Dino m_Table_Dino;
     public Table_QRCode m_Table_QRCode;
     public Table_Card m_Table_Card;
     public Table_Deck m_Table_Deck;
     public Table_Stage m_Table_Stage;
-    public Dictionary<string, bool> m_StageClear = new Dictionary<string, bool>();
 
+    // for data
+    public Dictionary<string, bool> m_StageClear = new Dictionary<string, bool>();
+    /// <summary>
+    /// 스테이지 진행 단계
+    /// </summary>
+    public int m_Stage_Step = 0;
+
+
+    // for util
+    public Mng_Util m_Util;
+    public SpriteAtlas m_Atlas_UI;
+    public SpriteAtlas m_Atlas_Card;
 
     private void Awake()
     {
@@ -47,11 +59,14 @@ public class GameData : MonoBehaviour
         m_Table_Deck.gameObject.transform.parent = transform;
 
 
-        // stage table 의 갯수 만큼 체크
-        //m_StageClear.Clear();
-        //m_StageClear.Add("stage_1", GetLocalData("stage_1", 0) == 1);
-        //m_StageClear.Add("stage_2", GetLocalData("stage_2", 0) == 1);
-        //m_StageClear.Add("stage_3", GetLocalData("stage_3", 0) == 1);
+        // save data load
+        m_Stage_Step = GetLocalData("stage", 0);
+
+        m_Util = CM_Singleton<Mng_Util>.instance;
+        m_Util.gameObject.transform.parent = transform;
+
+        m_Atlas_UI = Resources.Load<SpriteAtlas>("UGUI/Atlas_UI");
+        m_Atlas_Card = Resources.Load<SpriteAtlas>("UGUI/Atlas_Card");
     }
 
     /// <summary>
@@ -89,6 +104,21 @@ public class GameData : MonoBehaviour
         
     }
 
+    public void Clear_MyDino()
+    {
+        m_MyInfo.Clear_Dino();
+        foreach (var tmp in m_MyDino_Object)
+            Destroy(tmp.Value);
+        m_MyDino_Object.Clear();
+    }
+
+    public void Clear_OtherDino()
+    {
+        m_OtherInfo.Clear_Dino();
+        foreach (var tmp in m_OtherDino_Object)
+            Destroy(tmp.Value);
+        m_OtherDino_Object.Clear();
+    }
 
     public void Add_MyDino(int id)
     {
@@ -119,5 +149,16 @@ public class GameData : MonoBehaviour
             m_MyDino_Object.Add(id, tmp);
         else if (Owner == 1)
             m_OtherDino_Object.Add(id, tmp);
+    }
+
+
+    public void Test_Add_MyDino()
+    {
+        //Debug.LogFormat("Add MyDino {0}", id);
+        m_MyInfo.Add_Dino(1);
+        m_MyInfo.Add_Dino(2);
+        m_MyInfo.Add_Dino(3);
+
+        m_JobQueue.Enqueue(LoadDino(1, 0)).Enqueue(LoadDino(2, 0)).Enqueue(LoadDino(3, 0)).Start();
     }
 }

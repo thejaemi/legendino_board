@@ -17,8 +17,18 @@ public class Shop : MonoBehaviour
         
     }
 
-    public void OnClose()
+    public void Button_Battle()
     {
         SceneManager.LoadScene("Lobby");
+    }
+
+    public void Button_Starter()
+    {
+        Application.OpenURL("https://smartstore.naver.com/thejaemi/products/2482391702");
+    }
+
+    public void Button_Booster()
+    {
+        Application.OpenURL("https://smartstore.naver.com/thejaemi/products/2701018112");
     }
 }

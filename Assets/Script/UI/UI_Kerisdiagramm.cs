@@ -28,6 +28,14 @@ public class UI_Kerisdiagramm : MonoBehaviour
         
     }
 
+    public void Clear()
+    {
+        foreach(var tmp in m_Map)
+            Destroy(tmp.Key);
+
+        m_Map.Clear();
+    }
+
     public GameObject Add(float ratio, Color color)
     {
         GameObject tmp = Instantiate(m_SpriteCircle.gameObject, gameObject.transform) as GameObject;
@@ -52,7 +60,7 @@ public class UI_Kerisdiagramm : MonoBehaviour
     {
         GameObject tmp = Instantiate(m_SpriteCircle.gameObject, gameObject.transform) as GameObject;
         GameObject Desc = Instantiate(m_Desc, gameObject.transform) as GameObject;
-        yield return null; // 생성 직후 fillamount 입력시 값이 변경 안되는 경우가 있음
+        yield return new WaitForEndOfFrame(); //yield return null; // 생성 직후 fillamount 입력시 값이 변경 안되는 경우가 있음
         tmp.name = desc;
         tmp.GetComponent<UISprite>().fillAmount = ratio;
         tmp.GetComponent<UISprite>().color = color;
@@ -60,10 +68,13 @@ public class UI_Kerisdiagramm : MonoBehaviour
 
         m_Map.Add(tmp, new Vector2(m_CurRatio, m_CurRatio + ratio));
 
+        Desc.transform.parent = tmp.transform;
         Desc.GetComponentInChildren<UILabel>().text = desc;
         Desc.transform.rotation = Quaternion.AngleAxis((m_CurRatio + (ratio * 0.5f)) * -360, Vector3.forward);
 
         m_CurRatio += ratio;
+
+        yield break;
     }
 
     /// <summary>

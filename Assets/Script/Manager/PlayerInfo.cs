@@ -5,20 +5,22 @@ using UnityEngine;
 public class PlayerInfo
 {
     public List<int> m_Dino = new List<int>();
+    public int m_CurDino = 0;   // m_Dino 에서 몇 번째 포지션이 지금 사용 중인가
 
     public int m_Hp = 0;
     public int m_Attack = 0;
     public int m_Defence = 0;
     public int m_Counter = 0;
     public int m_Special = 0;
+    public int m_Card_Hp = 0;
     public void Reset_Stat() { m_Hp = 0; m_Attack = 0; m_Defence = 0; m_Counter = 0; m_Special = 0; }
 
-    public int m_Equip_Amulet;
-    public int m_Equip_Ring;
-    public int m_Equip_Glove;
-    public int m_Equip_Map;
-    public int m_Equip_Belt;
-    public void Reset_Equip() { m_Equip_Amulet = 0; m_Equip_Ring = 0; m_Equip_Glove = 0; m_Equip_Map = 0; m_Equip_Belt = 0; }
+    public int m_Card_Amulet;
+    public int m_Card_Ring;
+    public int m_Card_Glove;
+    public int m_Card_Map;
+    public int m_Card_Belt;
+    public void Reset_Card() { m_Card_Amulet = 0; m_Card_Ring = 0; m_Card_Glove = 0; m_Card_Map = 0; m_Card_Belt = 0; }
 
 
     public void Add_Dino(int Id)
@@ -41,23 +43,23 @@ public class PlayerInfo
         switch (Type)
         {
             case 1:
-                m_Equip_Amulet = Id;
+                m_Card_Amulet = Id;
                 break;
 
             case 2:
-                m_Equip_Ring = Id;
+                m_Card_Ring = Id;
                 break;
 
             case 3:
-                m_Equip_Glove = Id;
+                m_Card_Glove = Id;
                 break;
 
             case 4:
-                m_Equip_Map = Id;
+                m_Card_Map = Id;
                 break;
 
             case 5:
-                m_Equip_Belt = Id;
+                m_Card_Belt = Id;
                 break;
         }
 
@@ -71,19 +73,19 @@ public class PlayerInfo
     {
         Reset_Stat();
 
-        for (int i = 0; i < m_Dino.Count; i++)
+        if (m_Dino.Count > 0)
         {
-            m_Hp += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Hp;
-            m_Attack += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Attack;
-            m_Defence += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Defence;
-            m_Special += CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[i]].m_Special;
+            m_Hp = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Hp;
+            m_Attack = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Attack;
+            m_Defence = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Defence;
+            m_Special = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Special;
         }
 
-        CalcCardStat(m_Equip_Amulet);
-        CalcCardStat(m_Equip_Belt);
-        CalcCardStat(m_Equip_Glove);
-        CalcCardStat(m_Equip_Map);
-        CalcCardStat(m_Equip_Ring);
+        CalcCardStat(m_Card_Amulet);
+        CalcCardStat(m_Card_Belt);
+        CalcCardStat(m_Card_Glove);
+        CalcCardStat(m_Card_Map);
+        CalcCardStat(m_Card_Ring);
     }
 
     public void CalcCardStat(int Id)
