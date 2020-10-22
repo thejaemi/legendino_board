@@ -1,0 +1,103 @@
+
+trice_A1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effect/12
+  rotate: true
+  xy: 835, 740
+  size: 275, 120
+  orig: 275, 120
+  offset: 0, 0
+  index: -1
+Effect/E_03
+  rotate: false
+  xy: 2, 38
+  size: 175, 114
+  orig: 175, 114
+  offset: 0, 0
+  index: -1
+Trice_A1/Arm
+  rotate: true
+  xy: 599, 250
+  size: 224, 243
+  orig: 224, 243
+  offset: 0, 0
+  index: -1
+Trice_A1/Body
+  rotate: false
+  xy: 2, 476
+  size: 831, 539
+  orig: 831, 539
+  offset: 0, 0
+  index: -1
+Trice_A1/Chin
+  rotate: false
+  xy: 269, 277
+  size: 328, 197
+  orig: 328, 197
+  offset: 0, 0
+  index: -1
+Trice_A1/Eye_01
+  rotate: false
+  xy: 835, 668
+  size: 67, 70
+  orig: 67, 70
+  offset: 0, 0
+  index: -1
+Trice_A1/Eye_02
+  rotate: false
+  xy: 2, 2
+  size: 73, 34
+  orig: 73, 34
+  offset: 0, 0
+  index: -1
+Trice_A1/Eye_03
+  rotate: true
+  xy: 957, 948
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+Trice_A1/Horn
+  rotate: false
+  xy: 269, 157
+  size: 112, 118
+  orig: 112, 118
+  offset: 0, 0
+  index: -1
+Trice_A1/Leg
+  rotate: false
+  xy: 2, 154
+  size: 265, 320
+  orig: 265, 320
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_L
+  rotate: false
+  xy: 383, 258
+  size: 7, 17
+  orig: 7, 17
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_R
+  rotate: false
+  xy: 179, 135
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+
+trice_A12.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Trice_A1/Head
+  rotate: false
+  xy: 2, 2
+  size: 495, 561
+  orig: 495, 561
+  offset: 0, 0
+  index: -1

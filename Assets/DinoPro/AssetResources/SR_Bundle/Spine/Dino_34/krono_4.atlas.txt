@@ -1,0 +1,83 @@
+
+krono_4.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+effect/12
+  rotate: false
+  xy: 2, 17
+  size: 138, 60
+  orig: 138, 60
+  offset: 0, 0
+  index: -1
+effect/E_03
+  rotate: false
+  xy: 142, 20
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+krono_4/Arm_01
+  rotate: false
+  xy: 341, 190
+  size: 68, 62
+  orig: 68, 62
+  offset: 0, 0
+  index: -1
+krono_4/Body
+  rotate: false
+  xy: 2, 79
+  size: 240, 173
+  orig: 240, 173
+  offset: 0, 0
+  index: -1
+krono_4/Chin
+  rotate: true
+  xy: 244, 82
+  size: 70, 84
+  orig: 70, 84
+  offset: 0, 0
+  index: -1
+krono_4/Eye_01
+  rotate: false
+  xy: 411, 209
+  size: 51, 43
+  orig: 51, 43
+  offset: 0, 0
+  index: -1
+krono_4/Eye_02
+  rotate: false
+  xy: 2, 2
+  size: 50, 13
+  orig: 50, 13
+  offset: 0, 0
+  index: -1
+krono_4/Eye_03
+  rotate: true
+  xy: 464, 203
+  size: 49, 43
+  orig: 49, 43
+  offset: 0, 0
+  index: -1
+krono_4/Head
+  rotate: false
+  xy: 244, 154
+  size: 95, 98
+  orig: 95, 98
+  offset: 0, 0
+  index: -1
+krono_4/Leg_01
+  rotate: false
+  xy: 341, 152
+  size: 51, 36
+  orig: 51, 36
+  offset: 0, 0
+  index: -1
+krono_4/Nose
+  rotate: true
+  xy: 330, 145
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,97 @@
+
+spino_B5.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+spino_B2/eff01
+  rotate: true
+  xy: 296, 53
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+spino_B5/body_0
+  rotate: true
+  xy: 527, 313
+  size: 412, 215
+  orig: 412, 215
+  offset: 0, 0
+  index: -1
+spino_B5/body_1
+  rotate: false
+  xy: 2, 727
+  size: 756, 242
+  orig: 756, 242
+  offset: 0, 0
+  index: -1
+spino_B5/chin_0
+  rotate: false
+  xy: 744, 372
+  size: 113, 126
+  orig: 113, 126
+  offset: 0, 0
+  index: -1
+spino_B5/eye_0
+  rotate: false
+  xy: 2, 2
+  size: 17, 46
+  orig: 17, 46
+  offset: 0, 0
+  index: -1
+spino_B5/head_0
+  rotate: true
+  xy: 2, 50
+  size: 120, 292
+  orig: 120, 292
+  offset: 0, 0
+  index: -1
+spino_B5/l_arm_0
+  rotate: true
+  xy: 527, 197
+  size: 114, 227
+  orig: 114, 227
+  offset: 0, 0
+  index: -1
+spino_B5/l_arm_1
+  rotate: true
+  xy: 760, 683
+  size: 118, 188
+  orig: 118, 188
+  offset: 0, 0
+  index: -1
+spino_B5/l_leg_0
+  rotate: false
+  xy: 2, 172
+  size: 265, 553
+  orig: 265, 553
+  offset: 0, 0
+  index: -1
+spino_B5/neck_0
+  rotate: false
+  xy: 760, 803
+  size: 212, 166
+  orig: 212, 166
+  offset: 0, 0
+  index: -1
+spino_B5/r_arm_0
+  rotate: true
+  xy: 476, 95
+  size: 100, 242
+  orig: 100, 242
+  offset: 0, 0
+  index: -1
+spino_B5/r_arm_1
+  rotate: false
+  xy: 744, 500
+  size: 116, 181
+  orig: 116, 181
+  offset: 0, 0
+  index: -1
+spino_B5/r_leg_0
+  rotate: false
+  xy: 269, 201
+  size: 256, 524
+  orig: 256, 524
+  offset: 0, 0
+  index: -1

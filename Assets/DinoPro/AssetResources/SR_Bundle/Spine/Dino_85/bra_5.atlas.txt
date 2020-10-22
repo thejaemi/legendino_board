@@ -1,0 +1,69 @@
+
+bra_5.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bra_1/eff_01
+  rotate: false
+  xy: 234, 224
+  size: 318, 28
+  orig: 318, 28
+  offset: 0, 0
+  index: -1
+bra_1/eff_02
+  rotate: false
+  xy: 405, 107
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+bra_5/body_0
+  rotate: false
+  xy: 2, 106
+  size: 230, 146
+  orig: 230, 146
+  offset: 0, 0
+  index: -1
+bra_5/chin_0
+  rotate: false
+  xy: 113, 30
+  size: 113, 74
+  orig: 113, 74
+  offset: 0, 0
+  index: -1
+bra_5/eye_0
+  rotate: false
+  xy: 326, 16
+  size: 61, 54
+  orig: 61, 54
+  offset: 0, 0
+  index: -1
+bra_5/eye_1
+  rotate: false
+  xy: 554, 235
+  size: 60, 17
+  orig: 60, 17
+  offset: 0, 0
+  index: -1
+bra_5/head_0
+  rotate: false
+  xy: 234, 72
+  size: 169, 150
+  orig: 169, 150
+  offset: 0, 0
+  index: -1
+bra_5/l_arm_0
+  rotate: true
+  xy: 2, 23
+  size: 81, 109
+  orig: 81, 109
+  offset: 0, 0
+  index: -1
+bra_5/l_leg_0
+  rotate: true
+  xy: 228, 2
+  size: 68, 96
+  orig: 68, 96
+  offset: 0, 0
+  index: -1

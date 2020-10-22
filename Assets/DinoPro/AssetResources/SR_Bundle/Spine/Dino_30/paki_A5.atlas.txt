@@ -1,0 +1,97 @@
+
+paki_A5.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+effect/11
+  rotate: false
+  xy: 740, 193
+  size: 275, 51
+  orig: 275, 51
+  offset: 0, 0
+  index: -1
+effect/12
+  rotate: false
+  xy: 498, 73
+  size: 138, 60
+  orig: 138, 60
+  offset: 0, 0
+  index: -1
+effect/E_03
+  rotate: false
+  xy: 638, 76
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+paki_A4/Head_Nose
+  rotate: true
+  xy: 728, 108
+  size: 25, 9
+  orig: 25, 9
+  offset: 0, 0
+  index: -1
+paki_A5/Arm
+  rotate: true
+  xy: 2, 2
+  size: 37, 89
+  orig: 37, 89
+  offset: 0, 0
+  index: -1
+paki_A5/Body
+  rotate: false
+  xy: 2, 41
+  size: 332, 203
+  orig: 332, 203
+  offset: 0, 0
+  index: -1
+paki_A5/Body_Neck
+  rotate: false
+  xy: 740, 99
+  size: 107, 92
+  orig: 107, 92
+  offset: 0, 0
+  index: -1
+paki_A5/Eye
+  rotate: false
+  xy: 849, 101
+  size: 35, 31
+  orig: 35, 31
+  offset: 0, 0
+  index: -1
+paki_A5/Eye1
+  rotate: false
+  xy: 498, 54
+  size: 38, 17
+  orig: 38, 17
+  offset: 0, 0
+  index: -1
+paki_A5/Head
+  rotate: false
+  xy: 336, 50
+  size: 160, 194
+  orig: 160, 194
+  offset: 0, 0
+  index: -1
+paki_A5/Head_Mouth
+  rotate: false
+  xy: 943, 148
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+paki_A5/Head_Mouth1
+  rotate: false
+  xy: 849, 134
+  size: 92, 57
+  orig: 92, 57
+  offset: 0, 0
+  index: -1
+paki_A5/Leg
+  rotate: true
+  xy: 498, 135
+  size: 109, 240
+  orig: 109, 240
+  offset: 0, 0
+  index: -1

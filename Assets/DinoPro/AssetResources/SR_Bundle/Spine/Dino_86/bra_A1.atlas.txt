@@ -1,0 +1,97 @@
+
+bra_A1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bra_A1/body_0
+  rotate: false
+  xy: 198, 451
+  size: 323, 364
+  orig: 323, 364
+  offset: 0, 0
+  index: -1
+bra_A1/body_1
+  rotate: true
+  xy: 2, 2
+  size: 295, 261
+  orig: 295, 261
+  offset: 0, 0
+  index: -1
+bra_A1/chin_0
+  rotate: false
+  xy: 265, 20
+  size: 132, 89
+  orig: 132, 89
+  offset: 0, 0
+  index: -1
+bra_A1/eff01
+  rotate: false
+  xy: 413, 115
+  size: 68, 111
+  orig: 68, 111
+  offset: 0, 0
+  index: -1
+bra_A1/eff_02
+  rotate: false
+  xy: 265, 111
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+bra_A1/eye_0
+  rotate: false
+  xy: 963, 783
+  size: 32, 27
+  orig: 32, 27
+  offset: 0, 0
+  index: -1
+bra_A1/eye_1
+  rotate: true
+  xy: 940, 550
+  size: 34, 12
+  orig: 34, 12
+  offset: 0, 0
+  index: -1
+bra_A1/head_0
+  rotate: false
+  xy: 265, 228
+  size: 230, 221
+  orig: 230, 221
+  offset: 0, 0
+  index: -1
+bra_A1/l_arm_0
+  rotate: true
+  xy: 523, 586
+  size: 224, 438
+  orig: 224, 438
+  offset: 0, 0
+  index: -1
+bra_A1/l_leg_0
+  rotate: true
+  xy: 639, 812
+  size: 161, 370
+  orig: 161, 370
+  offset: 0, 0
+  index: -1
+bra_A1/neck_0
+  rotate: false
+  xy: 2, 299
+  size: 194, 516
+  orig: 194, 516
+  offset: 0, 0
+  index: -1
+bra_A1/r_arm_0
+  rotate: true
+  xy: 523, 369
+  size: 215, 415
+  orig: 215, 415
+  offset: 0, 0
+  index: -1
+bra_A1/tail_0
+  rotate: false
+  xy: 2, 817
+  size: 635, 156
+  orig: 635, 156
+  offset: 0, 0
+  index: -1

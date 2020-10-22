@@ -1,0 +1,188 @@
+
+carno_B5_1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B3/Air_11_00031_1
+  rotate: false
+  xy: 922, 735
+  size: 75, 81
+  orig: 75, 81
+  offset: 0, 0
+  index: -1
+B3/Air_11_00031_2
+  rotate: false
+  xy: 864, 599
+  size: 75, 81
+  orig: 75, 81
+  offset: 0, 0
+  index: -1
+B3/Energy 105 Ray Left Loop 2_00012
+  rotate: false
+  xy: 862, 515
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+B3/Group 11 copy 8
+  rotate: true
+  xy: 810, 672
+  size: 159, 43
+  orig: 159, 43
+  offset: 0, 0
+  index: -1
+B3/Group 6 copy 9
+  rotate: false
+  xy: 305, 275
+  size: 65, 47
+  orig: 65, 47
+  offset: 0, 0
+  index: -1
+B3/Group 8 copy
+  rotate: false
+  xy: 305, 146
+  size: 40, 67
+  orig: 40, 67
+  offset: 0, 0
+  index: -1
+B3/Smoke 009_00004
+  rotate: false
+  xy: 862, 473
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+B3/eye1
+  rotate: false
+  xy: 305, 215
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+B3/head3
+  rotate: false
+  xy: 864, 567
+  size: 70, 30
+  orig: 70, 30
+  offset: 0, 0
+  index: -1
+B3/slash
+  rotate: true
+  xy: 309, 324
+  size: 33, 83
+  orig: 33, 83
+  offset: 0, 0
+  index: -1
+B3/slash01
+  rotate: false
+  xy: 941, 616
+  size: 75, 55
+  orig: 75, 55
+  offset: 0, 0
+  index: -1
+B3/slash02
+  rotate: false
+  xy: 855, 682
+  size: 65, 134
+  orig: 65, 134
+  offset: 0, 0
+  index: -1
+B3/smoke_03_00002
+  rotate: false
+  xy: 394, 331
+  size: 87, 26
+  orig: 87, 26
+  offset: 0, 0
+  index: -1
+B3/smoke_03_00005
+  rotate: true
+  xy: 810, 568
+  size: 102, 52
+  orig: 102, 52
+  offset: 0, 0
+  index: -1
+B3/smoke_03_00007
+  rotate: false
+  xy: 941, 673
+  size: 81, 60
+  orig: 81, 60
+  offset: 0, 0
+  index: -1
+B3/sparking_00002
+  rotate: false
+  xy: 862, 436
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+B5/arm1
+  rotate: true
+  xy: 2, 2
+  size: 109, 171
+  orig: 109, 171
+  offset: 0, 0
+  index: -1
+B5/arm1_1
+  rotate: true
+  xy: 175, 14
+  size: 97, 182
+  orig: 97, 182
+  offset: 0, 0
+  index: -1
+B5_1/body1
+  rotate: true
+  xy: 309, 359
+  size: 443, 298
+  orig: 443, 298
+  offset: 0, 0
+  index: -1
+B5_1/body2
+  rotate: false
+  xy: 2, 804
+  size: 587, 216
+  orig: 587, 216
+  offset: 0, 0
+  index: -1
+B5_1/chin1
+  rotate: true
+  xy: 609, 552
+  size: 279, 199
+  orig: 279, 199
+  offset: 0, 0
+  index: -1
+B5_1/head1
+  rotate: false
+  xy: 2, 113
+  size: 301, 212
+  orig: 301, 212
+  offset: 0, 0
+  index: -1
+B5_1/head2
+  rotate: true
+  xy: 886, 818
+  size: 202, 115
+  orig: 202, 115
+  offset: 0, 0
+  index: -1
+B5_1/horn1
+  rotate: false
+  xy: 591, 833
+  size: 293, 187
+  orig: 293, 187
+  offset: 0, 0
+  index: -1
+B5_1/leg1
+  rotate: false
+  xy: 2, 327
+  size: 305, 475
+  orig: 305, 475
+  offset: 0, 0
+  index: -1
+B5_1/neck1
+  rotate: false
+  xy: 609, 326
+  size: 251, 224
+  orig: 251, 224
+  offset: 0, 0
+  index: -1

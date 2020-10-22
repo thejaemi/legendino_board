@@ -1,0 +1,83 @@
+
+clidas_2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+effect/12
+  rotate: false
+  xy: 2, 8
+  size: 138, 60
+  orig: 138, 60
+  offset: 0, 0
+  index: -1
+effect/E_03
+  rotate: false
+  xy: 142, 11
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+mosa_2/Arm_01
+  rotate: false
+  xy: 268, 91
+  size: 68, 62
+  orig: 68, 62
+  offset: 0, 0
+  index: -1
+mosa_2/Body
+  rotate: false
+  xy: 2, 70
+  size: 264, 184
+  orig: 264, 184
+  offset: 0, 0
+  index: -1
+mosa_2/Chin
+  rotate: false
+  xy: 358, 184
+  size: 54, 70
+  orig: 54, 70
+  offset: 0, 0
+  index: -1
+mosa_2/Eye_01
+  rotate: true
+  xy: 467, 219
+  size: 35, 42
+  orig: 35, 42
+  offset: 0, 0
+  index: -1
+mosa_2/Eye_02
+  rotate: true
+  xy: 338, 117
+  size: 36, 13
+  orig: 36, 13
+  offset: 0, 0
+  index: -1
+mosa_2/Eye_03
+  rotate: false
+  xy: 232, 30
+  size: 37, 38
+  orig: 37, 38
+  offset: 0, 0
+  index: -1
+mosa_2/Head
+  rotate: false
+  xy: 268, 155
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+mosa_2/Leg_01
+  rotate: false
+  xy: 414, 218
+  size: 51, 36
+  orig: 51, 36
+  offset: 0, 0
+  index: -1
+mosa_2/Nose
+  rotate: true
+  xy: 142, 2
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1

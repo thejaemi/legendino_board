@@ -1,0 +1,103 @@
+
+trice_A5.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effect/12
+  rotate: true
+  xy: 835, 745
+  size: 275, 120
+  orig: 275, 120
+  offset: 0, 0
+  index: -1
+Effect/E_03
+  rotate: false
+  xy: 269, 166
+  size: 175, 114
+  orig: 175, 114
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_L
+  rotate: false
+  xy: 446, 263
+  size: 7, 17
+  orig: 7, 17
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_R
+  rotate: false
+  xy: 239, 140
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+Trice_A5/Arm
+  rotate: true
+  xy: 599, 255
+  size: 224, 243
+  orig: 224, 243
+  offset: 0, 0
+  index: -1
+Trice_A5/Body
+  rotate: false
+  xy: 2, 481
+  size: 831, 539
+  orig: 831, 539
+  offset: 0, 0
+  index: -1
+Trice_A5/Chin
+  rotate: false
+  xy: 269, 282
+  size: 328, 197
+  orig: 328, 197
+  offset: 0, 0
+  index: -1
+Trice_A5/Eye_01
+  rotate: false
+  xy: 835, 673
+  size: 67, 70
+  orig: 67, 70
+  offset: 0, 0
+  index: -1
+Trice_A5/Eye_02
+  rotate: false
+  xy: 2, 2
+  size: 73, 34
+  orig: 73, 34
+  offset: 0, 0
+  index: -1
+Trice_A5/Eye_03
+  rotate: true
+  xy: 957, 953
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+Trice_A5/Horn_1
+  rotate: true
+  xy: 2, 38
+  size: 119, 235
+  orig: 119, 235
+  offset: 0, 0
+  index: -1
+Trice_A5/Leg
+  rotate: false
+  xy: 2, 159
+  size: 265, 320
+  orig: 265, 320
+  offset: 0, 0
+  index: -1
+
+trice_A52.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Trice_A5/Head
+  rotate: false
+  xy: 2, 2
+  size: 495, 561
+  orig: 495, 561
+  offset: 0, 0
+  index: -1

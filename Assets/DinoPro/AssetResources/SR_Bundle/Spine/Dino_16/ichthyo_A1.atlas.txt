@@ -1,0 +1,97 @@
+
+ichthyo_A1.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effect/12
+  rotate: false
+  xy: 2, 2
+  size: 122, 48
+  orig: 138, 60
+  offset: 9, 7
+  index: -1
+Effect/E_01
+  rotate: false
+  xy: 301, 193
+  size: 98, 13
+  orig: 98, 13
+  offset: 0, 0
+  index: -1
+Effect/E_02
+  rotate: true
+  xy: 665, 168
+  size: 131, 139
+  orig: 131, 139
+  offset: 0, 0
+  index: -1
+Effect/E_03
+  rotate: false
+  xy: 849, 306
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Arm_01
+  rotate: false
+  xy: 665, 301
+  size: 182, 189
+  orig: 182, 189
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Body
+  rotate: false
+  xy: 2, 208
+  size: 661, 282
+  orig: 661, 282
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Chin
+  rotate: false
+  xy: 2, 52
+  size: 264, 63
+  orig: 264, 63
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Eye_01
+  rotate: false
+  xy: 806, 259
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Eye_02
+  rotate: true
+  xy: 268, 77
+  size: 38, 6
+  orig: 38, 6
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Eye_03
+  rotate: false
+  xy: 126, 14
+  size: 41, 36
+  orig: 41, 36
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Head
+  rotate: false
+  xy: 2, 117
+  size: 297, 89
+  orig: 297, 89
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Leg_01
+  rotate: false
+  xy: 849, 365
+  size: 163, 125
+  orig: 163, 125
+  offset: 0, 0
+  index: -1
+ichthyo_A1/Nose
+  rotate: true
+  xy: 1014, 478
+  size: 12, 7
+  orig: 12, 7
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,110 @@
+
+trice_A4.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effect/12
+  rotate: true
+  xy: 835, 717
+  size: 275, 120
+  orig: 275, 120
+  offset: 0, 0
+  index: -1
+Effect/E_03
+  rotate: false
+  xy: 269, 138
+  size: 175, 114
+  orig: 175, 114
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_L
+  rotate: false
+  xy: 835, 588
+  size: 7, 17
+  orig: 7, 17
+  offset: 0, 0
+  index: -1
+Trice_A1/Nose_R
+  rotate: false
+  xy: 232, 112
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+Trice_A4/Arm
+  rotate: true
+  xy: 599, 227
+  size: 224, 243
+  orig: 224, 243
+  offset: 0, 0
+  index: -1
+Trice_A4/Body
+  rotate: false
+  xy: 2, 453
+  size: 831, 539
+  orig: 831, 539
+  offset: 0, 0
+  index: -1
+Trice_A4/Chin
+  rotate: false
+  xy: 269, 254
+  size: 328, 197
+  orig: 328, 197
+  offset: 0, 0
+  index: -1
+Trice_A4/Eye_01
+  rotate: false
+  xy: 446, 182
+  size: 67, 70
+  orig: 67, 70
+  offset: 0, 0
+  index: -1
+Trice_A4/Eye_02
+  rotate: false
+  xy: 2, 2
+  size: 73, 34
+  orig: 73, 34
+  offset: 0, 0
+  index: -1
+Trice_A4/Eye_03
+  rotate: true
+  xy: 957, 925
+  size: 67, 63
+  orig: 67, 63
+  offset: 0, 0
+  index: -1
+Trice_A4/Horn
+  rotate: true
+  xy: 2, 38
+  size: 91, 228
+  orig: 91, 228
+  offset: 0, 0
+  index: -1
+Trice_A4/Horn_1
+  rotate: false
+  xy: 835, 607
+  size: 73, 108
+  orig: 73, 108
+  offset: 0, 0
+  index: -1
+Trice_A4/Leg
+  rotate: false
+  xy: 2, 131
+  size: 265, 320
+  orig: 265, 320
+  offset: 0, 0
+  index: -1
+
+trice_A42.png
+size: 512,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Trice_A4/Head
+  rotate: false
+  xy: 2, 2
+  size: 495, 561
+  orig: 495, 561
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,104 @@
+
+para_A2.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Head_Mouth
+  rotate: false
+  xy: 497, 61
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+Head_Nose
+  rotate: false
+  xy: 739, 151
+  size: 27, 9
+  orig: 27, 9
+  offset: 0, 0
+  index: -1
+effect/11
+  rotate: false
+  xy: 2, 26
+  size: 237, 23
+  orig: 275, 51
+  offset: 16, 15
+  index: -1
+effect/12
+  rotate: false
+  xy: 848, 206
+  size: 122, 48
+  orig: 138, 60
+  offset: 9, 7
+  index: -1
+effect/E_03
+  rotate: false
+  xy: 430, 2
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+paraA2/Arm
+  rotate: true
+  xy: 497, 106
+  size: 37, 89
+  orig: 37, 89
+  offset: 0, 0
+  index: -1
+paraA2/Body
+  rotate: false
+  xy: 2, 51
+  size: 332, 203
+  orig: 332, 203
+  offset: 0, 0
+  index: -1
+paraA2/Body_Neck
+  rotate: false
+  xy: 739, 162
+  size: 107, 92
+  orig: 107, 92
+  offset: 0, 0
+  index: -1
+paraA2/Eye
+  rotate: false
+  xy: 972, 221
+  size: 37, 33
+  orig: 37, 33
+  offset: 0, 0
+  index: -1
+paraA2/Eye1
+  rotate: false
+  xy: 2, 7
+  size: 38, 17
+  orig: 38, 17
+  offset: 0, 0
+  index: -1
+paraA2/Eye2
+  rotate: false
+  xy: 848, 171
+  size: 37, 33
+  orig: 37, 33
+  offset: 0, 0
+  index: -1
+paraA2/Head
+  rotate: false
+  xy: 336, 61
+  size: 159, 193
+  orig: 159, 193
+  offset: 0, 0
+  index: -1
+paraA2/Head_Mouth1
+  rotate: false
+  xy: 336, 2
+  size: 92, 57
+  orig: 92, 57
+  offset: 0, 0
+  index: -1
+paraA2/Leg
+  rotate: true
+  xy: 497, 145
+  size: 109, 240
+  orig: 109, 240
+  offset: 0, 0
+  index: -1

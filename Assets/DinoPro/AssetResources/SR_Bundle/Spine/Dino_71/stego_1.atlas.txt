@@ -1,0 +1,90 @@
+
+stego_1.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Stego_1/Arm
+  rotate: true
+  xy: 796, 126
+  size: 62, 75
+  orig: 62, 75
+  offset: 0, 0
+  index: -1
+Stego_1/Body
+  rotate: false
+  xy: 2, 35
+  size: 363, 216
+  orig: 363, 216
+  offset: 0, 0
+  index: -1
+Stego_1/Chin
+  rotate: false
+  xy: 619, 34
+  size: 133, 101
+  orig: 133, 101
+  offset: 0, 0
+  index: -1
+Stego_1/Eye_01
+  rotate: false
+  xy: 754, 33
+  size: 48, 64
+  orig: 48, 64
+  offset: 0, 0
+  index: -1
+Stego_1/Eye_02
+  rotate: false
+  xy: 2, 2
+  size: 51, 31
+  orig: 51, 31
+  offset: 0, 0
+  index: -1
+Stego_1/Head
+  rotate: false
+  xy: 367, 22
+  size: 250, 229
+  orig: 250, 229
+  offset: 0, 0
+  index: -1
+Stego_1/Horn
+  rotate: false
+  xy: 754, 99
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+Stego_1/Leg
+  rotate: true
+  xy: 922, 189
+  size: 62, 79
+  orig: 62, 79
+  offset: 0, 0
+  index: -1
+Stego_1/Nose_L
+  rotate: false
+  xy: 1003, 241
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+Stego_1/Nose_R
+  rotate: false
+  xy: 873, 178
+  size: 9, 10
+  orig: 9, 10
+  offset: 0, 0
+  index: -1
+Stego_1/Wing
+  rotate: false
+  xy: 796, 190
+  size: 124, 61
+  orig: 124, 61
+  offset: 0, 0
+  index: -1
+effect/E_03
+  rotate: false
+  xy: 619, 137
+  size: 175, 114
+  orig: 175, 114
+  offset: 0, 0
+  index: -1

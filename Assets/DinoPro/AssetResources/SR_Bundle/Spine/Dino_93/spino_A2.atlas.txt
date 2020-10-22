@@ -1,0 +1,83 @@
+
+spino_A2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+spino_A2/body_0
+  rotate: false
+  xy: 2, 238
+  size: 303, 242
+  orig: 303, 242
+  offset: 0, 0
+  index: -1
+spino_A2/chin_0
+  rotate: false
+  xy: 297, 22
+  size: 113, 89
+  orig: 113, 89
+  offset: 0, 0
+  index: -1
+spino_A2/eff01
+  rotate: false
+  xy: 853, 135
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+spino_A2/eye_0
+  rotate: false
+  xy: 2, 2
+  size: 48, 19
+  orig: 48, 19
+  offset: 0, 0
+  index: -1
+spino_A2/head_0
+  rotate: false
+  xy: 650, 164
+  size: 201, 149
+  orig: 201, 149
+  offset: 0, 0
+  index: -1
+spino_A2/l_arm_0
+  rotate: true
+  xy: 307, 203
+  size: 109, 307
+  orig: 109, 307
+  offset: 0, 0
+  index: -1
+spino_A2/l_leg_0
+  rotate: true
+  xy: 307, 314
+  size: 166, 341
+  orig: 166, 341
+  offset: 0, 0
+  index: -1
+spino_A2/neck_0
+  rotate: false
+  xy: 576, 11
+  size: 157, 151
+  orig: 157, 151
+  offset: 0, 0
+  index: -1
+spino_A2/r_arm_0
+  rotate: true
+  xy: 297, 113
+  size: 88, 277
+  orig: 88, 277
+  offset: 0, 0
+  index: -1
+spino_A2/r_leg_0
+  rotate: true
+  xy: 650, 315
+  size: 165, 331
+  orig: 165, 331
+  offset: 0, 0
+  index: -1
+spino_A2/tail_0
+  rotate: false
+  xy: 2, 23
+  size: 293, 213
+  orig: 293, 213
+  offset: 0, 0
+  index: -1

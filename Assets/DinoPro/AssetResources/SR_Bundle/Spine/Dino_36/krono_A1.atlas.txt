@@ -1,0 +1,97 @@
+
+krono_A1.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Effect/12
+  rotate: false
+  xy: 665, 256
+  size: 138, 60
+  orig: 138, 60
+  offset: 0, 0
+  index: -1
+Effect/E_01
+  rotate: false
+  xy: 2, 17
+  size: 98, 13
+  orig: 98, 13
+  offset: 0, 0
+  index: -1
+Effect/E_02
+  rotate: true
+  xy: 314, 95
+  size: 131, 139
+  orig: 131, 139
+  offset: 0, 0
+  index: -1
+Effect/E_03
+  rotate: false
+  xy: 849, 325
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+krono_A1/Arm_01
+  rotate: false
+  xy: 665, 318
+  size: 182, 192
+  orig: 182, 192
+  offset: 0, 0
+  index: -1
+krono_A1/Body
+  rotate: false
+  xy: 2, 228
+  size: 661, 282
+  orig: 661, 282
+  offset: 0, 0
+  index: -1
+krono_A1/Chin
+  rotate: false
+  xy: 2, 32
+  size: 279, 92
+  orig: 279, 92
+  offset: 0, 0
+  index: -1
+krono_A1/Eye_01
+  rotate: true
+  xy: 805, 265
+  size: 51, 33
+  orig: 51, 33
+  offset: 0, 0
+  index: -1
+krono_A1/Eye_02
+  rotate: true
+  xy: 283, 71
+  size: 53, 9
+  orig: 53, 9
+  offset: 0, 0
+  index: -1
+krono_A1/Eye_03
+  rotate: false
+  xy: 455, 190
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+krono_A1/Head
+  rotate: false
+  xy: 2, 126
+  size: 310, 100
+  orig: 310, 100
+  offset: 0, 0
+  index: -1
+krono_A1/Leg_01
+  rotate: false
+  xy: 849, 384
+  size: 163, 126
+  orig: 163, 126
+  offset: 0, 0
+  index: -1
+krono_A1/Nose
+  rotate: true
+  xy: 2, 2
+  size: 13, 6
+  orig: 13, 6
+  offset: 0, 0
+  index: -1

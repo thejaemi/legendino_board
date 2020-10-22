@@ -1,0 +1,90 @@
+
+paki_2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+effect/11
+  rotate: false
+  xy: 2, 203
+  size: 275, 51
+  orig: 275, 51
+  offset: 0, 0
+  index: -1
+effect/12
+  rotate: false
+  xy: 279, 194
+  size: 138, 60
+  orig: 138, 60
+  offset: 0, 0
+  index: -1
+paki_2/Arm
+  rotate: true
+  xy: 184, 20
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+paki_2/Body
+  rotate: true
+  xy: 156, 54
+  size: 147, 98
+  orig: 147, 98
+  offset: 0, 0
+  index: -1
+paki_2/Body_Neck
+  rotate: false
+  xy: 419, 205
+  size: 83, 49
+  orig: 83, 49
+  offset: 0, 0
+  index: -1
+paki_2/Eye
+  rotate: true
+  xy: 227, 15
+  size: 37, 25
+  orig: 37, 25
+  offset: 0, 0
+  index: -1
+paki_2/Head
+  rotate: false
+  xy: 2, 76
+  size: 152, 125
+  orig: 152, 125
+  offset: 0, 0
+  index: -1
+paki_2/Head_Eye1
+  rotate: true
+  xy: 256, 164
+  size: 37, 8
+  orig: 37, 8
+  offset: 0, 0
+  index: -1
+paki_2/Head_Mouth
+  rotate: false
+  xy: 136, 16
+  size: 46, 36
+  orig: 46, 36
+  offset: 0, 0
+  index: -1
+paki_2/Head_Nose
+  rotate: false
+  xy: 419, 199
+  size: 17, 4
+  orig: 17, 4
+  offset: 0, 0
+  index: -1
+paki_2/Leg
+  rotate: false
+  xy: 2, 2
+  size: 62, 72
+  orig: 62, 72
+  offset: 0, 0
+  index: -1
+paki_2/Leg1
+  rotate: false
+  xy: 66, 3
+  size: 68, 71
+  orig: 68, 71
+  offset: 0, 0
+  index: -1
