@@ -1,0 +1,69 @@
+
+qr_symbol.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+simbol/bridge_0
+  rotate: false
+  xy: 217, 139
+  size: 42, 76
+  orig: 42, 76
+  offset: 0, 0
+  index: -1
+simbol/center_0
+  rotate: false
+  xy: 526, 371
+  size: 103, 110
+  orig: 103, 110
+  offset: 0, 0
+  index: -1
+simbol/circle_0
+  rotate: false
+  xy: 2, 2
+  size: 213, 213
+  orig: 213, 213
+  offset: 0, 0
+  index: -1
+simbol/circle_1
+  rotate: false
+  xy: 2, 217
+  size: 268, 264
+  orig: 268, 264
+  offset: 0, 0
+  index: -1
+simbol/circle_2
+  rotate: false
+  xy: 272, 234
+  size: 252, 247
+  orig: 252, 247
+  offset: 0, 0
+  index: -1
+simbol/marker
+  rotate: false
+  xy: 799, 406
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+simbol/wing_0
+  rotate: false
+  xy: 526, 291
+  size: 84, 78
+  orig: 84, 78
+  offset: 0, 0
+  index: -1
+simbol/wing_1
+  rotate: false
+  xy: 631, 404
+  size: 84, 77
+  orig: 84, 77
+  offset: 0, 0
+  index: -1
+simbol/wing_2
+  rotate: true
+  xy: 717, 402
+  size: 79, 80
+  orig: 79, 80
+  offset: 0, 0
+  index: -1
