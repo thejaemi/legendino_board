@@ -89,14 +89,17 @@ public class Panel_CardPick : MonoBehaviour
         m_Label_Count.text = string.Format("({0}/{1})", m_CurRound, m_TotalRound);
 
         m_Sprite_Button[0].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_List_Deck[0]));
+        m_Sprite_Button[0].gameObject.GetComponent<ShaderLerp>().Run();
         m_Button_Index[0] = m_List_Deck[0];
         m_List_Deck.RemoveAt(0);
 
         m_Sprite_Button[1].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_List_Deck[0]));
+        m_Sprite_Button[1].gameObject.GetComponent<ShaderLerp>().Run();
         m_Button_Index[1] = m_List_Deck[0];
         m_List_Deck.RemoveAt(0);
 
         m_Sprite_Button[2].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_List_Deck[0]));
+        m_Sprite_Button[2].gameObject.GetComponent<ShaderLerp>().Run();
         m_Button_Index[2] = m_List_Deck[0];
         m_List_Deck.RemoveAt(0);
     }
