@@ -1,0 +1,146 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+draw/draw_t1
+  rotate: false
+  xy: 879, 376
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+draw/draw_t2
+  rotate: false
+  xy: 788, 376
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+draw/draw_t3
+  rotate: true
+  xy: 697, 285
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+fin/back
+  rotate: false
+  xy: 2, 307
+  size: 240, 199
+  orig: 240, 199
+  offset: 0, 0
+  index: -1
+fin/fl
+  rotate: true
+  xy: 2, 15
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+fin/leaves
+  rotate: false
+  xy: 486, 134
+  size: 132, 161
+  orig: 132, 161
+  offset: 0, 0
+  index: -1
+win/leaves
+  rotate: false
+  xy: 486, 134
+  size: 132, 161
+  orig: 132, 161
+  offset: 0, 0
+  index: -1
+fin/logo
+  rotate: false
+  xy: 486, 297
+  size: 209, 209
+  orig: 209, 209
+  offset: 0, 0
+  index: -1
+win/logo
+  rotate: false
+  xy: 486, 297
+  size: 209, 209
+  orig: 209, 209
+  offset: 0, 0
+  index: -1
+fin/tmd
+  rotate: false
+  xy: 697, 376
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+lose/back
+  rotate: false
+  xy: 2, 106
+  size: 240, 199
+  orig: 240, 199
+  offset: 0, 0
+  index: -1
+lose/fl
+  rotate: true
+  xy: 134, 15
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+lose/tmd
+  rotate: true
+  xy: 266, 15
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+start/back
+  rotate: false
+  xy: 244, 307
+  size: 240, 199
+  orig: 240, 199
+  offset: 0, 0
+  index: -1
+start/fl
+  rotate: true
+  xy: 829, 285
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+start/point
+  rotate: false
+  xy: 711, 200
+  size: 79, 83
+  orig: 79, 83
+  offset: 0, 0
+  index: -1
+start/tmd
+  rotate: true
+  xy: 398, 15
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+win/back
+  rotate: false
+  xy: 244, 106
+  size: 240, 199
+  orig: 240, 199
+  offset: 0, 0
+  index: -1
+win/fl
+  rotate: false
+  xy: 530, 2
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
+win/tmd
+  rotate: false
+  xy: 620, 153
+  size: 89, 130
+  orig: 89, 130
+  offset: 0, 0
+  index: -1
