@@ -64,6 +64,6 @@ public class QRVerificationManager : MonoBehaviour
         string code = decodeCodes[codeSection];
         int dinoIndex = CM_Singleton<Table_QRCode>.instance.GetDinoIndex(code);
 
-        Debug.Log("Dino Index :: " + dinoIndex);
+        GameObject.Find("Main").GetComponent<Scan>().ScanDino(code, dinoIndex);
     }
 }
