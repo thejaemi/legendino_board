@@ -22,11 +22,19 @@ public class UGUI_Medal : MonoBehaviour
 
     public bool m_ShowTool = false;
 
+    public bool m_Preload = false;
+
     static public Color Color_Attack = new Color(0.1882353f, 0.09411765f, 0.1607843f, 1.0f);
     static public Color Color_Defence = new Color(0.05490196f, 0.09411765f, 0.2392157f, 1.0f);
     static public Color Color_Counter = new Color(0.04705882f, 0.227451f, 0.2392157f, 1.0f);
     static public Color Color_Evade = new Color(0.1294118f, 0.09803922f, 0.227451f, 1.0f);
     static public Color Color_Special = new Color(0.2235294f, 0.254902f, 0.2156863f, 1.0f);
+
+    private void Awake()
+    {
+        if (m_Preload)
+            TestSet();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +45,9 @@ public class UGUI_Medal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(m_IsSpin)
+            transform.Rotate(-Vector3.forward * Time.deltaTime * Random.Range(2000, 3000));
+
         m_Angle = gameObject.transform.rotation.eulerAngles.z;
         m_AngleRatio = 1.0f - (m_Angle / 360.0f);
         m_Desc = m_Gauge.Win(1.0f - m_AngleRatio);
@@ -59,7 +70,7 @@ public class UGUI_Medal : MonoBehaviour
     public void Set(int DinoId)
     {
         m_Id = DinoId;
-        //m_Sprite_Dino.spriteName = string.Format("medal_{0}", DinoId);
+        m_Sprite_Dino.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite(string.Format("medal_{0}", DinoId));
 
         m_Dino = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[DinoId];
         if (m_Dino.m_Ratio_Attack > 0)
@@ -87,7 +98,7 @@ public class UGUI_Medal : MonoBehaviour
     public void OnSpin()
     {
         m_IsSpin = true;
-        StartCoroutine(RotateMedal());
+        //StartCoroutine(RotateMedal()); // 이 방식으로 돌리면 battle 쪽 코루틴하고 뭔가 안맞는지 get 할 때 결과가 다른 현상이 있어서 사용 안함
     }
 
     private IEnumerator RotateMedal()
@@ -109,9 +120,10 @@ public class UGUI_Medal : MonoBehaviour
         if (m_ShowTool == false)
             return;
 
-        GUI.Label(new Rect(550, 140, 300, 30), string.Format("z {0} / r {1} / {2}", m_Angle, m_AngleRatio, m_Desc));
+        GUI.Box(new Rect(300, 140, 300, 80), "");
+        GUI.Label(new Rect(300, 140, 300, 30), string.Format("z {0} / r {1} / {2}({3})", m_Angle, m_AngleRatio, m_Desc, Get()));
 
-        if (GUI.Button(new Rect(550, 100, 100, 30), "Set"))
+        if (GUI.Button(new Rect(300, 100, 100, 30), "Set"))
             TestSet();
     }
 
