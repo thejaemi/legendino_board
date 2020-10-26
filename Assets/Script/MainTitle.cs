@@ -8,6 +8,7 @@ public class MainTitle : MonoBehaviour
 {
     public const string CAMERA_ACCESS_PERMISSION = "android.permission.CAMERA";
     public SimpleAnimation_Stop m_AniCtrl;
+    public GameObject m_Button;
 
     private void Awake()
     {
@@ -44,6 +45,8 @@ public class MainTitle : MonoBehaviour
 
     public void OnClickTitle()
     {
+        m_Button.SetActive(false);
+
         m_AniCtrl.Play();
 
         Invoke("SceneMove", 2.0f);
