@@ -7,6 +7,7 @@ using TBEasyWebCam;
 public class MainTitle : MonoBehaviour
 {
     public const string CAMERA_ACCESS_PERMISSION = "android.permission.CAMERA";
+    public SimpleAnimation_Stop m_AniCtrl;
 
     private void Awake()
     {
@@ -42,6 +43,13 @@ public class MainTitle : MonoBehaviour
     }
 
     public void OnClickTitle()
+    {
+        m_AniCtrl.Play();
+
+        Invoke("SceneMove", 2.0f);
+    }
+
+    void SceneMove()
     {
         SceneManager.LoadScene("Lobby");
     }
