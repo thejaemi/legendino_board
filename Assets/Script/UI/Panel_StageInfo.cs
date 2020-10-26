@@ -67,11 +67,11 @@ public class Panel_StageInfo : MonoBehaviour
         CM_Singleton<GameData>.instance.m_OtherInfo.Set_Card(4, stage.m_Card4);
         CM_Singleton<GameData>.instance.m_OtherInfo.Set_Card(5, stage.m_Card5);
 
-        m_Label_Attack.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Attack.ToString();
-        m_Label_Defence.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Defence.ToString();
-        m_Label_Counter.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Counter.ToString();
-        m_Label_Special.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Special.ToString();
-        m_Label_Hp.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Hp.ToString();
+        m_Label_Attack.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Stat_Card.m_Attack.ToString();
+        m_Label_Defence.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Stat_Card.m_Defence.ToString();
+        m_Label_Counter.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Stat_Card.m_Counter.ToString();
+        m_Label_Special.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Stat_Card.m_Special.ToString();
+        m_Label_Hp.text = CM_Singleton<GameData>.instance.m_OtherInfo.m_Stat_Card.m_Hp.ToString();
 
     }
 
@@ -79,11 +79,7 @@ public class Panel_StageInfo : MonoBehaviour
 
     public void OnBattle()
     {
-#if UNITY_EDITOR
-        SceneManager.LoadScene("Test_A");
-#else
         SceneManager.LoadScene("Scan");
-#endif
     }
 
     public void OnClose_Info()

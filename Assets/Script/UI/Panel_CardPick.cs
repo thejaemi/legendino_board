@@ -68,10 +68,10 @@ public class Panel_CardPick : MonoBehaviour
         if (m_GameData.m_MyInfo.m_Card_Belt > 0)
             m_Sprite_Deck[4].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Belt));
 
-        m_Label_Attack.text = string.Format("{0}", m_GameData.m_MyInfo.m_Attack);
-        m_Label_Defence.text = string.Format("{0}", m_GameData.m_MyInfo.m_Defence);
-        m_Label_Counter.text = string.Format("{0}", m_GameData.m_MyInfo.m_Counter);
-        m_Label_Special.text = string.Format("{0}", m_GameData.m_MyInfo.m_Special);
+        m_Label_Attack.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Attack);
+        m_Label_Defence.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Defence);
+        m_Label_Counter.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Counter);
+        m_Label_Special.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Special);
     }
 
     public void SetPickCards(List<int> DeckList)

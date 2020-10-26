@@ -15,40 +15,105 @@ public class Dlg_Command : MonoBehaviour
         m_Move = gameObject.GetComponent<UGUI_Move>();
     }
 
-    public void Set(int Command_My, int Command_Other)
+    public void Set(PlayerInfo MyInfo, int Command_My, PlayerInfo OtherInfo, int Command_Other)
     {
-        if(Command_My == 0) // 공격
+        if (Command_My == 0) // 공격
         {
             m_Image_Mark.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite("icon_attack");
-            m_Value.text = Mathf.Max(0, CM_Singleton<GameData>.instance.m_MyInfo.m_Attack - CM_Singleton<GameData>.instance.m_OtherInfo.m_Defence).ToString();
-            m_ValueDesc.text = string.Format("({0} - {1})", CM_Singleton<GameData>.instance.m_MyInfo.m_Attack, CM_Singleton<GameData>.instance.m_OtherInfo.m_Defence);
+            m_Value.text = MyInfo.m_Stat.m_Attack.ToString();
+            m_ValueDesc.text = string.Format("{0} + {1}", MyInfo.m_Stat_Card.m_Attack, MyInfo.m_Stat_Medal.m_Attack);
+
+            /*
+            if (Command_Other == 1)
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Attack - OtherInfo.m_Defence).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Attack, OtherInfo.m_Defence);
+            }
+            else if (Command_Other == 2)
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Attack - OtherInfo.m_Counter).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Attack, OtherInfo.m_Counter);
+            }
+            else if (Command_Other == 4)
+            {
+                m_Value.text = "빗나감";
+                m_ValueDesc.text = "";
+            }
+            else
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Attack).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Attack, 0);
+            }
+            */
         }
         else if (Command_My == 1)   // 방어
         {
             m_Image_Mark.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite("icon_defence");
-            m_Value.text = Mathf.Max(0, CM_Singleton<GameData>.instance.m_MyInfo.m_Defence - CM_Singleton<GameData>.instance.m_OtherInfo.m_Attack).ToString();
-            m_ValueDesc.text = string.Format("({0} - {1})", CM_Singleton<GameData>.instance.m_MyInfo.m_Defence, CM_Singleton<GameData>.instance.m_OtherInfo.m_Attack);
+            m_Value.text = MyInfo.m_Stat.m_Defence.ToString();
+            m_ValueDesc.text = string.Format("{0} + {1}", MyInfo.m_Stat_Card.m_Defence, MyInfo.m_Stat_Medal.m_Defence);
+            /*
+            m_Value.text = "방어";
+            m_ValueDesc.text = "";
+            */
         }
         else if (Command_My == 2)   // 카운터
         {
             m_Image_Mark.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite("icon_counter");
-            m_Value.text = string.Format("{0}, {1}", Mathf.Max(0, CM_Singleton<GameData>.instance.m_MyInfo.m_Attack - CM_Singleton<GameData>.instance.m_OtherInfo.m_Defence),
-                Mathf.Max(0, CM_Singleton<GameData>.instance.m_MyInfo.m_Defence - CM_Singleton<GameData>.instance.m_OtherInfo.m_Attack));
-            m_ValueDesc.text = "카운터";
+            m_Value.text = MyInfo.m_Stat.m_Counter.ToString();
+            m_ValueDesc.text = string.Format("{0} + {1}", MyInfo.m_Stat_Card.m_Counter, MyInfo.m_Stat_Medal.m_Counter);
+            /*
+            if (Command_Other == 1)
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Counter - OtherInfo.m_Defence).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Counter, OtherInfo.m_Defence);
+            }
+            else if (Command_Other == 2)
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Counter - OtherInfo.m_Counter).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Counter, OtherInfo.m_Counter);
+            }
+            else if (Command_Other == 4)
+            {
+                m_Value.text = "빗나감";
+                m_ValueDesc.text = "";
+            }
+            else
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Counter).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Counter, 0);
+            }
+            */
         }
         else if (Command_My == 3)   // 스페셜
         {
             m_Image_Mark.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite("icon_special");
-            m_Value.text = CM_Singleton<GameData>.instance.m_MyInfo.m_Special.ToString();
-            m_ValueDesc.text = string.Format("({0} - 0", CM_Singleton<GameData>.instance.m_MyInfo.m_Special);
+            m_Value.text = MyInfo.m_Stat.m_Special.ToString();
+            m_ValueDesc.text = string.Format("{0} + {1}", MyInfo.m_Stat_Card.m_Special, MyInfo.m_Stat_Medal.m_Special);
+            /*
+            if(Command_Other == 1)
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Special).ToString();
+                m_ValueDesc.text = "방어무시";
+            }
+            else if (Command_Other == 4)
+            {
+                m_Value.text = "빗나감";
+                m_ValueDesc.text = "";
+            }
+            else
+            {
+                m_Value.text = Mathf.Max(0, MyInfo.m_Special).ToString();
+                m_ValueDesc.text = string.Format("{0} - {1}", MyInfo.m_Special, 0);
+            }
+            */
         }
         else
         {
             m_Image_Mark.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite("icon_evade");
-            m_Value.text = "0";
-            m_ValueDesc.text = "회피";
-        }
 
+            m_Value.text = "회피";
+            m_ValueDesc.text = "";
+        }
 
         m_Move.OnReset();
         m_Move.OnStart(0.5f);
