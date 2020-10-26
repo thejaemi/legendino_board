@@ -2,18 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo
+public class Stat
 {
-    public List<int> m_Dino = new List<int>();
-    public int m_CurDino = 0;   // m_Dino 에서 몇 번째 포지션이 지금 사용 중인가
-
     public int m_Hp = 0;
     public int m_Attack = 0;
     public int m_Defence = 0;
     public int m_Counter = 0;
     public int m_Special = 0;
-    public int m_Card_Hp = 0;
-    public void Reset_Stat() { m_Hp = 0; m_Attack = 0; m_Defence = 0; m_Counter = 0; m_Special = 0; }
+
+    public void Reset()
+    {
+        m_Hp = 0;
+        m_Attack = 0;
+        m_Defence = 0;
+        m_Counter = 0;
+        m_Special = 0;
+    }
+
+    public void Set(Dino Dino)
+    {
+        m_Hp = Dino.m_Hp;
+        m_Attack = Dino.m_Attack;
+        m_Defence = Dino.m_Defence;
+        m_Counter = Dino.m_Counter;
+        m_Special = Dino.m_Special;
+    }
+}
+
+public class PlayerInfo
+{
+    public List<int> m_Dino = new List<int>();
+    public int m_CurDino = 0;   // m_Dino 에서 몇 번째 포지션이 지금 사용 중인가
+
+    public Stat m_Stat_Medal = new Stat();
+    public Stat m_Stat_Card = new Stat();
+    public Stat m_Stat = new Stat();
 
     public int m_Card_Amulet;
     public int m_Card_Ring;
@@ -71,14 +94,15 @@ public class PlayerInfo
     /// </summary>
     public void CalcStat()
     {
-        Reset_Stat();
+        m_Stat.Reset();
+        m_Stat_Medal.Reset();
+        m_Stat_Card.Reset();
 
         if (m_Dino.Count > 0)
         {
-            m_Hp = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Hp;
-            m_Attack = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Attack;
-            m_Defence = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Defence;
-            m_Special = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]].m_Special;
+            m_Stat_Medal.Set(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]]);
+            // m_Stat += m_Stat_Medal
+            m_Stat.Set(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[m_Dino[m_CurDino]]);
         }
 
         CalcCardStat(m_Card_Amulet);
@@ -86,6 +110,11 @@ public class PlayerInfo
         CalcCardStat(m_Card_Glove);
         CalcCardStat(m_Card_Map);
         CalcCardStat(m_Card_Ring);
+        m_Stat.m_Hp += m_Stat_Card.m_Hp;
+        m_Stat.m_Attack += m_Stat_Card.m_Attack;
+        m_Stat.m_Defence += m_Stat_Card.m_Defence;
+        m_Stat.m_Counter += m_Stat_Card.m_Counter;
+        m_Stat.m_Special += m_Stat_Card.m_Special;
     }
 
     public void CalcCardStat(int Id)
@@ -93,9 +122,15 @@ public class PlayerInfo
         if (Id == 0)
             return;
 
-        m_Hp += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Hp;
-        m_Attack += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Attack;
-        m_Defence += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Defence;
-        m_Special += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Special;
+        m_Stat_Card.m_Hp += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Hp;
+        m_Stat_Card.m_Attack += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Attack;
+        m_Stat_Card.m_Defence += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Defence;
+        m_Stat_Card.m_Special += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Special;
+    }
+
+    public void SetCurDino(int Pos)
+    {
+        m_CurDino = Pos;
+        CalcStat();
     }
 }
