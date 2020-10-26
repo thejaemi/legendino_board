@@ -6,12 +6,20 @@ using Spine.Unity;
 
 public class Scan : MonoBehaviour
 {
+    public GameObject m_Panel_Scan;
     public QRCamScreen m_QRMgr;
     public SkeletonAnimation m_QRSymbol;
     public UGUI_Medal[] m_Medals;
     public GameObject[] m_Effects;
     public GameObject m_Button;
     List<string> m_ScanList = new List<string>();
+
+    private void Awake()
+    {
+#if UNITY_EDITOR
+        m_Panel_Scan.SetActive(false);
+#endif
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +46,10 @@ public class Scan : MonoBehaviour
 
         if (m_ScanList.Count == 3)
         {
-            m_QRMgr.Stop();
+#if !UNITY_EDITOR
+            if(m_QRMgr)
+                m_QRMgr.Stop();
+#endif
             m_Button.SetActive(true);
             m_QRSymbol.gameObject.SetActive(false);
         }
@@ -46,7 +57,10 @@ public class Scan : MonoBehaviour
 
     void ResetQRSymbol()
     {
-        m_QRMgr.StartDecode();
+#if !UNITY_EDITOR
+        if (m_QRMgr)
+            m_QRMgr.StartDecode();
+#endif
         m_QRSymbol.gameObject.SetActive(false);
         m_QRSymbol.AnimationName = "start";
         m_QRSymbol.gameObject.SetActive(true);
@@ -84,7 +98,7 @@ public class Scan : MonoBehaviour
     private void OnGUI()
     {
         if (GUI.Button(new Rect(50, 50, 100, 50), "Test_1"))
-            ScanDino("Test1", 124);
+            ScanDino("Test1", 1);
 
         if (GUI.Button(new Rect(50, 100, 100, 50), "Test_2"))
             ScanDino("Test2", 2);
