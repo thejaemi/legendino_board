@@ -68,6 +68,7 @@ public class Battle : MonoBehaviour
     public GameObject m_CardPick;
     public Panel_CardPick m_Panel_CardPick;
     public GameObject m_CardMade;
+    public GameObject[] m_DinoFieldEffect;
 
     // main stream
     CM_JobQueue m_JobQueue;
@@ -206,6 +207,8 @@ public class Battle : MonoBehaviour
         m_Image_Deck_Other[2].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_OtherInfo.m_Card_Glove));
         m_Image_Deck_Other[3].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_OtherInfo.m_Card_Map));
         m_Image_Deck_Other[4].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_OtherInfo.m_Card_Belt));
+        for (int i = 0; i < m_Deck_Other.Length; i++)
+            m_Image_Deck_Other[i].gameObject.GetComponent<ShaderLerp>().Run();
 
         m_Label_Deck_Other[0].text = string.Format("{0}", m_GameData.m_OtherInfo.m_Stat.m_Attack);
         m_Label_Deck_Other[1].text = string.Format("{0}", m_GameData.m_OtherInfo.m_Stat.m_Defence);
@@ -231,6 +234,9 @@ public class Battle : MonoBehaviour
         m_Image_Deck_My[2].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Glove));
         m_Image_Deck_My[3].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Map));
         m_Image_Deck_My[4].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Belt));
+        for (int i = 0; i < m_Deck_Other.Length; i++)
+            if(m_Image_Deck_My[i].sprite.name != "card_0")
+                m_Image_Deck_My[i].gameObject.GetComponent<ShaderLerp>().Run();
 
         m_Label_Deck_My[0].text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat.m_Attack);
         m_Label_Deck_My[1].text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat.m_Defence);
@@ -283,6 +289,9 @@ public class Battle : MonoBehaviour
     {
         DebugAdd("# 스타트 셋 (덱 픽)");
 
+        for(int i=0; i<m_DinoFieldEffect.Length; i++)
+            m_DinoFieldEffect[i].SetActive(false);
+
         m_CardTypeSelect.SetActive(true);
 
         m_JobQueue.Pause();
@@ -293,6 +302,16 @@ public class Battle : MonoBehaviour
         {
             yield return null;
         }
+
+        if (CM_Singleton<GameData>.instance.m_Util.m_Transitioner)
+        {
+            CM_Singleton<GameData>.instance.m_Util.m_Transitioner._transitionCamera = Camera.main;
+            CM_Singleton<GameData>.instance.m_Util.m_Transitioner.TransitionInWithoutChangingScene();
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
+        SetDeck_My();
 
         DebugAdd("# 엔드 셋");
     }
@@ -762,9 +781,12 @@ public class Battle : MonoBehaviour
 
     public void CardMade()
     {
-        SetDeck_My();
+        //SetDeck_My();
 
         m_CardMade.SetActive(false);
+        // 다이노필드 자기장 이펙트 활성
+        for (int i = 0; i < m_DinoFieldEffect.Length; i++)
+            m_DinoFieldEffect[i].SetActive(true);
         m_JobQueue.Resume();
     }
 
@@ -823,7 +845,15 @@ public class Battle : MonoBehaviour
     void OnGUI()
     {
         if (GUI.Button(new Rect(50, 50, 100, 30), "Test"))
-            ShowResult_Win();
+        {
+            //ShowResult_Win();
+            if (CM_Singleton<GameData>.instance.m_Util.m_Transitioner)
+            {
+                CM_Singleton<GameData>.instance.m_Util.m_Transitioner._transitionCamera = Camera.main;
+                CM_Singleton<GameData>.instance.m_Util.m_Transitioner.TransitionInWithoutChangingScene();
+            }
+        }
+            
 
         if (m_bShowLog)
         {

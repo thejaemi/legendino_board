@@ -26,7 +26,7 @@ public class Panel_DeckMade : MonoBehaviour
         m_Label_Special.text = string.Format("{0}", CM_Singleton<GameData>.instance.m_MyInfo.m_Stat_Card.m_Special);
 
         m_Button.SetActive(false);
-        Invoke("ShowButton", 1.0f);
+        Invoke("ShowButton", 2.0f);
     }
 
     void ShowButton()
