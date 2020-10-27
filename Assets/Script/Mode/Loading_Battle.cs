@@ -55,7 +55,7 @@ public class Loading_Battle : MonoBehaviour
 
     IEnumerator Loading()
     {
-        float Sec = 1.0f;
+        float Sec = 3.0f;
         float f = 0.0f;
         float r = 0.0f;
 
@@ -87,8 +87,7 @@ public class Loading_Battle : MonoBehaviour
             CM_Singleton<GameData>.instance.m_Util.m_Transitioner.TransitionInWithoutChangingScene();
         }
     }
-
-    /*
+/*
     private void OnGUI()
     {
         if (GUI.Button(new Rect(50, 50, 100, 100), "Tras"))

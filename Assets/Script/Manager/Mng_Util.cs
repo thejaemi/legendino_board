@@ -8,7 +8,7 @@ public class Mng_Util : MonoBehaviour
 
     private void Awake()
     {
-        //m_Transitioner = (Instantiate(Resources.Load("UI/WiggleDiamondTransitioner"), gameObject.transform) as GameObject).GetComponent<Transitioner>();
+        m_Transitioner = (Instantiate(Resources.Load("UGUI/WiggleDiamondTransitioner"), gameObject.transform) as GameObject).GetComponent<Transitioner>();
     }
 
     // Start is called before the first frame update
