@@ -44,19 +44,19 @@ public class GameData : MonoBehaviour
         m_JobQueue = CM_JobQueue.Make();
 
         (m_Table_Dino = CM_Singleton<Table_Dino>.instance).Load();
-        m_Table_Dino.gameObject.transform.parent = transform;
+        m_Table_Dino.gameObject.transform.SetParent(transform);
 
         (m_Table_QRCode = CM_Singleton<Table_QRCode>.instance).Load();
-        m_Table_QRCode.gameObject.transform.parent = transform;
+        m_Table_QRCode.gameObject.transform.SetParent(transform);
 
         (m_Table_Card = CM_Singleton<Table_Card>.instance).Load();
-        m_Table_Card.gameObject.transform.parent = transform;
+        m_Table_Card.gameObject.transform.SetParent(transform);
 
         (m_Table_Stage = CM_Singleton<Table_Stage>.instance).Load();
-        m_Table_Stage.gameObject.transform.parent = transform;
+        m_Table_Stage.gameObject.transform.SetParent(transform);
 
         (m_Table_Deck = CM_Singleton<Table_Deck>.instance).Load();
-        m_Table_Deck.gameObject.transform.parent = transform;
+        m_Table_Deck.gameObject.transform.SetParent(transform);
 
 
         // save data load

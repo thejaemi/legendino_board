@@ -68,7 +68,7 @@ public class UI_Kerisdiagramm : MonoBehaviour
 
         m_Map.Add(tmp, new Vector2(m_CurRatio, m_CurRatio + ratio));
 
-        Desc.transform.parent = tmp.transform;
+        Desc.transform.SetParent(tmp.transform);
         Desc.GetComponentInChildren<UILabel>().text = desc;
         Desc.transform.rotation = Quaternion.AngleAxis((m_CurRatio + (ratio * 0.5f)) * -360, Vector3.forward);
 
