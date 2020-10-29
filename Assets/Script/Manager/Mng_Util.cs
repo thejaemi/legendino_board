@@ -22,4 +22,13 @@ public class Mng_Util : MonoBehaviour
     {
         
     }
+
+    public void FadeOut()
+    {
+        if (m_Transitioner)
+        {
+            m_Transitioner._transitionCamera = Camera.main;
+            m_Transitioner.TransitionInWithoutChangingScene();
+        }
+    }
 }
