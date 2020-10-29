@@ -54,6 +54,8 @@ public class MainTitle : MonoBehaviour
 
     void SceneMove()
     {
+        CM_Singleton<GameData>.instance.m_UseFadeOut = true;
+
         SceneManager.LoadScene("Lobby");
     }
 }
