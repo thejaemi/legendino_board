@@ -33,8 +33,8 @@ public class Dino
         m_Ratio_Counter = float.Parse(val[10]);
         m_Ratio_Evade = float.Parse(val[11]);
         m_Ratio_Special = float.Parse(val[12]);
-        if ((int)(m_Ratio_Attack + m_Ratio_Defence + m_Ratio_Counter + m_Ratio_Evade + m_Ratio_Special) != 1)
-            Debug.LogErrorFormat("Dino Ratio's Total Not 1  ({0})", m_Ratio_Attack + m_Ratio_Defence + m_Ratio_Counter + m_Ratio_Evade + m_Ratio_Special);
+        if (Mathf.Approximately(1.0f, m_Ratio_Attack + m_Ratio_Defence + m_Ratio_Counter + m_Ratio_Evade + m_Ratio_Special) == false)
+            Debug.LogErrorFormat("Dino {0} Ratio's Total Not 1  ({1})", m_Index, m_Ratio_Attack + m_Ratio_Defence + m_Ratio_Counter + m_Ratio_Evade + m_Ratio_Special);
         m_Ani_Attack = val[13];
         m_Ani_Special = val[14];
     }
