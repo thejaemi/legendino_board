@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Spine.Unity;
 
 public class Test_A : MonoBehaviour
 {
@@ -47,6 +48,35 @@ public class Test_A : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         Debug.Log("Job End");
     }
+
+
+
+    GameObject m_CurDino_My;
+    GameObject m_CurDino_Other;
+    public Transform m_Position_My;
+    public Transform m_Position_Other;
+
+    void TestBattle()
+    {
+        m_CurDino_My = CM_Singleton<GameData>.instance.m_MyDino_Object[CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[0]];
+        m_CurDino_My.transform.SetParent(null);
+        m_CurDino_My.transform.position = m_Position_My.position;
+        m_CurDino_My.transform.localScale = m_Position_My.transform.localScale * 0.015625f;
+        m_CurDino_My.transform.rotation = m_Position_My.rotation;
+        m_CurDino_My.transform.SetParent(m_Position_My);
+
+        m_CurDino_Other = CM_Singleton<GameData>.instance.m_OtherDino_Object[CM_Singleton<GameData>.instance.m_OtherInfo.m_Dino[0]];
+        m_CurDino_Other.transform.SetParent(null);
+        m_CurDino_Other.transform.position = m_Position_Other.position;
+        m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale * 0.015625f;
+        m_CurDino_Other.transform.rotation = m_Position_Other.rotation;
+        m_CurDino_Other.transform.SetParent(m_Position_Other);
+
+        m_CurDino_My.GetComponent<DinoObject>().SetTarget(m_CurDino_Other.transform);
+        m_CurDino_Other.GetComponent<DinoObject>().SetTarget(m_CurDino_My.transform);
+    }
+
+
 
     //private void OnGUI()
     //{
@@ -95,60 +125,90 @@ public class Test_A : MonoBehaviour
 
             if (GUI.Button(new Rect(320, 230, 200, 60), "임시배틀"))
             {
-                CM_Singleton<GameData>.instance.m_StageId = 1;
-                SceneManager.LoadScene("Loading_Battle");
+                //CM_Singleton<GameData>.instance.m_StageId = 1;
+                //SceneManager.LoadScene("Loading_Battle");
+                TestBattle();
             }
-/*
+
             float sy = Screen.height - 600;
 
             GUI.BeginGroup(new Rect(0, sy, 300, 600));
 
             float y = 0f;
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_1"))
-                m_MyDino.SetAnimation("attack_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_2"))
-                m_MyDino.SetAnimation("attack_2");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_3"))
-                m_MyDino.SetAnimation("attack_3");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_4"))
-                m_MyDino.SetAnimation("attack_4");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_1"))
-                m_MyDino.SetAnimation("attackready_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_2"))
-                m_MyDino.SetAnimation("attackready_2");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_3"))
-                m_MyDino.SetAnimation("attackready_3");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_4"))
-                m_MyDino.SetAnimation("attackready_4");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "damage"))
-                m_MyDino.SetAnimation("damage");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "defense"))
-                m_MyDino.SetAnimation("defense");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "die"))
-                m_MyDino.SetAnimation("die");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "dodge"))
-                m_MyDino.SetAnimation("dodge");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "idle"))
-                m_MyDino.SetAnimation("idle");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "natk_1"))
-                m_MyDino.SetAnimation("natk_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "natkready_1"))
-                m_MyDino.SetAnimation("natkready_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "run"))
-                m_MyDino.SetAnimation("run");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "soul"))
-                m_MyDino.SetAnimation("soul");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "special_1"))
-                m_MyDino.SetAnimation("special_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "special_2"))
-                m_MyDino.SetAnimation("special_2");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "specialready_1"))
-                m_MyDino.SetAnimation("specialready_1");
-            if (GUI.Button(new Rect(0, y += 30, 100, 30), "specialready_2"))
-                m_MyDino.SetAnimation("specialready_2");
+            if (GUI.Button(new Rect(0, y += 30, 100, 30), "공격"))
+            {
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[0]].m_Ani_Attack, false);
+                m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+            }
+            if (GUI.Button(new Rect(0, y += 30, 100, 30), "방어"))
+            {
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("defense", false);
+                m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+            }
+            if (GUI.Button(new Rect(0, y += 30, 100, 30), "스페셜"))
+            {
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[0]].m_Ani_Special, false);
+                m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+            }
+            if (GUI.Button(new Rect(0, y += 30, 100, 30), "회피"))
+            {
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("dodge", false);
+                m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+            }
 
             GUI.EndGroup();
-*/
+
+            /*
+                        float sy = Screen.height - 600;
+
+                        GUI.BeginGroup(new Rect(0, sy, 300, 600));
+
+                        float y = 0f;
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_1"))
+                            m_MyDino.SetAnimation("attack_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_2"))
+                            m_MyDino.SetAnimation("attack_2");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_3"))
+                            m_MyDino.SetAnimation("attack_3");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attack_4"))
+                            m_MyDino.SetAnimation("attack_4");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_1"))
+                            m_MyDino.SetAnimation("attackready_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_2"))
+                            m_MyDino.SetAnimation("attackready_2");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_3"))
+                            m_MyDino.SetAnimation("attackready_3");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "attackready_4"))
+                            m_MyDino.SetAnimation("attackready_4");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "damage"))
+                            m_MyDino.SetAnimation("damage");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "defense"))
+                            m_MyDino.SetAnimation("defense");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "die"))
+                            m_MyDino.SetAnimation("die");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "dodge"))
+                            m_MyDino.SetAnimation("dodge");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "idle"))
+                            m_MyDino.SetAnimation("idle");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "natk_1"))
+                            m_MyDino.SetAnimation("natk_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "natkready_1"))
+                            m_MyDino.SetAnimation("natkready_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "run"))
+                            m_MyDino.SetAnimation("run");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "soul"))
+                            m_MyDino.SetAnimation("soul");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "special_1"))
+                            m_MyDino.SetAnimation("special_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "special_2"))
+                            m_MyDino.SetAnimation("special_2");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "specialready_1"))
+                            m_MyDino.SetAnimation("specialready_1");
+                        if (GUI.Button(new Rect(0, y += 30, 100, 30), "specialready_2"))
+                            m_MyDino.SetAnimation("specialready_2");
+
+                        GUI.EndGroup();
+            */
         }
         else if (m_CurMode == EMode.SelectDino || m_CurMode == EMode.SelectDinoOther)
         {
