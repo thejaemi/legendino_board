@@ -25,12 +25,12 @@ public class Panel_Common : MonoBehaviour
 
     public void OnBattle_Quit()
     {
-
+        GameObject.Find("Main").GetComponent<Battle>().EndGame();
     }
 
     public void OnBattle_Cancel()
     {
-
+        m_Dlg_BattleQuit.SetActive(false);
     }
 
     public void OnQuit_OK()
