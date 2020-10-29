@@ -12,7 +12,7 @@ public class Panel_Result : MonoBehaviour
     public SkeletonGraphic m_Spine_Lose;
     public GameObject m_Button;
 
-    void Reset()
+    public void Reset()
     {
         m_Spine_Start.gameObject.SetActive(false);
         m_Spine_Fin.gameObject.SetActive(false);
@@ -54,6 +54,7 @@ public class Panel_Result : MonoBehaviour
     {
         Reset();
         m_Spine_Lose.gameObject.SetActive(true);
+        Invoke("ActiveButton", 2.0f);
     }
 
     public void ActiveButton()
