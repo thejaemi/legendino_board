@@ -54,7 +54,7 @@ public class Panel_StageInfo : MonoBehaviour
             m_Medals[2].gameObject.SetActive(false);
 
 
-        CM_Singleton<GameData>.instance.m_OtherInfo.Clear_Dino();
+        CM_Singleton<GameData>.instance.m_OtherInfo.Reset();
         CM_Singleton<GameData>.instance.Add_OtherDino(stage.m_Dino1);
         CM_Singleton<GameData>.instance.Add_OtherDino(stage.m_Dino2);
         CM_Singleton<GameData>.instance.Add_OtherDino(stage.m_Dino3);
@@ -84,6 +84,8 @@ public class Panel_StageInfo : MonoBehaviour
 
     public void OnClose_Info()
     {
+        CM_Singleton<GameData>.instance.Reset();
+
         gameObject.SetActive(false);
     }
 

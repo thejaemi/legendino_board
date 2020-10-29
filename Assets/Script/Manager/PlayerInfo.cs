@@ -45,6 +45,12 @@ public class PlayerInfo
     public int m_Card_Belt;
     public void Reset_Card() { m_Card_Amulet = 0; m_Card_Ring = 0; m_Card_Glove = 0; m_Card_Map = 0; m_Card_Belt = 0; }
 
+    public void Reset()
+    {
+        m_CurDino = 0;
+        Reset_Card();
+        Clear_Dino();
+    }
 
     public void Add_Dino(int Id)
     {
@@ -62,7 +68,6 @@ public class PlayerInfo
 
     public void Set_Card(int Type, int Id)
     {
-
         switch (Type)
         {
             case 1:

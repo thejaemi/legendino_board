@@ -14,7 +14,7 @@ public class GameData : MonoBehaviour
     public Dictionary<int, GameObject> m_OtherDino_Object = new Dictionary<int, GameObject>();
 
 
-    public CM_JobManager m_JobMng;
+    //public CM_JobManager m_JobMng;
     public CM_JobQueue m_JobQueue;
 
     // for table
@@ -37,11 +37,12 @@ public class GameData : MonoBehaviour
     public SpriteAtlas m_Atlas_UI;
     public SpriteAtlas m_Atlas_Card;
 
+    public bool m_UseFadeOut = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(CM_Dispatcher.instance);
-        m_JobMng = CM_JobManager.Make();
-        m_JobQueue = CM_JobQueue.Make();
+        //m_JobMng = CM_JobManager.Make();
 
         (m_Table_Dino = CM_Singleton<Table_Dino>.instance).Load();
         m_Table_Dino.gameObject.transform.SetParent(transform);
@@ -104,6 +105,14 @@ public class GameData : MonoBehaviour
         
     }
 
+    public void Reset()
+    {
+        m_OtherInfo.Reset();
+        Clear_OtherDino();
+        m_MyInfo.Reset();
+        Clear_MyDino();
+    }
+
     public void Clear_MyDino()
     {
         m_MyInfo.Clear_Dino();
@@ -124,16 +133,18 @@ public class GameData : MonoBehaviour
     {
         Debug.LogFormat("Add MyDino {0}", id);
         m_MyInfo.Add_Dino(id);
+
         //StartCoroutine(LoadDino(id, 0));
-        m_JobQueue.Enqueue(LoadDino(id, 0)).Start();
+        CM_Job.Make(LoadDino(id, 0)).Start();
     }
 
     public void Add_OtherDino(int id)
     {
         Debug.LogFormat("Add OtherDino {0}", id);
         m_OtherInfo.Add_Dino(id);
+
         //StartCoroutine(LoadDino(id, 1));
-        m_JobQueue.Enqueue(LoadDino(id, 1)).Start();
+        CM_Job.Make(LoadDino(id, 1)).Start();
     }
 
     IEnumerator LoadDino(int id, int Owner)
@@ -159,6 +170,22 @@ public class GameData : MonoBehaviour
         m_MyInfo.Add_Dino(2);
         m_MyInfo.Add_Dino(3);
 
+        m_JobQueue = CM_JobQueue.Make();
         m_JobQueue.Enqueue(LoadDino(1, 0)).Enqueue(LoadDino(2, 0)).Enqueue(LoadDino(3, 0)).Start();
+    }
+
+
+    public void StageClear()
+    { 
+        if (GetLocalData("stage", 0) < m_StageId) // 이미 깼던 스테이지 보다 지금 깬 스테이지 값이 더 크면
+        {
+            m_Stage_Step = m_StageId;
+            SetLocalData("stage", m_StageId);    // 갱신
+        }
+    }
+
+    public void ResetStageStep()
+    {
+        SetLocalData("stage", 0);
     }
 }

@@ -15,12 +15,13 @@ public class Battle : MonoBehaviour
     int m_CurDinoPos_My;
     GameObject m_CurDino_My;
     int m_Hp_My;
-    public Image m_Gauge_Hp_My;
+    public UGUI_Gauge m_Gauge_Hp_My;
     public Text m_Label_Hp_My;
     public Image[] m_Image_Deck_My;
     public Text[] m_Label_Deck_My;
     public UGUI_DinoField m_DinoField_My;
     public UGUI_Medal[] m_Medal_My;
+    public GameObject[] m_DeathMark_My;
     public Text m_Label_Attack_My;
     public Text m_Label_Defence_My;
     public Text m_Label_Counter_My;
@@ -31,12 +32,13 @@ public class Battle : MonoBehaviour
     int m_CurDinoPos_Other;
     GameObject m_CurDino_Other;
     int m_Hp_Other;
-    public Image m_Gauge_Hp_Other;
+    public UGUI_Gauge m_Gauge_Hp_Other;
     public Text m_Label_Hp_Other;
     public Image[] m_Image_Deck_Other;
     public Text[] m_Label_Deck_Other;
     public UGUI_DinoField m_DinoField_Other;
     public UGUI_Medal[] m_Medal_Other;
+    public GameObject[] m_DeathMark_Other;
     public Text m_Label_Attack_Other;
     public Text m_Label_Defence_Other;
     public Text m_Label_Counter_Other;
@@ -47,7 +49,10 @@ public class Battle : MonoBehaviour
     //public GameObject m_Label_Ready;
     //public GameObject m_Label_Set;
     //public GameObject m_Label_Spin;
+    bool m_IsInput = false;
     public GameObject m_UI_Counter;
+    public GameObject m_ReadySetSpin;
+    public GameObject[] m_SpinEffect;
 
     public Panel_Result m_Panel_Result;
 
@@ -69,6 +74,7 @@ public class Battle : MonoBehaviour
     public Panel_CardPick m_Panel_CardPick;
     public GameObject m_CardMade;
     public GameObject[] m_DinoFieldEffect;
+    public GameObject[] m_DinoFieldStopEffect;
 
     // main stream
     CM_JobQueue m_JobQueue;
@@ -83,6 +89,8 @@ public class Battle : MonoBehaviour
     {
         m_GameData = CM_Singleton<GameData>.instance;
         m_GameData.m_MyInfo.Reset_Card();
+
+        m_DinoField_My.OnBackLight();
 
         if (m_GameData.m_MyInfo.m_Dino.Count == 0)
         {
@@ -258,22 +266,22 @@ public class Battle : MonoBehaviour
         DebugAdd("# 스타트 레디");
         DebugAdd("  아군 등장");
         if(m_CurDino_My)
-            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run");
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run", true);
         m_Position_My.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
 
         DebugAdd("  적군 등장");
         if(m_CurDino_Other)
-            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run");
+            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run", true);
         m_Position_Other.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
 
         yield return new WaitForSeconds(1.0f);
 
         // 공룡 제자리에-
         if (m_CurDino_My)
-            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle", true);
         m_CurDino_My.GetComponent<DinoObject>().SetTarget(m_CurDino_Other.transform);
         if (m_CurDino_Other)
-            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
+            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle", true);
         m_CurDino_Other.GetComponent<DinoObject>().SetTarget(m_CurDino_My.transform);
 
         yield return new WaitForSeconds(2.0f);
@@ -341,6 +349,21 @@ public class Battle : MonoBehaviour
         DebugAdd("아군 후 패시브");
         DebugAdd("적군 후 패시브");
         DebugAdd("# 엔드 고");
+
+        // 카드 접기
+        for (int i = 0; i < m_Image_Deck_My.Length; i++)
+        {
+            m_Image_Deck_My[i].transform.parent.GetComponent<UGUI_Move>().OnStart(1.0f);
+            m_Image_Deck_My[i].transform.parent.GetComponent<UGUI_Scale>().OnStart(1.0f);
+        }
+
+        for (int i = 0; i < m_Image_Deck_Other.Length; i++)
+        {
+            m_Image_Deck_Other[i].transform.parent.GetComponent<UGUI_Move>().OnStart(1.0f);
+            m_Image_Deck_Other[i].transform.parent.GetComponent<UGUI_Scale>().OnStart(1.0f);
+        }
+
+        yield return new WaitForSeconds(1.5f);
     }
 
     IEnumerator Step_Duel()
@@ -372,14 +395,21 @@ public class Battle : MonoBehaviour
     {
         DebugAdd("# 스타트 결과");
 
-        if (m_CurDinoPos_My == 3)
-            m_Panel_Result.OnLose();
+        m_Panel_Result.gameObject.SetActive(true);
 
-        if (m_CurDinoPos_Other == 3)
-            m_Panel_Result.OnWin();
+        yield return new WaitForEndOfFrame();
 
-        if (m_Position_My == m_Position_Other)
+        if (m_CurDinoPos_My == 3 && m_CurDinoPos_Other == 3)
             m_Panel_Result.OnDraw();
+        else if (m_CurDinoPos_My == 3)
+            m_Panel_Result.OnLose();
+        else if (m_CurDinoPos_Other == 3)
+        {
+            m_GameData.StageClear();
+            m_Panel_Result.OnWin();
+        }
+
+
 
         //yield return new WaitForSeconds(3.0f);
 
@@ -403,18 +433,37 @@ public class Battle : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
+    // spin 연출
+    //https://github.com/mob-sakai/ParticleEffectForUGUI
+
     const int CONST_MAX_COUNT = 3;
+    CM_Job m_Job_Counting;
 
     IEnumerator Duel_WaitInput()
     {
         DebugAdd("# 입력 다이노 필드 스핀 시작");
 
         m_Panel_Blind.gameObject.SetActive(true);
+
+        // 다이노 필드 확대
+        m_DinoField_My.GetComponent<UGUI_Scale>().OnStart(1.0f);
+        m_DinoField_Other.GetComponent<UGUI_Scale>().OnStart(1.0f);
+
+        m_ReadySetSpin.SetActive(true); // 레디 셋 스핀 표시
+
+        yield return new WaitForSeconds(3.0f);
+
+        m_ReadySetSpin.SetActive(false);    // 레디 셋 스핀 감춤
+
+        m_IsInput = false;        // 인풋 대기 활성화
         m_DinoField_My.StartSpin();
         m_DinoField_Other.StartSpin();
+        for (int i = 0; i < m_SpinEffect.Length; i++)
+            m_SpinEffect[i].SetActive(true);
+
 
         m_Count = CONST_MAX_COUNT;
-        CM_Job.Make(Duel_Counting())
+        m_Job_Counting = CM_Job.Make(Duel_Counting())
                 .Repeat(CONST_MAX_COUNT)
                 .NotifyOnJobComplete((object sender, CM_JobEventArgs e) => {
                     DebugAdd(string.Format("input Count {0}", m_Count));
@@ -422,15 +471,23 @@ public class Battle : MonoBehaviour
 
         while (true)
         {
-            if (m_Count == 0)
+            if (m_Count == 0 || m_IsInput)
                 break;
 
             yield return null;
         }
-        
+
+        if(m_Job_Counting.running)
+            m_Job_Counting.Kill();
+
         m_UI_Counter.SetActive(false);
         m_DinoField_My.StopSpin();
         m_DinoField_Other.StopSpin();
+        for (int i = 0; i < m_SpinEffect.Length; i++)
+            m_SpinEffect[i].SetActive(false);
+        for (int i = 0; i < m_DinoFieldStopEffect.Length; i++)
+            m_DinoFieldStopEffect[i].SetActive(true);
+
 
         //yield return new WaitForEndOfFrame();
 
@@ -442,6 +499,10 @@ public class Battle : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);  // 판정 연출 끝 대기
 
+        // 다이노 필드 확대 원복
+        m_DinoField_My.GetComponent<UGUI_Scale>().OnReset();
+        m_DinoField_Other.GetComponent<UGUI_Scale>().OnReset();
+
         m_Dlg_Command_My.Reset();
         m_Dlg_Command_Other.Reset();
 
@@ -450,6 +511,14 @@ public class Battle : MonoBehaviour
         m_Panel_Blind.gameObject.SetActive(false);
 
         DebugAdd("# 입력 대기 종료");
+    }
+
+    public void Input_SpinStop()
+    {
+        if(m_UI_Counter && m_IsInput == false)
+        {
+            m_IsInput = true;
+        }
     }
 
     void CommandCalc(eCommand Command_My, eCommand Command_Other)
@@ -550,7 +619,7 @@ public class Battle : MonoBehaviour
         DebugAdd(string.Format("받은 데미지 {0}", Mathf.Max(0, Damage)));
 
         m_Hp_My = Mathf.Max(0, m_Hp_My - Damage);
-        m_Gauge_Hp_My.fillAmount = m_Hp_My / (float)m_GameData.m_MyInfo.m_Stat.m_Hp;
+        m_Gauge_Hp_My.Set(m_Hp_My / (float)m_GameData.m_MyInfo.m_Stat.m_Hp);
         m_Label_Hp_My.text = m_Hp_My.ToString();
     }
 
@@ -559,7 +628,7 @@ public class Battle : MonoBehaviour
         DebugAdd(string.Format("준 데미지 {0}", Mathf.Max(0, Damage)));
 
         m_Hp_Other = Mathf.Max(0, m_Hp_Other - Mathf.Max(0, Damage));
-        m_Gauge_Hp_Other.fillAmount = m_Hp_Other / (float)m_GameData.m_OtherInfo.m_Stat.m_Hp;
+        m_Gauge_Hp_Other.Set(m_Hp_Other / (float)m_GameData.m_OtherInfo.m_Stat.m_Hp);
         m_Label_Hp_Other.text = m_Hp_Other.ToString();
     }
 
@@ -567,10 +636,13 @@ public class Battle : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
-        --m_Count;
+        if(m_IsInput == false)
+        {
+            --m_Count;
 
-        m_UI_Counter.SetActive(true);
-        m_UI_Counter.GetComponent<Text>().text = m_Count.ToString();
+            m_UI_Counter.SetActive(true);
+            m_UI_Counter.GetComponent<Text>().text = m_Count.ToString();
+        }
     }
 
 
@@ -584,21 +656,23 @@ public class Battle : MonoBehaviour
             {
                 case (int)eCommand.Attack:
                 case (int)eCommand.Counter:
-                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_My[0].m_Id].m_Ani_Attack);
+                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_My[0].m_Id].m_Ani_Attack, false);
                     break;
 
                 case (int)eCommand.Defence:
-                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation("defense");
+                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation("defense", false);
                     break;
 
                 case (int)eCommand.Special:
-                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_My[0].m_Id].m_Ani_Special);
+                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_My[0].m_Id].m_Ani_Special, false);
                     break;
 
                 case (int)eCommand.Evade:
-                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation("dodge");
+                    m_CurDino_My.GetComponent<DinoObject>().SetAnimation("dodge", false);
                     break;
             }
+
+            m_CurDino_My.GetComponent<DinoObject>().AddAnimation("idle", true);
         }
             
 
@@ -608,21 +682,23 @@ public class Battle : MonoBehaviour
             {
                 case (int)eCommand.Attack:
                 case (int)eCommand.Counter:
-                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_Other[0].m_Id].m_Ani_Attack);
+                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_Other[0].m_Id].m_Ani_Attack, false);
                     break;
 
                 case (int)eCommand.Defence:
-                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("defense");
+                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("defense", false);
                     break;
 
                 case (int)eCommand.Special:
-                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_Other[0].m_Id].m_Ani_Special);
+                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation(m_GameData.m_Table_Dino.m_Dic[m_Medal_Other[0].m_Id].m_Ani_Special, false);
                     break;
 
                 case (int)eCommand.Evade:
-                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("dodge");
+                    m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("dodge", false);
                     break;
             }
+
+            m_CurDino_Other.GetComponent<DinoObject>().AddAnimation("idle", true);
         }
 
         yield return new WaitForSeconds(1.0f);
@@ -630,39 +706,39 @@ public class Battle : MonoBehaviour
         if (m_JobQueue_Duel == null)
             yield break;
 
-        m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
-        m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
+        //m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
+        //m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
 
         if (m_Hp_My == 0)
         {
-            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("die");
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("die", true);
             yield return new WaitForSeconds(1.0f);
 
             if(NextDino_My())
             {
-                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run");
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run", true);
                 m_Position_My.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
 
                 yield return new WaitForSeconds(1.0f);
 
-                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
+                m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle", true);
                 m_CurDino_My.GetComponent<DinoObject>().SetTarget(m_CurDino_Other.transform);
             }
         }   
 
         if (m_Hp_Other == 0)
         {
-            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("die");
+            m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("die", true);
             yield return new WaitForSeconds(1.0f);
 
             if(NextDino_Other())
             {
-                m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run");
+                m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run", true);
                 m_Position_Other.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
 
                 yield return new WaitForSeconds(1.0f);
 
-                m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
+                m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle", true);
                 m_CurDino_Other.GetComponent<DinoObject>().SetTarget(m_CurDino_My.transform);
             }
         } 
@@ -677,11 +753,15 @@ public class Battle : MonoBehaviour
 
         ++m_CurDinoPos_My;
         if (m_CurDinoPos_My == 3)
+        {
+            // 다 죽은 
+            m_DeathMark_My[0].SetActive(true);
             return false;
+        }
 
         m_GameData.m_MyInfo.SetCurDino(m_CurDinoPos_My);
         m_Hp_My = m_GameData.m_MyInfo.m_Stat.m_Hp;
-        m_Gauge_Hp_My.fillAmount = m_Hp_My / (float)m_GameData.m_MyInfo.m_Stat.m_Hp;
+        m_Gauge_Hp_My.SetDefault();
         m_Label_Hp_My.text = m_Hp_My.ToString();
 
         m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[m_CurDinoPos_My]];
@@ -695,11 +775,13 @@ public class Battle : MonoBehaviour
         if (m_CurDinoPos_My == 1)
         {            
             m_Medal_My[1].Set(m_GameData.m_MyInfo.m_Dino[0]);           // 죽은 메달을 1 번에 세팅
+            m_DeathMark_My[1].SetActive(true);
         }
 
         if (m_CurDinoPos_My == 2)
         {
             m_Medal_My[2].Set(m_GameData.m_MyInfo.m_Dino[1]);           // 죽은 메달을 2 번에 세팅
+            m_DeathMark_My[2].SetActive(true);
         }
 
         return true;
@@ -711,11 +793,15 @@ public class Battle : MonoBehaviour
 
         ++m_CurDinoPos_Other;
         if (m_CurDinoPos_Other == 3)
+        {
+            // 다 죽은 
+            m_DeathMark_Other[0].SetActive(true);
             return false;
+        }
 
         m_GameData.m_OtherInfo.SetCurDino(m_CurDinoPos_Other);
         m_Hp_Other = m_GameData.m_OtherInfo.m_Stat.m_Hp;
-        m_Gauge_Hp_Other.fillAmount = m_Hp_Other / (float)m_GameData.m_OtherInfo.m_Stat.m_Hp;
+        m_Gauge_Hp_Other.SetDefault();
         m_Label_Hp_Other.text = m_Hp_Other.ToString();
 
         m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[m_CurDinoPos_Other]];
@@ -728,11 +814,13 @@ public class Battle : MonoBehaviour
 
         if (m_CurDinoPos_Other == 1)
         {
+            m_DeathMark_Other[1].SetActive(true);
             m_Medal_Other[1].Set(m_GameData.m_OtherInfo.m_Dino[0]);           // 죽은 메달을 1 번에 세팅
         }
 
         if (m_CurDinoPos_Other == 2)
         {
+            m_DeathMark_Other[2].SetActive(true);
             m_Medal_Other[2].Set(m_GameData.m_OtherInfo.m_Dino[1]);           // 죽은 메달을 2 번에 세팅
         }
 
@@ -801,7 +889,7 @@ public class Battle : MonoBehaviour
     }
 
     #endregion
-
+/*
     void HideResult()
     {
         m_Panel_Result.gameObject.SetActive(false);
@@ -824,9 +912,16 @@ public class Battle : MonoBehaviour
         m_Panel_Result.gameObject.SetActive(true);
         m_Panel_Result.OnLose();
     }
-
+*/
     public void EndGame()
     {
+        if(m_JobQueue != null && m_JobQueue.running)
+            m_JobQueue.Pause();
+        if (m_JobQueue_Duel != null && m_JobQueue_Duel.running)
+            m_JobQueue_Duel.Pause();
+        if (m_Job_Counting != null && m_Job_Counting.running)
+            m_Job_Counting.Pause();
+
         SceneManager.LoadScene("Lobby");
     }
 
@@ -844,16 +939,30 @@ public class Battle : MonoBehaviour
 
     void OnGUI()
     {
+#if UNITY_EDITOR
+
         if (GUI.Button(new Rect(50, 50, 100, 30), "Test"))
         {
-            //ShowResult_Win();
+            m_GameData.StageClear();
+            EndGame();
+
+//            m_Panel_Result.OnWin();
+
+            /*
             if (CM_Singleton<GameData>.instance.m_Util.m_Transitioner)
             {
                 CM_Singleton<GameData>.instance.m_Util.m_Transitioner._transitionCamera = Camera.main;
                 CM_Singleton<GameData>.instance.m_Util.m_Transitioner.TransitionInWithoutChangingScene();
             }
+            */
         }
-            
+
+        if (GUI.Button(new Rect(50, 100, 100, 30), "SpeedUp"))
+            Time.timeScale = 10.0f;
+        if (GUI.Button(new Rect(50, 150, 100, 30), "SpeedDown"))
+            Time.timeScale = 1.0f;
+
+
 
         if (m_bShowLog)
         {
@@ -868,6 +977,7 @@ public class Battle : MonoBehaviour
                 GUI.Label(new Rect(0, i * 20.0f, nScrW, 20.0f), (string)m_sDebug[i]);
             GUI.EndGroup();
         }
+#endif
     }
 
     #endregion
