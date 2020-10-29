@@ -651,4 +651,9 @@ public class DinoObject : MonoBehaviour
         m_skeletonAnimation.AnimationName = Name;
         m_skeletonAnimation.loop = Loop;
     }
+
+    public void AddAnimation(string Name, bool Loop)
+    {
+        m_skeletonAnimation.AnimationState.AddAnimation(0, Name, Loop, 0.0f);
+    }
 }
