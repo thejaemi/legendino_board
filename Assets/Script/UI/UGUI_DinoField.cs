@@ -6,6 +6,8 @@ public class UGUI_DinoField : MonoBehaviour
 {
     public UGUI_Medal m_Medal;
     public GameObject m_SpinBase;
+    public GameObject m_BackLight;
+    public GameObject m_Arrow;
     private Dinosaur m_dinosaur;
     public bool m_ShowTool = false;
 
@@ -38,12 +40,29 @@ public class UGUI_DinoField : MonoBehaviour
 
     public void StartSpin()
     {
+        OnArrow();
         m_Medal.OnSpin();
     }
 
     public void StopSpin()
     {
+        Invoke("OffArrow", 1.5f);
         m_Medal.OffSpin();
+    }
+
+    public void OnBackLight()
+    {
+        m_BackLight.SetActive(true);
+    }
+
+    void OnArrow()
+    {
+        m_Arrow.SetActive(true);
+    }
+
+    void OffArrow()
+    {
+        m_Arrow.SetActive(false);
     }
 
     public Dino GetDino()
