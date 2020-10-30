@@ -108,16 +108,19 @@ public partial class SoundManagerEditor : Editor {
 			}
 			
 			script.audios[0].hideFlags = HideFlags.HideInInspector;
-			script.audios[1].hideFlags = HideFlags.HideInInspector;
+            if(script.audios[1])
+			    script.audios[1].hideFlags = HideFlags.HideInInspector;
 			
 			SoundManagerTools.make2D(ref script.audios[0]);
 			SoundManagerTools.make2D(ref script.audios[1]);
 			
 			script.audios[0].volume = 0f;
-			script.audios[1].volume = 0f;
+            if(script.audios[1])
+			    script.audios[1].volume = 0f;
 			
 			script.audios[0].ignoreListenerVolume = true;
-			script.audios[1].ignoreListenerVolume = true;
+            if(script.audios[1])
+			    script.audios[1].ignoreListenerVolume = true;
 		}
 		
 		for(int i = 0; i < script.soundConnections.Count ; i++)
