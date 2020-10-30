@@ -18,6 +18,11 @@ public class TargetDinoEffectController : DinoEffectController
     private Vector3 m_originLocalScale;
     // private Vector3 m_originLocalEulerAngles;
 
+    private void Awake()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
     public void SetOriginParent()
     {
         // Debug.Log(transform.parent.name);
