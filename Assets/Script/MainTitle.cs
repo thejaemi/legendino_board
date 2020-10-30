@@ -7,21 +7,30 @@ using TBEasyWebCam;
 public class MainTitle : MonoBehaviour
 {
     public const string CAMERA_ACCESS_PERMISSION = "android.permission.CAMERA";
+    public GameObject m_Splash;
     public SimpleAnimation_Stop m_AniCtrl;
     public GameObject m_Button;
 
     private void Awake()
     {
+        Screen.SetResolution(720, 1280, false);
+
         if (CM_Singleton<GameData>.instance)
             Debug.Log("Create GameData");
+
+        SoundManager.SetVolumeMusic(0.3f);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         bool granted = CameraPermissionsController.IsPermissionGranted(CAMERA_ACCESS_PERMISSION);
-        if(!granted)
+        if (!granted)
             RequestCameraPermission();
+
+        yield return new WaitForSeconds(2.0f);
+
+        CM_Singleton<GameData>.instance.m_Util.FadeOut();
+        m_Splash.SetActive(false);
     }
 
     private void RequestCameraPermission()
