@@ -451,7 +451,7 @@ public class Battle : MonoBehaviour
         m_Set.SetActive(false);
         m_Spin.SetActive(false);
         m_ReadySetSpin.SetActive(true); // 레디 셋 스핀 표시
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
 
         m_IsInput = false;              // 인풋 대기 활성화
 
@@ -740,7 +740,7 @@ public class Battle : MonoBehaviour
             }
         } 
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         DebugAdd("# 엔드 전투 연출");
     }
 
