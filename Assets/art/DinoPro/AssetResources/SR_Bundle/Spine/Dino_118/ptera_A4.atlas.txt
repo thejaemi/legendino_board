@@ -1,0 +1,97 @@
+
+ptera_A4.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ptera_A3/eff01
+  rotate: false
+  xy: 856, 332
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+ptera_A3/eff_02
+  rotate: false
+  xy: 477, 25
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+ptera_A4/Layer 0 copy
+  rotate: true
+  xy: 625, 60
+  size: 80, 162
+  orig: 80, 162
+  offset: 0, 0
+  index: -1
+ptera_A4/Layer 1
+  rotate: false
+  xy: 856, 148
+  size: 134, 182
+  orig: 134, 182
+  offset: 0, 0
+  index: -1
+ptera_A4/body_0
+  rotate: true
+  xy: 317, 6
+  size: 134, 158
+  orig: 134, 158
+  offset: 0, 0
+  index: -1
+ptera_A4/chin_0
+  rotate: false
+  xy: 911, 37
+  size: 76, 109
+  orig: 76, 109
+  offset: 0, 0
+  index: -1
+ptera_A4/eye_0
+  rotate: true
+  xy: 477, 2
+  size: 21, 50
+  orig: 21, 50
+  offset: 0, 0
+  index: -1
+ptera_A4/head_0
+  rotate: true
+  xy: 2, 49
+  size: 91, 313
+  orig: 91, 313
+  offset: 0, 0
+  index: -1
+ptera_A4/head_1
+  rotate: true
+  xy: 2, 9
+  size: 38, 101
+  orig: 38, 101
+  offset: 0, 0
+  index: -1
+ptera_A4/l_arm_0
+  rotate: false
+  xy: 2, 327
+  size: 781, 183
+  orig: 781, 183
+  offset: 0, 0
+  index: -1
+ptera_A4/l_arm_1
+  rotate: false
+  xy: 2, 142
+  size: 781, 183
+  orig: 781, 183
+  offset: 0, 0
+  index: -1
+ptera_A4/neck_0
+  rotate: true
+  xy: 789, 51
+  size: 95, 120
+  orig: 95, 120
+  offset: 0, 0
+  index: -1
+ptera_A4/tail_0
+  rotate: true
+  xy: 785, 159
+  size: 351, 69
+  orig: 351, 69
+  offset: 0, 0
+  index: -1

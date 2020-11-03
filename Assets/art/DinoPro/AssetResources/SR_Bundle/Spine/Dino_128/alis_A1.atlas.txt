@@ -1,0 +1,111 @@
+
+alis_A1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+alis_A1/body_0
+  rotate: false
+  xy: 740, 776
+  size: 253, 242
+  orig: 253, 242
+  offset: 0, 0
+  index: -1
+alis_A1/chin_0
+  rotate: false
+  xy: 740, 206
+  size: 157, 119
+  orig: 157, 119
+  offset: 0, 0
+  index: -1
+alis_A1/chin_1
+  rotate: false
+  xy: 2, 2
+  size: 84, 53
+  orig: 84, 53
+  offset: 0, 0
+  index: -1
+alis_A1/eff_02
+  rotate: true
+  xy: 567, 48
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+alis_A1/eff_1
+  rotate: true
+  xy: 862, 331
+  size: 55, 73
+  orig: 55, 73
+  offset: 0, 0
+  index: -1
+alis_A1/eye_0
+  rotate: false
+  xy: 88, 23
+  size: 35, 32
+  orig: 35, 32
+  offset: 0, 0
+  index: -1
+alis_A1/head_0
+  rotate: true
+  xy: 871, 592
+  size: 182, 139
+  orig: 182, 139
+  offset: 0, 0
+  index: -1
+alis_A1/head_1
+  rotate: false
+  xy: 862, 388
+  size: 115, 82
+  orig: 115, 82
+  offset: 0, 0
+  index: -1
+alis_A1/l_arm_0
+  rotate: false
+  xy: 2, 196
+  size: 367, 822
+  orig: 367, 822
+  offset: 0, 0
+  index: -1
+alis_A1/l_leg_0
+  rotate: false
+  xy: 740, 548
+  size: 129, 226
+  orig: 129, 226
+  offset: 0, 0
+  index: -1
+alis_A1/l_leg_1
+  rotate: false
+  xy: 871, 472
+  size: 133, 118
+  orig: 133, 118
+  offset: 0, 0
+  index: -1
+alis_A1/l_leg_2
+  rotate: false
+  xy: 740, 327
+  size: 120, 219
+  orig: 120, 219
+  offset: 0, 0
+  index: -1
+alis_A1/neck_0
+  rotate: false
+  xy: 747, 39
+  size: 170, 165
+  orig: 170, 165
+  offset: 0, 0
+  index: -1
+alis_A1/r_arm_0
+  rotate: false
+  xy: 371, 196
+  size: 367, 822
+  orig: 367, 822
+  offset: 0, 0
+  index: -1
+alis_A1/tail_0
+  rotate: false
+  xy: 2, 57
+  size: 563, 137
+  orig: 563, 137
+  offset: 0, 0
+  index: -1

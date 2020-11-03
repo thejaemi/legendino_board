@@ -1,0 +1,83 @@
+
+ank_2.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ank/body_0
+  rotate: false
+  xy: 2, 36
+  size: 241, 218
+  orig: 241, 218
+  offset: 0, 0
+  index: -1
+ank/chin_0
+  rotate: false
+  xy: 451, 137
+  size: 159, 117
+  orig: 159, 117
+  offset: 0, 0
+  index: -1
+ank/chin_1
+  rotate: false
+  xy: 479, 60
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+ank/eff01
+  rotate: true
+  xy: 366, 34
+  size: 68, 111
+  orig: 68, 111
+  offset: 0, 0
+  index: -1
+ank/eff_02
+  rotate: false
+  xy: 612, 139
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+ank/eye_0
+  rotate: false
+  xy: 556, 86
+  size: 54, 49
+  orig: 54, 49
+  offset: 0, 0
+  index: -1
+ank/haed_1
+  rotate: false
+  xy: 245, 32
+  size: 119, 70
+  orig: 119, 70
+  offset: 0, 0
+  index: -1
+ank/head_0
+  rotate: false
+  xy: 245, 104
+  size: 204, 150
+  orig: 204, 150
+  offset: 0, 0
+  index: -1
+ank/head_2
+  rotate: false
+  xy: 366, 2
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+ank/l_arm_0
+  rotate: true
+  xy: 760, 123
+  size: 131, 142
+  orig: 131, 142
+  offset: 0, 0
+  index: -1
+ank/r_arm_0
+  rotate: false
+  xy: 904, 110
+  size: 99, 144
+  orig: 99, 144
+  offset: 0, 0
+  index: -1

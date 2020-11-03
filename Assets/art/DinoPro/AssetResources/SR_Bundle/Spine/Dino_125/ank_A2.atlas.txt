@@ -1,0 +1,97 @@
+
+ank_A2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ank_A/body_0
+  rotate: false
+  xy: 2, 266
+  size: 311, 414
+  orig: 311, 414
+  offset: 0, 0
+  index: -1
+ank_A/body_1
+  rotate: false
+  xy: 539, 776
+  size: 409, 238
+  orig: 409, 238
+  offset: 0, 0
+  index: -1
+ank_A/chin_0
+  rotate: false
+  xy: 675, 478
+  size: 179, 150
+  orig: 179, 150
+  offset: 0, 0
+  index: -1
+ank_A/chin_1
+  rotate: false
+  xy: 315, 266
+  size: 145, 74
+  orig: 145, 74
+  offset: 0, 0
+  index: -1
+ank_A/eff_02
+  rotate: false
+  xy: 675, 361
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+ank_A/eye_0
+  rotate: false
+  xy: 950, 990
+  size: 45, 24
+  orig: 45, 24
+  offset: 0, 0
+  index: -1
+ank_A/head_0
+  rotate: false
+  xy: 675, 630
+  size: 224, 144
+  orig: 224, 144
+  offset: 0, 0
+  index: -1
+ank_A/head_1
+  rotate: false
+  xy: 316, 186
+  size: 116, 78
+  orig: 116, 78
+  offset: 0, 0
+  index: -1
+ank_A/head_2
+  rotate: false
+  xy: 2, 2
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+ank_A/l_arm_0
+  rotate: false
+  xy: 2, 682
+  size: 535, 332
+  orig: 535, 332
+  offset: 0, 0
+  index: -1
+ank_A/neck_0
+  rotate: false
+  xy: 315, 342
+  size: 225, 338
+  orig: 225, 338
+  offset: 0, 0
+  index: -1
+ank_A/r_arm_0
+  rotate: true
+  xy: 2, 34
+  size: 230, 312
+  orig: 230, 312
+  offset: 0, 0
+  index: -1
+ank_A/tail_0
+  rotate: false
+  xy: 542, 393
+  size: 131, 381
+  orig: 131, 381
+  offset: 0, 0
+  index: -1

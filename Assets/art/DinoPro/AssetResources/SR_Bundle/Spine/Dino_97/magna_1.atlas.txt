@@ -1,0 +1,76 @@
+
+magna_1.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group 8 copy
+  rotate: true
+  xy: 123, 28
+  size: 40, 67
+  orig: 40, 67
+  offset: 0, 0
+  index: -1
+aMix_02_00006
+  rotate: false
+  xy: 2, 26
+  size: 119, 42
+  orig: 119, 42
+  offset: 0, 0
+  index: -1
+magna1/body_0
+  rotate: false
+  xy: 2, 100
+  size: 211, 154
+  orig: 211, 154
+  offset: 0, 0
+  index: -1
+magna1/chin_0
+  rotate: false
+  xy: 393, 48
+  size: 84, 91
+  orig: 84, 91
+  offset: 0, 0
+  index: -1
+magna1/eff_01
+  rotate: false
+  xy: 2, 70
+  size: 318, 28
+  orig: 318, 28
+  offset: 0, 0
+  index: -1
+magna1/eye_0
+  rotate: false
+  xy: 192, 32
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: -1
+magna1/head_0
+  rotate: true
+  xy: 215, 106
+  size: 148, 167
+  orig: 148, 167
+  offset: 0, 0
+  index: -1
+magna1/l_arm_0
+  rotate: false
+  xy: 384, 141
+  size: 94, 113
+  orig: 94, 113
+  offset: 0, 0
+  index: -1
+magna1/l_leg_0
+  rotate: false
+  xy: 322, 2
+  size: 69, 102
+  orig: 69, 102
+  offset: 0, 0
+  index: -1
+mix_smoke_00000
+  rotate: false
+  xy: 393, 6
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1

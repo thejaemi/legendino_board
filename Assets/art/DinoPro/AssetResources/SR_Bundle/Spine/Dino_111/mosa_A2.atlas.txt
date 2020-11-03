@@ -1,0 +1,104 @@
+
+mosa_A2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+mosa_A2/body_0
+  rotate: false
+  xy: 2, 567
+  size: 644, 453
+  orig: 644, 453
+  offset: 0, 0
+  index: -1
+mosa_A2/chin_0
+  rotate: true
+  xy: 659, 163
+  size: 194, 130
+  orig: 194, 130
+  offset: 0, 0
+  index: -1
+mosa_A2/chin_1
+  rotate: false
+  xy: 544, 35
+  size: 102, 61
+  orig: 102, 61
+  offset: 0, 0
+  index: -1
+mosa_A2/eff_01
+  rotate: false
+  xy: 748, 365
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+mosa_A2/eff_02
+  rotate: true
+  xy: 791, 217
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+mosa_A2/eye_0
+  rotate: false
+  xy: 2, 2
+  size: 69, 27
+  orig: 69, 27
+  offset: 0, 0
+  index: -1
+mosa_A2/head_0
+  rotate: true
+  xy: 544, 98
+  size: 208, 113
+  orig: 208, 113
+  offset: 0, 0
+  index: -1
+mosa_A2/head_1
+  rotate: true
+  xy: 913, 910
+  size: 110, 65
+  orig: 110, 65
+  offset: 0, 0
+  index: -1
+mosa_A2/head_2
+  rotate: false
+  xy: 659, 113
+  size: 110, 48
+  orig: 110, 48
+  offset: 0, 0
+  index: -1
+mosa_A2/l_arm_0
+  rotate: false
+  xy: 2, 308
+  size: 599, 257
+  orig: 599, 257
+  offset: 0, 0
+  index: -1
+mosa_A2/l_shoulder_0
+  rotate: false
+  xy: 648, 545
+  size: 265, 235
+  orig: 265, 235
+  offset: 0, 0
+  index: -1
+mosa_A2/neck_0
+  rotate: false
+  xy: 603, 359
+  size: 143, 184
+  orig: 143, 184
+  offset: 0, 0
+  index: -1
+mosa_A2/r_arm_0
+  rotate: false
+  xy: 2, 31
+  size: 540, 275
+  orig: 540, 275
+  offset: 0, 0
+  index: -1
+mosa_A2/r_shoulder_0
+  rotate: false
+  xy: 648, 782
+  size: 263, 238
+  orig: 263, 238
+  offset: 0, 0
+  index: -1

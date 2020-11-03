@@ -1,0 +1,111 @@
+
+ptera_3.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ptera_3/body_0
+  rotate: false
+  xy: 422, 147
+  size: 97, 105
+  orig: 97, 105
+  offset: 0, 0
+  index: -1
+ptera_3/chin_0
+  rotate: false
+  xy: 652, 190
+  size: 69, 62
+  orig: 69, 62
+  offset: 0, 0
+  index: -1
+ptera_3/eff01
+  rotate: true
+  xy: 160, 24
+  size: 68, 111
+  orig: 68, 111
+  offset: 0, 0
+  index: -1
+ptera_3/eff_02
+  rotate: false
+  xy: 274, 137
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+ptera_3/eye_0
+  rotate: false
+  xy: 521, 149
+  size: 26, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1
+ptera_3/head_0
+  rotate: false
+  xy: 160, 94
+  size: 112, 158
+  orig: 112, 158
+  offset: 0, 0
+  index: -1
+ptera_3/head_1
+  rotate: true
+  xy: 723, 202
+  size: 50, 81
+  orig: 50, 81
+  offset: 0, 0
+  index: -1
+ptera_3/l_arm_0
+  rotate: false
+  xy: 2, 128
+  size: 156, 124
+  orig: 156, 124
+  offset: 0, 0
+  index: -1
+ptera_3/l_arm_1
+  rotate: false
+  xy: 2, 2
+  size: 156, 124
+  orig: 156, 124
+  offset: 0, 0
+  index: -1
+ptera_3/l_leg_0
+  rotate: true
+  xy: 863, 209
+  size: 43, 57
+  orig: 43, 57
+  offset: 0, 0
+  index: -1
+ptera_3/l_leg_1
+  rotate: false
+  xy: 273, 67
+  size: 33, 25
+  orig: 33, 25
+  offset: 0, 0
+  index: -1
+ptera_3/l_leg_2
+  rotate: true
+  xy: 806, 202
+  size: 50, 55
+  orig: 50, 55
+  offset: 0, 0
+  index: -1
+ptera_3/r_leg_0
+  rotate: true
+  xy: 274, 94
+  size: 41, 50
+  orig: 41, 50
+  offset: 0, 0
+  index: -1
+ptera_3/r_leg_1
+  rotate: false
+  xy: 922, 227
+  size: 33, 25
+  orig: 33, 25
+  offset: 0, 0
+  index: -1
+ptera_3/tail_0
+  rotate: false
+  xy: 521, 184
+  size: 129, 68
+  orig: 129, 68
+  offset: 0, 0
+  index: -1

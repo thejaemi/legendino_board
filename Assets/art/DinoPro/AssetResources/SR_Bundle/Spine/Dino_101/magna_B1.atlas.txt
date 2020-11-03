@@ -1,0 +1,138 @@
+
+magna_B1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aMix_02_00006
+  rotate: false
+  xy: 442, 558
+  size: 119, 42
+  orig: 119, 42
+  offset: 0, 0
+  index: -1
+magna_B1/body_0
+  rotate: false
+  xy: 2, 602
+  size: 600, 420
+  orig: 600, 420
+  offset: 0, 0
+  index: -1
+magna_B1/body_1
+  rotate: true
+  xy: 442, 2
+  size: 462, 267
+  orig: 462, 267
+  offset: 0, 0
+  index: -1
+magna_B1/chin_1
+  rotate: false
+  xy: 2, 2
+  size: 100, 65
+  orig: 100, 65
+  offset: 0, 0
+  index: -1
+magna_B1/eff_01
+  rotate: true
+  xy: 958, 704
+  size: 318, 28
+  orig: 318, 28
+  offset: 0, 0
+  index: -1
+magna_B1/eye_0
+  rotate: true
+  xy: 958, 664
+  size: 38, 23
+  orig: 38, 23
+  offset: 0, 0
+  index: -1
+magna_B1/l_arm_0
+  rotate: false
+  xy: 604, 466
+  size: 352, 556
+  orig: 352, 556
+  offset: 0, 0
+  index: -1
+magna_B1/r_arm_0
+  rotate: false
+  xy: 2, 69
+  size: 438, 531
+  orig: 438, 531
+  offset: 0, 0
+  index: -1
+magna_B1/tail_0
+  rotate: true
+  xy: 711, 83
+  size: 381, 226
+  orig: 381, 226
+  offset: 0, 0
+  index: -1
+mix_smoke_00000
+  rotate: false
+  xy: 711, 41
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+
+magna_B12.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+magna_B1/body_2
+  rotate: false
+  xy: 2, 784
+  size: 603, 231
+  orig: 603, 231
+  offset: 0, 0
+  index: -1
+magna_B1/chin_0
+  rotate: false
+  xy: 473, 555
+  size: 201, 227
+  orig: 201, 227
+  offset: 0, 0
+  index: -1
+magna_B1/head_0
+  rotate: false
+  xy: 2, 473
+  size: 232, 309
+  orig: 232, 309
+  offset: 0, 0
+  index: -1
+magna_B1/head_2
+  rotate: false
+  xy: 676, 611
+  size: 152, 199
+  orig: 152, 199
+  offset: 0, 0
+  index: -1
+magna_B1/l_leg_0
+  rotate: true
+  xy: 607, 812
+  size: 203, 274
+  orig: 203, 274
+  offset: 0, 0
+  index: -1
+magna_B1/l_leg_1
+  rotate: true
+  xy: 2, 2
+  size: 191, 155
+  orig: 191, 155
+  offset: 0, 0
+  index: -1
+magna_B1/l_leg_2
+  rotate: false
+  xy: 236, 502
+  size: 235, 280
+  orig: 235, 280
+  offset: 0, 0
+  index: -1
+magna_B1/neck_0
+  rotate: false
+  xy: 2, 195
+  size: 167, 276
+  orig: 167, 276
+  offset: 0, 0
+  index: -1

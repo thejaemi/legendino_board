@@ -1,0 +1,111 @@
+
+gladio_A3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gladio_A3/body_0
+  rotate: false
+  xy: 2, 810
+  size: 351, 200
+  orig: 351, 200
+  offset: 0, 0
+  index: -1
+gladio_A3/chin_0
+  rotate: false
+  xy: 588, 866
+  size: 140, 95
+  orig: 140, 95
+  offset: 0, 0
+  index: -1
+gladio_A3/eff_02
+  rotate: false
+  xy: 596, 686
+  size: 146, 178
+  orig: 146, 178
+  offset: 0, 0
+  index: -1
+gladio_A3/eye_0
+  rotate: false
+  xy: 387, 584
+  size: 39, 17
+  orig: 39, 17
+  offset: 0, 0
+  index: -1
+gladio_A3/head_0
+  rotate: false
+  xy: 172, 405
+  size: 193, 171
+  orig: 193, 171
+  offset: 0, 0
+  index: -1
+gladio_A3/head_1
+  rotate: false
+  xy: 754, 962
+  size: 90, 48
+  orig: 90, 48
+  offset: 0, 0
+  index: -1
+gladio_A3/head_2
+  rotate: true
+  xy: 2, 2
+  size: 29, 91
+  orig: 29, 91
+  offset: 0, 0
+  index: -1
+gladio_A3/l_arm_0
+  rotate: false
+  xy: 2, 516
+  size: 168, 292
+  orig: 168, 292
+  offset: 0, 0
+  index: -1
+gladio_A3/l_arm_1
+  rotate: false
+  xy: 2, 33
+  size: 220, 226
+  orig: 220, 226
+  offset: 0, 0
+  index: -1
+gladio_A3/l_leg_0
+  rotate: true
+  xy: 355, 816
+  size: 145, 231
+  orig: 145, 231
+  offset: 0, 0
+  index: -1
+gladio_A3/l_leg_1
+  rotate: false
+  xy: 387, 603
+  size: 207, 211
+  orig: 207, 211
+  offset: 0, 0
+  index: -1
+gladio_A3/neck_0
+  rotate: false
+  xy: 596, 512
+  size: 163, 172
+  orig: 163, 172
+  offset: 0, 0
+  index: -1
+gladio_A3/r_arm_0
+  rotate: false
+  xy: 2, 261
+  size: 158, 253
+  orig: 158, 253
+  offset: 0, 0
+  index: -1
+gladio_A3/r_arm_1
+  rotate: true
+  xy: 172, 578
+  size: 230, 213
+  orig: 230, 213
+  offset: 0, 0
+  index: -1
+gladio_A3/tail_0
+  rotate: false
+  xy: 355, 963
+  size: 397, 47
+  orig: 397, 47
+  offset: 0, 0
+  index: -1

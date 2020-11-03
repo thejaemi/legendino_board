@@ -1,0 +1,131 @@
+
+magna_B3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aMix_02_00006
+  rotate: false
+  xy: 424, 519
+  size: 119, 42
+  orig: 119, 42
+  offset: 0, 0
+  index: -1
+magna_B1/eff_01
+  rotate: true
+  xy: 973, 699
+  size: 318, 28
+  orig: 318, 28
+  offset: 0, 0
+  index: -1
+magna_B3/body_0
+  rotate: true
+  xy: 2, 164
+  size: 600, 420
+  orig: 600, 420
+  offset: 0, 0
+  index: -1
+magna_B3/body_2
+  rotate: false
+  xy: 2, 766
+  size: 615, 251
+  orig: 615, 251
+  offset: 0, 0
+  index: -1
+magna_B3/chin_0
+  rotate: true
+  xy: 424, 563
+  size: 201, 182
+  orig: 201, 182
+  offset: 0, 0
+  index: -1
+magna_B3/chin_1
+  rotate: true
+  xy: 545, 461
+  size: 100, 65
+  orig: 100, 65
+  offset: 0, 0
+  index: -1
+magna_B3/eye_0
+  rotate: true
+  xy: 466, 479
+  size: 38, 23
+  orig: 38, 23
+  offset: 0, 0
+  index: -1
+magna_B3/l_arm_0
+  rotate: false
+  xy: 619, 415
+  size: 352, 602
+  orig: 352, 602
+  offset: 0, 0
+  index: -1
+magna_B3/l_leg_1
+  rotate: false
+  xy: 2, 7
+  size: 191, 155
+  orig: 191, 155
+  offset: 0, 0
+  index: -1
+magna_B3/r_arm_0
+  rotate: true
+  xy: 424, 2
+  size: 411, 577
+  orig: 411, 577
+  offset: 0, 0
+  index: -1
+mix_smoke_00000
+  rotate: false
+  xy: 424, 477
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+
+magna_B32.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+magna_B3/body_1
+  rotate: false
+  xy: 2, 230
+  size: 493, 262
+  orig: 493, 262
+  offset: 0, 0
+  index: -1
+magna_B3/head_0
+  rotate: false
+  xy: 779, 266
+  size: 240, 226
+  orig: 240, 226
+  offset: 0, 0
+  index: -1
+magna_B3/l_leg_0
+  rotate: true
+  xy: 385, 25
+  size: 203, 274
+  orig: 203, 274
+  offset: 0, 0
+  index: -1
+magna_B3/l_leg_2
+  rotate: true
+  xy: 497, 257
+  size: 235, 280
+  orig: 235, 280
+  offset: 0, 0
+  index: -1
+magna_B3/neck_0
+  rotate: true
+  xy: 661, 88
+  size: 167, 276
+  orig: 167, 276
+  offset: 0, 0
+  index: -1
+magna_B3/tail_0
+  rotate: false
+  xy: 2, 2
+  size: 381, 226
+  orig: 381, 226
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,104 @@
+
+magna_A1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aMix_02_00006
+  rotate: false
+  xy: 2, 2
+  size: 119, 42
+  orig: 119, 42
+  offset: 0, 0
+  index: -1
+magna_A1/body_0
+  rotate: false
+  xy: 2, 759
+  size: 555, 251
+  orig: 555, 251
+  offset: 0, 0
+  index: -1
+magna_A1/body_1
+  rotate: false
+  xy: 559, 814
+  size: 463, 196
+  orig: 463, 196
+  offset: 0, 0
+  index: -1
+magna_A1/body_2
+  rotate: false
+  xy: 2, 46
+  size: 212, 153
+  orig: 212, 153
+  offset: 0, 0
+  index: -1
+magna_A1/chin_0
+  rotate: false
+  xy: 584, 633
+  size: 162, 149
+  orig: 162, 149
+  offset: 0, 0
+  index: -1
+magna_A1/chin_1
+  rotate: false
+  xy: 328, 526
+  size: 36, 30
+  orig: 36, 30
+  offset: 0, 0
+  index: -1
+magna_A1/eff_01
+  rotate: false
+  xy: 559, 784
+  size: 318, 28
+  orig: 318, 28
+  offset: 0, 0
+  index: -1
+magna_A1/eye_0
+  rotate: false
+  xy: 748, 752
+  size: 44, 30
+  orig: 44, 30
+  offset: 0, 0
+  index: -1
+magna_A1/head_0
+  rotate: false
+  xy: 231, 558
+  size: 191, 199
+  orig: 191, 199
+  offset: 0, 0
+  index: -1
+magna_A1/head_1
+  rotate: false
+  xy: 231, 488
+  size: 95, 68
+  orig: 95, 68
+  offset: 0, 0
+  index: -1
+magna_A1/l_arm_0
+  rotate: false
+  xy: 2, 458
+  size: 227, 299
+  orig: 227, 299
+  offset: 0, 0
+  index: -1
+magna_A1/l_leg_0
+  rotate: false
+  xy: 2, 201
+  size: 203, 255
+  orig: 203, 255
+  offset: 0, 0
+  index: -1
+magna_A1/neck_0
+  rotate: false
+  xy: 424, 564
+  size: 158, 193
+  orig: 158, 193
+  offset: 0, 0
+  index: -1
+mix_smoke_00000
+  rotate: false
+  xy: 584, 591
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1

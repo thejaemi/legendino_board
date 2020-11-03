@@ -1,0 +1,76 @@
+
+mosa_4.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+mosa_2/eff01
+  rotate: false
+  xy: 817, 124
+  size: 68, 111
+  orig: 68, 111
+  offset: 0, 0
+  index: -1
+mosa_2/eff_01
+  rotate: false
+  xy: 531, 120
+  size: 146, 115
+  orig: 146, 115
+  offset: 0, 0
+  index: -1
+mosa_4/body_0
+  rotate: false
+  xy: 2, 2
+  size: 214, 233
+  orig: 214, 233
+  offset: 0, 0
+  index: -1
+mosa_4/chin_0
+  rotate: false
+  xy: 679, 116
+  size: 136, 119
+  orig: 136, 119
+  offset: 0, 0
+  index: -1
+mosa_4/chin_1
+  rotate: true
+  xy: 942, 132
+  size: 38, 51
+  orig: 38, 51
+  offset: 0, 0
+  index: -1
+mosa_4/eye_0
+  rotate: false
+  xy: 887, 125
+  size: 53, 45
+  orig: 53, 45
+  offset: 0, 0
+  index: -1
+mosa_4/head_0
+  rotate: false
+  xy: 218, 115
+  size: 161, 120
+  orig: 161, 120
+  offset: 0, 0
+  index: -1
+mosa_4/head_1
+  rotate: false
+  xy: 887, 172
+  size: 111, 63
+  orig: 111, 63
+  offset: 0, 0
+  index: -1
+mosa_4/l_arm_0
+  rotate: false
+  xy: 381, 109
+  size: 148, 126
+  orig: 148, 126
+  offset: 0, 0
+  index: -1
+mosa_4/r_arm_0
+  rotate: true
+  xy: 218, 20
+  size: 93, 148
+  orig: 93, 148
+  offset: 0, 0
+  index: -1
