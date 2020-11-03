@@ -154,7 +154,7 @@ public class GameData : MonoBehaviour
         while (!req.isDone)
             yield return null;
 
-        GameObject tmp = Instantiate(req.asset, gameObject.transform) as GameObject;
+        GameObject tmp = Instantiate(req.asset, new Vector3(1000, 0, 0), Quaternion.identity, gameObject.transform) as GameObject;
         
         if (Owner == 0)
             m_MyDino_Object.Add(id, tmp);
