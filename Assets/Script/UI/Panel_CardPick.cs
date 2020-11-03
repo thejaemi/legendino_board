@@ -36,7 +36,7 @@ public class Panel_CardPick : MonoBehaviour
         m_UI_Pick.SetActive(true);
         m_UI_Change.SetActive(false);
         m_UI_DeckMade.SetActive(false);
-        ReflashInfo();
+        ReflashInfo(false);
     }
 
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class Panel_CardPick : MonoBehaviour
         
     }
 
-    public void ReflashInfo()
+    public void ReflashInfo(bool UseAnimation)
     {
         if (m_GameData.m_MyInfo.m_Card_Amulet > 0)
             m_Sprite_Deck[0].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Amulet));
@@ -67,6 +67,18 @@ public class Panel_CardPick : MonoBehaviour
 
         if (m_GameData.m_MyInfo.m_Card_Belt > 0)
             m_Sprite_Deck[4].sprite = m_GameData.m_Atlas_Card.GetSprite(string.Format("card_{0}", m_GameData.m_MyInfo.m_Card_Belt));
+
+        if (UseAnimation)
+        {
+            if(m_Label_Attack.text != m_GameData.m_MyInfo.m_Stat_Card.m_Attack.ToString())
+                m_Label_Attack.transform.parent.gameObject.GetComponent<Animation>().Play();
+            if(m_Label_Defence.text != m_GameData.m_MyInfo.m_Stat_Card.m_Defence.ToString())
+                m_Label_Defence.transform.parent.gameObject.GetComponent<Animation>().Play();
+            if(m_Label_Counter.text != m_GameData.m_MyInfo.m_Stat_Card.m_Counter.ToString())
+                m_Label_Counter.transform.parent.gameObject.GetComponent<Animation>().Play();
+            if(m_Label_Special.text != m_GameData.m_MyInfo.m_Stat_Card.m_Special.ToString())
+                m_Label_Special.transform.parent.gameObject.GetComponent<Animation>().Play();
+        }
 
         m_Label_Attack.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Attack);
         m_Label_Defence.text = string.Format("{0}", m_GameData.m_MyInfo.m_Stat_Card.m_Defence);
@@ -167,7 +179,7 @@ public class Panel_CardPick : MonoBehaviour
                     break;
             }
 
-            ReflashInfo();
+            ReflashInfo(true);
             if (m_CurRound < m_TotalRound)
                 SetPickCards();
             else
@@ -215,7 +227,7 @@ public class Panel_CardPick : MonoBehaviour
     {
         m_GameData.m_MyInfo.Set_Card(m_Type, m_Id_CardNew);
 
-        ReflashInfo();
+        ReflashInfo(true);
         if (m_CurRound < m_TotalRound)
         {
             m_UI_Pick.SetActive(true);
