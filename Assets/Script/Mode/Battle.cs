@@ -46,12 +46,12 @@ public class Battle : MonoBehaviour
 
     [Header("전투")]
     public Panel_Blind m_Panel_Blind;
-    //public GameObject m_Label_Ready;
-    //public GameObject m_Label_Set;
-    //public GameObject m_Label_Spin;
     bool m_IsInput = false;
-    public GameObject m_UI_Counter;
     public GameObject m_ReadySetSpin;
+    public GameObject m_Ready;
+    public GameObject m_Set;
+    public GameObject m_Spin;
+    public GameObject m_SwifeEffect;
     public GameObject[] m_SpinEffect;
 
     public Panel_Result m_Panel_Result;
@@ -82,11 +82,12 @@ public class Battle : MonoBehaviour
     // for duel
     int m_Turn = 0;
     CM_JobQueue m_JobQueue_Duel;
-    int m_Count = 0;
 
 
     private void Awake()
     {
+        Screen.SetResolution(720, 1280, false);
+
         m_GameData = CM_Singleton<GameData>.instance;
         m_GameData.m_MyInfo.Reset_Card();
 
@@ -435,10 +436,6 @@ public class Battle : MonoBehaviour
 
     // spin 연출
     //https://github.com/mob-sakai/ParticleEffectForUGUI
-
-    const int CONST_MAX_COUNT = 3;
-    CM_Job m_Job_Counting;
-
     IEnumerator Duel_WaitInput()
     {
         DebugAdd("# 입력 다이노 필드 스핀 시작");
@@ -449,38 +446,44 @@ public class Battle : MonoBehaviour
         m_DinoField_My.GetComponent<UGUI_Scale>().OnStart(1.0f);
         m_DinoField_Other.GetComponent<UGUI_Scale>().OnStart(1.0f);
 
+        // 레디셋스핀 판넬이 활성화되고 자동으로 표시되고 닫혀지는 모든 과정은 이것으로
+        m_Ready.SetActive(false);
+        m_Set.SetActive(false);
+        m_Spin.SetActive(false);
         m_ReadySetSpin.SetActive(true); // 레디 셋 스핀 표시
-
         yield return new WaitForSeconds(3.0f);
 
-        m_ReadySetSpin.SetActive(false);    // 레디 셋 스핀 감춤
+        m_IsInput = false;              // 인풋 대기 활성화
 
-        m_IsInput = false;        // 인풋 대기 활성화
-        m_DinoField_My.StartSpin();
-        m_DinoField_Other.StartSpin();
-        for (int i = 0; i < m_SpinEffect.Length; i++)
-            m_SpinEffect[i].SetActive(true);
-
-
-        m_Count = CONST_MAX_COUNT;
-        m_Job_Counting = CM_Job.Make(Duel_Counting())
-                .Repeat(CONST_MAX_COUNT)
-                .NotifyOnJobComplete((object sender, CM_JobEventArgs e) => {
-                    DebugAdd(string.Format("input Count {0}", m_Count));
-                }).Start();
-
-        while (true)
+        while(true)
         {
-            if (m_Count == 0 || m_IsInput)
+            if (m_IsInput)
                 break;
 
             yield return null;
         }
 
-        if(m_Job_Counting.running)
-            m_Job_Counting.Kill();
+        m_ReadySetSpin.SetActive(false);    // 레디 셋 스핀 감춤
+        m_SwifeEffect.SetActive(true);      // 스와이프 이펙트 on
 
-        m_UI_Counter.SetActive(false);
+        m_DinoField_My.StartSpin();     // 회전 시작
+        m_DinoField_Other.StartSpin();
+        for (int i = 0; i < m_SpinEffect.Length; i++)
+            m_SpinEffect[i].SetActive(true);
+
+        yield return new WaitForSeconds(1.0f);
+
+        m_IsInput = false;              // 인풋 대기 활성화
+
+        while (true)
+        {
+            if (m_IsInput)
+                break;
+
+            yield return null;
+        }
+
+
         m_DinoField_My.StopSpin();
         m_DinoField_Other.StopSpin();
         for (int i = 0; i < m_SpinEffect.Length; i++)
@@ -513,9 +516,17 @@ public class Battle : MonoBehaviour
         DebugAdd("# 입력 대기 종료");
     }
 
+    public void Input_SpinStart()
+    {
+        
+
+    }
+
     public void Input_SpinStop()
     {
-        if(m_UI_Counter && m_IsInput == false)
+        Debug.Log("Spin !!!!!!!!!!!!!!!!!!!");
+
+        if(m_IsInput == false)
         {
             m_IsInput = true;
         }
@@ -632,20 +643,6 @@ public class Battle : MonoBehaviour
         m_Label_Hp_Other.text = m_Hp_Other.ToString();
     }
 
-    private IEnumerator Duel_Counting()
-    {
-        yield return new WaitForSeconds(1.0f);
-
-        if(m_IsInput == false)
-        {
-            --m_Count;
-
-            m_UI_Counter.SetActive(true);
-            m_UI_Counter.GetComponent<Text>().text = m_Count.ToString();
-        }
-    }
-
-
     IEnumerator Duel_Fight()
     {
         DebugAdd("# 스타트 전투 연출");
@@ -743,7 +740,7 @@ public class Battle : MonoBehaviour
             }
         } 
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         DebugAdd("# 엔드 전투 연출");
     }
 
@@ -919,8 +916,6 @@ public class Battle : MonoBehaviour
             m_JobQueue.Pause();
         if (m_JobQueue_Duel != null && m_JobQueue_Duel.running)
             m_JobQueue_Duel.Pause();
-        if (m_Job_Counting != null && m_Job_Counting.running)
-            m_Job_Counting.Pause();
 
         SceneManager.LoadScene("Lobby");
     }
