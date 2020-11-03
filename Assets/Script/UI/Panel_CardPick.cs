@@ -192,11 +192,15 @@ public class Panel_CardPick : MonoBehaviour
 
     public void Cancel()
     {
+        m_UI_Pick.SetActive(true);
+        m_UI_Change.SetActive(false);
+
+        /*
         if (m_CurRound < m_TotalRound)
         {
             m_UI_Pick.SetActive(true);
             m_UI_Change.SetActive(false);
-            //SetPickCards();
+            SetPickCards();
         }
         else
         {
@@ -204,6 +208,7 @@ public class Panel_CardPick : MonoBehaviour
             m_UI_Change.SetActive(false);
             Invoke("ShowMadeDeck", 1.0f);
         }
+        */
     }
 
     public void Change()
