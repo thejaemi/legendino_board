@@ -107,9 +107,9 @@ public class Battle : MonoBehaviour
 
     IEnumerator TestLoading()
     {
-        m_GameData.Add_MyDino(1);
-        m_GameData.Add_MyDino(2);
-        m_GameData.Add_MyDino(3);
+        m_GameData.Add_MyDino(129);
+        m_GameData.Add_MyDino(126);
+        m_GameData.Add_MyDino(120);
 
         // 선택한 스테이지로 저장
         m_GameData.m_StageId = 1;
@@ -172,7 +172,7 @@ public class Battle : MonoBehaviour
                 m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[i]];
                 m_CurDino_My.transform.SetParent(null);
                 m_CurDino_My.transform.position = m_Position_My.position;
-                //m_CurDino_My.transform.localScale = m_Position_My.transform.localScale * 0.0015625f;
+                m_CurDino_My.transform.localScale = m_Position_My.localScale;
                 m_CurDino_My.transform.rotation = m_Position_My.rotation;
                 m_CurDino_My.transform.SetParent(m_Position_My);
             }
@@ -191,7 +191,7 @@ public class Battle : MonoBehaviour
                 m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[i]];
                 m_CurDino_Other.transform.SetParent(null);
                 m_CurDino_Other.transform.position = m_Position_Other.position;
-                //m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale * 0.0015625f;
+                m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale;
                 m_CurDino_Other.transform.rotation = m_Position_Other.rotation;
                 m_CurDino_Other.transform.SetParent(m_Position_Other);
             }
@@ -226,6 +226,7 @@ public class Battle : MonoBehaviour
 
         m_Hp_Other = m_GameData.m_OtherInfo.m_Stat.m_Hp;
         m_Label_Hp_Other.text = m_GameData.m_OtherInfo.m_Stat.m_Hp.ToString();
+        m_Label_Hp_Other.gameObject.GetComponent<Event_Animation>().Run();
 
         m_Panel_Blind.Reflash();
     }
@@ -254,6 +255,7 @@ public class Battle : MonoBehaviour
 
         m_Hp_My = m_GameData.m_MyInfo.m_Stat.m_Hp;
         m_Label_Hp_My.text = m_GameData.m_MyInfo.m_Stat.m_Hp.ToString();
+        m_Label_Hp_My.gameObject.GetComponent<Event_Animation>().Run();
 
         m_Panel_Blind.Reflash();
     }
@@ -632,6 +634,7 @@ public class Battle : MonoBehaviour
         m_Hp_My = Mathf.Max(0, m_Hp_My - Damage);
         m_Gauge_Hp_My.Set(m_Hp_My / (float)m_GameData.m_MyInfo.m_Stat.m_Hp);
         m_Label_Hp_My.text = m_Hp_My.ToString();
+        m_Label_Hp_My.gameObject.GetComponent<Event_Animation>().Run();
     }
 
     void TakeDamage_Other(int Damage)
@@ -641,6 +644,7 @@ public class Battle : MonoBehaviour
         m_Hp_Other = Mathf.Max(0, m_Hp_Other - Mathf.Max(0, Damage));
         m_Gauge_Hp_Other.Set(m_Hp_Other / (float)m_GameData.m_OtherInfo.m_Stat.m_Hp);
         m_Label_Hp_Other.text = m_Hp_Other.ToString();
+        m_Label_Hp_Other.gameObject.GetComponent<Event_Animation>().Run();
     }
 
     IEnumerator Duel_Fight()
@@ -764,10 +768,12 @@ public class Battle : MonoBehaviour
         m_Hp_My = m_GameData.m_MyInfo.m_Stat.m_Hp;
         m_Gauge_Hp_My.SetDefault();
         m_Label_Hp_My.text = m_Hp_My.ToString();
+        m_Label_Hp_My.gameObject.GetComponent<Event_Animation>().Run();
 
         m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[m_CurDinoPos_My]];
         m_CurDino_My.transform.SetParent(null);
         m_CurDino_My.transform.position = m_Position_My.position;
+        m_CurDino_My.transform.localScale = m_Position_My.transform.localScale;
         m_CurDino_My.transform.rotation = m_Position_My.rotation;
         m_CurDino_My.transform.SetParent(m_Position_My);
 
@@ -804,10 +810,12 @@ public class Battle : MonoBehaviour
         m_Hp_Other = m_GameData.m_OtherInfo.m_Stat.m_Hp;
         m_Gauge_Hp_Other.SetDefault();
         m_Label_Hp_Other.text = m_Hp_Other.ToString();
+        m_Label_Hp_Other.gameObject.GetComponent<Event_Animation>().Run();
 
         m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[m_CurDinoPos_Other]];
         m_CurDino_Other.transform.SetParent(null);
         m_CurDino_Other.transform.position = m_Position_Other.position;
+        m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale;
         m_CurDino_Other.transform.rotation = m_Position_Other.rotation;
         m_CurDino_Other.transform.SetParent(m_Position_Other);
 
