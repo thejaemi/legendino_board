@@ -53,6 +53,7 @@ public class Battle : MonoBehaviour
     public GameObject m_Spin;
     public GameObject m_SwifeEffect;
     public GameObject[] m_SpinEffect;
+    public GameObject m_PlzTouch;
 
     public Panel_Result m_Panel_Result;
 
@@ -477,6 +478,8 @@ public class Battle : MonoBehaviour
 
         m_IsInput = false;              // 인풋 대기 활성화
 
+        m_PlzTouch.SetActive(true);
+
         while (true)
         {
             if (m_IsInput)
@@ -485,6 +488,7 @@ public class Battle : MonoBehaviour
             yield return null;
         }
 
+        m_PlzTouch.SetActive(false);
 
         m_DinoField_My.StopSpin();
         m_DinoField_Other.StopSpin();
