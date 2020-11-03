@@ -708,10 +708,12 @@ public class Battle : MonoBehaviour
 
         if (m_Hp_My == 0)
         {
+            m_DeathMark_My[0].SetActive(true);
             m_CurDino_My.GetComponent<DinoObject>().SetAnimation("die", true);
             yield return new WaitForSeconds(1.0f);
+            m_DeathMark_My[0].SetActive(false);
 
-            if(NextDino_My())
+            if (NextDino_My())
             {
                 m_CurDino_My.GetComponent<DinoObject>().SetAnimation("run", true);
                 m_Position_My.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
@@ -725,10 +727,12 @@ public class Battle : MonoBehaviour
 
         if (m_Hp_Other == 0)
         {
+            m_DeathMark_Other[0].SetActive(true);
             m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("die", true);
             yield return new WaitForSeconds(1.0f);
+            m_DeathMark_Other[0].SetActive(false);
 
-            if(NextDino_Other())
+            if (NextDino_Other())
             {
                 m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("run", true);
                 m_Position_Other.GetComponent<SimpleMove_Lerp_Local>().OnStart(1.0f);
