@@ -196,7 +196,7 @@ public class Panel_CardPick : MonoBehaviour
         {
             m_UI_Pick.SetActive(true);
             m_UI_Change.SetActive(false);
-            SetPickCards();
+            //SetPickCards();
         }
         else
         {
