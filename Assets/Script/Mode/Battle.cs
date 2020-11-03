@@ -10,6 +10,7 @@ public class Battle : MonoBehaviour
 
     // for interface
     [Header("보드")]
+    public float DinoScale = 1.0f;
     public Transform m_Position_My;         // 공룡 모델 위치
     public SpriteRenderer[] m_Deck_My;
     int m_CurDinoPos_My;
@@ -108,7 +109,7 @@ public class Battle : MonoBehaviour
 
     IEnumerator TestLoading()
     {
-        m_GameData.Add_MyDino(129);
+        m_GameData.Add_MyDino(1);
         m_GameData.Add_MyDino(126);
         m_GameData.Add_MyDino(120);
 
@@ -173,7 +174,7 @@ public class Battle : MonoBehaviour
                 m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[i]];
                 m_CurDino_My.transform.SetParent(null);
                 m_CurDino_My.transform.position = m_Position_My.position;
-                m_CurDino_My.transform.localScale = m_Position_My.localScale;
+                m_CurDino_My.transform.localScale = new Vector3(DinoScale, DinoScale, 1.0f);
                 m_CurDino_My.transform.rotation = m_Position_My.rotation;
                 m_CurDino_My.transform.SetParent(m_Position_My);
             }
@@ -192,7 +193,7 @@ public class Battle : MonoBehaviour
                 m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[i]];
                 m_CurDino_Other.transform.SetParent(null);
                 m_CurDino_Other.transform.position = m_Position_Other.position;
-                m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale;
+                m_CurDino_Other.transform.localScale = new Vector3(DinoScale, DinoScale, 1.0f);
                 m_CurDino_Other.transform.rotation = m_Position_Other.rotation;
                 m_CurDino_Other.transform.SetParent(m_Position_Other);
             }
@@ -777,7 +778,7 @@ public class Battle : MonoBehaviour
         m_CurDino_My = m_GameData.m_MyDino_Object[m_GameData.m_MyInfo.m_Dino[m_CurDinoPos_My]];
         m_CurDino_My.transform.SetParent(null);
         m_CurDino_My.transform.position = m_Position_My.position;
-        m_CurDino_My.transform.localScale = m_Position_My.transform.localScale;
+        m_CurDino_My.transform.localScale = new Vector3(DinoScale, DinoScale, 1.0f);
         m_CurDino_My.transform.rotation = m_Position_My.rotation;
         m_CurDino_My.transform.SetParent(m_Position_My);
 
@@ -819,9 +820,10 @@ public class Battle : MonoBehaviour
         m_CurDino_Other = m_GameData.m_OtherDino_Object[m_GameData.m_OtherInfo.m_Dino[m_CurDinoPos_Other]];
         m_CurDino_Other.transform.SetParent(null);
         m_CurDino_Other.transform.position = m_Position_Other.position;
-        m_CurDino_Other.transform.localScale = m_Position_Other.transform.localScale;
+        m_CurDino_Other.transform.localScale = new Vector3(DinoScale, DinoScale, 1.0f);
         m_CurDino_Other.transform.rotation = m_Position_Other.rotation;
         m_CurDino_Other.transform.SetParent(m_Position_Other);
+
 
         m_Medal_Other[0].Set(m_GameData.m_OtherInfo.m_Dino[m_CurDinoPos_Other]); // 다이노필드에 현재 쓸 메달 세팅
 
