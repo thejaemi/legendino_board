@@ -508,6 +508,7 @@ public class Battle : MonoBehaviour
         Debug.LogFormat("Command {0} / {1}", m_DinoField_My.GetCommand(), m_DinoField_Other.GetCommand());
 
         // 판정 연출
+        SoundManager.PlaySFX(gameObject, "fx_u_0019");
         m_Dlg_Command_My.Set(m_GameData.m_MyInfo, m_DinoField_My.GetCommand(), m_GameData.m_OtherInfo, m_DinoField_Other.GetCommand());
         m_Dlg_Command_Other.Set(m_GameData.m_OtherInfo, m_DinoField_Other.GetCommand(), m_GameData.m_MyInfo, m_DinoField_My.GetCommand());
 
@@ -536,6 +537,7 @@ public class Battle : MonoBehaviour
 
         if(m_IsInput == false)
         {
+            SoundManager.PlaySFX(gameObject, "fx_u_0014");
             m_IsInput = true;
         }
     }
@@ -874,21 +876,25 @@ public class Battle : MonoBehaviour
 
     public void CardTypeSelect_Attack()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0030");
         SetCardPick(1);
     }
 
     public void CardTypeSelect_Defence()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0030");
         SetCardPick(2);
     }
 
     public void CardTypeSelect_Counter()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0030");
         SetCardPick(3);
     }
 
     public void CardTypeSelect_Special()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0030");
         SetCardPick(4);
     }
 
@@ -966,10 +972,12 @@ public class Battle : MonoBehaviour
 
         if (GUI.Button(new Rect(50, 50, 100, 30), "Test"))
         {
-            m_GameData.StageClear();
-            EndGame();
+            SoundManager.PlaySFX(gameObject, "fx_u_0030");
 
-//            m_Panel_Result.OnWin();
+            //m_GameData.StageClear();
+            //EndGame();
+
+            //            m_Panel_Result.OnWin();
 
             /*
             if (CM_Singleton<GameData>.instance.m_Util.m_Transitioner)

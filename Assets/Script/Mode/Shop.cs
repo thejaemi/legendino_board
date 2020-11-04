@@ -24,11 +24,13 @@ public class Shop : MonoBehaviour
 
     public void Button_Starter()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0034");
         Application.OpenURL("https://smartstore.naver.com/thejaemi/products/2482391702");
     }
 
     public void Button_Booster()
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0034");
         Application.OpenURL("https://smartstore.naver.com/thejaemi/products/2701018112");
     }
 }

@@ -117,12 +117,14 @@ public class Panel_CardPick : MonoBehaviour
     }
 
     public void CardPick()
-    {
+    { 
         CardPick(int.Parse(UIButton.current.name));
     }
 
     public void CardPick(int n)
     {
+        SoundManager.PlaySFX(gameObject, "fx_u_0030");
+
         if (n < m_Button_Index.Length)
         {
             Card card = m_GameData.m_Table_Card.m_Dic[m_Button_Index[n]];

@@ -77,6 +77,7 @@ public class Scan : MonoBehaviour
         {
             if(m_Medals[i].gameObject.activeSelf == false)
             {
+                SoundManager.PlaySFX(gameObject, "fx_u_0014");
                 m_ScanList.Add(Code);
                 m_Medals[i].Set(DinoId);
                 m_Medals[i].gameObject.SetActive(true);
