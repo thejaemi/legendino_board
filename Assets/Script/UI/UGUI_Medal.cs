@@ -18,7 +18,8 @@ public class UGUI_Medal : MonoBehaviour
     public float m_Angle = 0.0f;
     [ReadOnly]
     public float m_AngleRatio = 0.0f;
-    string m_Desc = "";
+    [ReadOnly]
+    public string m_Desc = "";
 
     public bool m_ShowTool = false;
 
@@ -45,6 +46,9 @@ public class UGUI_Medal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_Id == 0)
+            return;
+
         if(m_IsSpin)
             transform.Rotate(-Vector3.forward * Time.deltaTime * Random.Range(2000, 3000));
 
@@ -63,8 +67,14 @@ public class UGUI_Medal : MonoBehaviour
             return 2;
         else if (m_Desc == "스페셜")
             return 3;
-        else
+        else if (m_Desc == "회피")
             return 4;
+        else
+        {
+            // 판정이 이상할 때는 메달 교체하고 로테이션을 0 으로 초기화해줬나 확인 해주자
+            Debug.LogErrorFormat("### 메달({0}) 커맨드({1}) 판정 애러 {1}", m_Id, m_Desc);
+            return -1;
+        }
     }
 
     public void Set(int DinoId)
@@ -73,6 +83,7 @@ public class UGUI_Medal : MonoBehaviour
         m_Sprite_Dino.sprite = CM_Singleton<GameData>.instance.m_Atlas_UI.GetSprite(string.Format("medal_{0}", DinoId));
 
         m_Dino = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[DinoId];
+        m_Gauge.Clear();
         if (m_Dino.m_Ratio_Attack > 0)
             //StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color_Attack, "공격"));
             CM_Job.Make(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color_Attack, "공격")).Start();

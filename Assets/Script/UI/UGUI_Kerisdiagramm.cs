@@ -27,6 +27,8 @@ public class UGUI_Kerisdiagramm : MonoBehaviour
 
     public void Clear()
     {
+        m_CurRatio = 0.0f;
+
         foreach (var tmp in m_Map)
             Destroy(tmp.Key);
 
@@ -85,7 +87,9 @@ public class UGUI_Kerisdiagramm : MonoBehaviour
         {
             if (tmp.Value.x <= f && f <= tmp.Value.y)
             {
-                ColorChange(tmp.Key);
+                if (tmp.Key.name == "")
+                    Debug.Log("### Check Win");
+                //ColorChange(tmp.Key);
                 return tmp.Key.name;
             }
         }

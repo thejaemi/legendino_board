@@ -51,6 +51,7 @@ public class Medal : MonoBehaviour
         m_Sprite_Dino.spriteName = string.Format("medal_{0}", DinoId);
 
         m_Dino = CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[DinoId];
+        m_Gauge.Clear();
         if (m_Dino.m_Ratio_Attack > 0)
             //StartCoroutine(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color_Attack, "공격"));
             CM_Job.Make(m_Gauge.Add_(m_Dino.m_Ratio_Attack, Color_Attack, "공격")).Start();

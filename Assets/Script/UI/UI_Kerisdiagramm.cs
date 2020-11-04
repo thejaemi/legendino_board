@@ -30,7 +30,9 @@ public class UI_Kerisdiagramm : MonoBehaviour
 
     public void Clear()
     {
-        foreach(var tmp in m_Map)
+        m_CurRatio = 0.0f;
+
+        foreach (var tmp in m_Map)
             Destroy(tmp.Key);
 
         m_Map.Clear();

@@ -783,6 +783,7 @@ public class Battle : MonoBehaviour
         m_CurDino_My.transform.SetParent(m_Position_My);
 
         m_Medal_My[0].Set(m_GameData.m_MyInfo.m_Dino[m_CurDinoPos_My]); // 다이노필드에 현재 쓸 메달 세팅
+        m_Medal_My[0].transform.rotation = Quaternion.identity;
 
         if (m_CurDinoPos_My == 1)
         {            
@@ -826,6 +827,7 @@ public class Battle : MonoBehaviour
 
 
         m_Medal_Other[0].Set(m_GameData.m_OtherInfo.m_Dino[m_CurDinoPos_Other]); // 다이노필드에 현재 쓸 메달 세팅
+        m_Medal_Other[0].transform.rotation = Quaternion.identity;
 
         if (m_CurDinoPos_Other == 1)
         {
