@@ -517,9 +517,6 @@ public class Battle : MonoBehaviour
         m_DinoField_My.GetComponent<UGUI_Scale>().OnReset();
         m_DinoField_Other.GetComponent<UGUI_Scale>().OnReset();
 
-        m_Dlg_Command_My.Reset();
-        m_Dlg_Command_Other.Reset();
-
         CommandCalc((eCommand)m_DinoField_My.GetCommand(), (eCommand)m_DinoField_Other.GetCommand());
 
         m_Panel_Blind.gameObject.SetActive(false);
@@ -719,6 +716,9 @@ public class Battle : MonoBehaviour
 
         if (m_JobQueue_Duel == null)
             yield break;
+
+        m_Dlg_Command_My.Reset();
+        m_Dlg_Command_Other.Reset();
 
         //m_CurDino_My.GetComponent<DinoObject>().SetAnimation("idle");
         //m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("idle");
