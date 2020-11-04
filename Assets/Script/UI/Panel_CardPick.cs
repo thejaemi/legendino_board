@@ -191,6 +191,22 @@ public class Panel_CardPick : MonoBehaviour
         }
     }
 
+    public void CardDraw()
+    {
+        if (m_CurRound < m_TotalRound)
+        {
+            m_UI_Pick.SetActive(true);
+            m_UI_Change.SetActive(false);
+            SetPickCards();
+        }
+        else
+        {
+            m_UI_Pick.SetActive(false);
+            m_UI_Change.SetActive(false);
+            Invoke("ShowMadeDeck", 1.0f);
+        }
+    }
+
     public void ShowChoice(int Old, Card card)
     {
         m_Type = card.m_Attribute;
