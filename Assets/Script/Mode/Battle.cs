@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using Spine.Unity;
+
 public class Battle : MonoBehaviour
 {
     GameData m_GameData;
@@ -55,6 +57,8 @@ public class Battle : MonoBehaviour
     public GameObject m_SwifeEffect;
     public GameObject[] m_SpinEffect;
     public GameObject m_PlzTouch;
+    public GameObject[] m_EffectDefence;
+    public GameObject[] m_EffectEvade;
 
     public Panel_Result m_Panel_Result;
 
@@ -667,6 +671,7 @@ public class Battle : MonoBehaviour
 
                 case (int)eCommand.Defence:
                     m_CurDino_My.GetComponent<DinoObject>().SetAnimation("defense", false);
+                    m_EffectDefence[0].SetActive(true);
                     break;
 
                 case (int)eCommand.Special:
@@ -675,6 +680,7 @@ public class Battle : MonoBehaviour
 
                 case (int)eCommand.Evade:
                     m_CurDino_My.GetComponent<DinoObject>().SetAnimation("dodge", false);
+                    m_EffectEvade[0].SetActive(true);
                     break;
             }
 
@@ -693,6 +699,7 @@ public class Battle : MonoBehaviour
 
                 case (int)eCommand.Defence:
                     m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("defense", false);
+                    m_EffectDefence[1].SetActive(true);
                     break;
 
                 case (int)eCommand.Special:
@@ -701,6 +708,7 @@ public class Battle : MonoBehaviour
 
                 case (int)eCommand.Evade:
                     m_CurDino_Other.GetComponent<DinoObject>().SetAnimation("dodge", false);
+                    m_EffectEvade[1].SetActive(true);
                     break;
             }
 
@@ -976,6 +984,32 @@ public class Battle : MonoBehaviour
             Time.timeScale = 10.0f;
         if (GUI.Button(new Rect(50, 150, 100, 30), "SpeedDown"))
             Time.timeScale = 1.0f;
+
+        GUI.BeginGroup(new Rect(50, 200, 300, 600));
+
+        float y = 0f;
+        if (GUI.Button(new Rect(0, y += 30, 100, 30), "공격"))
+        {
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[0]].m_Ani_Attack, false);
+            m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+        }
+        if (GUI.Button(new Rect(0, y += 30, 100, 30), "방어"))
+        {
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("defense", false);
+            m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+        }
+        if (GUI.Button(new Rect(0, y += 30, 100, 30), "스페셜"))
+        {
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation(CM_Singleton<GameData>.instance.m_Table_Dino.m_Dic[CM_Singleton<GameData>.instance.m_MyInfo.m_Dino[0]].m_Ani_Special, false);
+            m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+        }
+        if (GUI.Button(new Rect(0, y += 30, 100, 30), "회피"))
+        {
+            m_CurDino_My.GetComponent<DinoObject>().SetAnimation("dodge", false);
+            m_CurDino_My.GetComponent<SkeletonAnimation>().AnimationState.AddAnimation(0, "idle", true, 0.0f);
+        }
+
+        GUI.EndGroup();
 
 
 
