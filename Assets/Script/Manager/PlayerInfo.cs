@@ -131,6 +131,7 @@ public class PlayerInfo
         m_Stat_Card.m_Attack += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Attack;
         m_Stat_Card.m_Defence += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Defence;
         m_Stat_Card.m_Special += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Special;
+        m_Stat_Card.m_Counter += CM_Singleton<GameData>.instance.m_Table_Card.m_Dic[Id].m_Counter;
     }
 
     public void SetCurDino(int Pos)
